@@ -1,6 +1,6 @@
 <?php
 class ControllerCommonCart extends Controller {
-	public function index() {
+	public function index($field = null) {
 		$this->load->language('common/cart');
 
 		// Totals
@@ -139,11 +139,19 @@ class ControllerCommonCart extends Controller {
 
 		$data['cart'] = $this->url->link('checkout/cart');
 		$data['checkout'] = $this->url->link('checkout/checkout', '', true);
-
+                
+                if ($field) {
+                    return $data[$field];
+                }
+                
 		return $this->load->view('common/cart', $data);
 	}
 
 	public function info() {
 		$this->response->setOutput($this->index());
 	}
+        
+        public function getCartField($field) {
+            return $this->index($field);
+        }
 }

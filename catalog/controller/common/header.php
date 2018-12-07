@@ -24,6 +24,9 @@ class ControllerCommonHeader extends Controller {
 			$this->document->addLink($server . 'image/' . $this->config->get('config_icon'), 'icon');
 		}
 
+                // Additional style
+                $this->document->addStyle('catalog/view/theme/svetodiodi/stylesheet/style.css');
+                
 		$data['title'] = $this->document->getTitle();
 
 		$data['base'] = $server;
@@ -72,7 +75,9 @@ class ControllerCommonHeader extends Controller {
 		$data['text_page'] = $this->language->get('text_page');
 		$data['text_category'] = $this->language->get('text_category');
 		$data['text_all'] = $this->language->get('text_all');
-
+                $data['text_my_orders'] = $this->language->get('text_my_orders');
+                $data['text_personal_data'] = $this->language->get('text_personal_data');
+                
 		$data['home'] = $this->url->link('common/home');
 		$data['wishlist'] = $this->url->link('account/wishlist', '', true);
 		$data['logged'] = $this->customer->isLogged();
@@ -87,50 +92,42 @@ class ControllerCommonHeader extends Controller {
 		$data['checkout'] = $this->url->link('checkout/checkout', '', true);
 		$data['contact'] = $this->url->link('information/contact');
 		$data['telephone'] = $this->config->get('config_telephone');
-
+                $data['my_orders'] = $this->url->link('account/order', true);
+                $data['personal_data'] = $this->url->link('account/account', true);
+                
 		// Menu
-		$this->load->model('catalog/category');
+                $top_menu = [
+                    'about_company' => [
+                        'name' => $this->language->get('text_about_company'),
+                        'href' => $this->url->link('information/information', 'information_id=4')
+                    ],
+                    'actions' => [
+                        'name' => $this->language->get('text_actions'),
+                        'href' => $this->url->link('information/information', 'information_id=8')
+                    ],
+                    'tearms_of_cooperation' => [
+                        'name' => $this->language->get('text_terms_of_cooperations'),
+                        'href' => $this->url->link('information/information', 'information_id=9')
+                    ],
+                    'price_list' => [
+                        'name' => $this->language->get('text_price_list'),
+                        'href' => $this->url->link('information/information', 'information_id=6')
+                    ],
+                    'contacts' => [
+                        'name' => $this->language->get('text_contacts'),
+                        'href' => $this->url->link('information/contact')
+                    ]
+                ];
 
-		$this->load->model('catalog/product');
-
-		$data['categories'] = array();
-
-		$categories = $this->model_catalog_category->getCategories(0);
-
-		foreach ($categories as $category) {
-			if ($category['top']) {
-				// Level 2
-				$children_data = array();
-
-				$children = $this->model_catalog_category->getCategories($category['category_id']);
-
-				foreach ($children as $child) {
-					$filter_data = array(
-						'filter_category_id'  => $child['category_id'],
-						'filter_sub_category' => true
-					);
-
-					$children_data[] = array(
-						'name'  => $child['name'] . ($this->config->get('config_product_count') ? ' (' . $this->model_catalog_product->getTotalProducts($filter_data) . ')' : ''),
-						'href'  => $this->url->link('product/category', 'path=' . $category['category_id'] . '_' . $child['category_id'])
-					);
-				}
-
-				// Level 1
-				$data['categories'][] = array(
-					'name'     => $category['name'],
-					'children' => $children_data,
-					'column'   => $category['column'] ? $category['column'] : 1,
-					'href'     => $this->url->link('product/category', 'path=' . $category['category_id'])
-				);
-			}
-		}
+                $data['top_menu'] = $top_menu;
 
 		$data['language'] = $this->load->controller('common/language');
 		$data['currency'] = $this->load->controller('common/currency');
 		$data['search'] = $this->load->controller('common/search');
 		$data['cart'] = $this->load->controller('common/cart');
 
+                $data['cart_products_count'] = count($this->load->controller('common/cart/getCartField', 'products'));
+                
 		// For page specific css
 		if (isset($this->request->get['route'])) {
 			if (isset($this->request->get['product_id'])) {

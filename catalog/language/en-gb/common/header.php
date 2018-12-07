@@ -15,3 +15,11 @@ $_['text_checkout']      = 'Checkout';
 $_['text_search']        = 'Search';
 $_['text_all']           = 'Show All';
 $_['text_page']          = 'page';
+
+$_['text_about_company'] = 'About company';
+$_['text_actions']       = 'Actions';
+$_['text_terms_of_cooperations'] = 'Terms of cooperations';
+$_['text_price_list']    = 'Price list';
+$_['text_contacts']      = 'Contacts';
+$_['text_my_orders']     = 'My orders';
+$_['text_personal_data'] = 'Personal data';

@@ -15,3 +15,11 @@ $_['text_checkout']      = 'Оформление заказа';
 $_['text_search']        = 'Поиск';
 $_['text_all']           = 'Показать все';
 $_['text_page']          = 'страница';
+
+$_['text_about_company'] = 'О компании';
+$_['text_actions']       = 'Акции';
+$_['text_terms_of_cooperations'] = 'Условия сотрудничества';
+$_['text_price_list']    = 'Прайс-лист';
+$_['text_contacts']      = 'Контакты';
+$_['text_my_orders']     = 'Мои заказы';
+$_['text_personal_data'] = 'Персональные данные';

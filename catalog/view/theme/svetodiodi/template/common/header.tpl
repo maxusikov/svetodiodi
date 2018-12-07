@@ -31,7 +31,7 @@
 <script src="catalog/view/javascript/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
 <link href="catalog/view/javascript/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
 <link href="//fonts.googleapis.com/css?family=Open+Sans:400,400i,300,700" rel="stylesheet" type="text/css" />
-<link href="catalog/view/theme/default/stylesheet/stylesheet.css" rel="stylesheet">
+<link href="catalog/view/theme/svetodiodi/stylesheet/stylesheet.css" rel="stylesheet">
 <?php foreach ($styles as $style) { ?>
 <link href="<?php echo $style['href']; ?>" type="text/css" rel="<?php echo $style['rel']; ?>" media="<?php echo $style['media']; ?>" />
 <?php } ?>
@@ -47,7 +47,7 @@
 <?php } ?>
 </head>
 <body class="<?php echo $class; ?>">
-<nav id="top">
+<!-- nav id="top">
   <div class="container">
     <?php echo $currency; ?>
     <?php echo $language; ?>
@@ -74,8 +74,8 @@
       </ul>
     </div>
   </div>
-</nav>
-<header>
+</nav -->
+<!-- header>
   <div class="container">
     <div class="row">
       <div class="col-sm-4">
@@ -96,36 +96,80 @@
       <div class="col-sm-3"><?php echo $cart; ?></div>
     </div>
   </div>
-</header>
-<?php if ($categories) { ?>
-<div class="container">
-  <nav id="menu" class="navbar">
-    <div class="navbar-header"><span id="category" class="visible-xs"><?php echo $text_category; ?></span>
-      <button type="button" class="btn btn-navbar navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse"><i class="fa fa-bars"></i></button>
-    </div>
-    <div class="collapse navbar-collapse navbar-ex1-collapse">
-      <ul class="nav navbar-nav">
-        <?php foreach ($categories as $category) { ?>
-        <?php if ($category['children']) { ?>
-        <li class="dropdown"><a href="<?php echo $category['href']; ?>" class="dropdown-toggle" data-toggle="dropdown"><?php echo $category['name']; ?></a>
-          <div class="dropdown-menu">
-            <div class="dropdown-inner">
-              <?php foreach (array_chunk($category['children'], ceil(count($category['children']) / $category['column'])) as $children) { ?>
-              <ul class="list-unstyled">
-                <?php foreach ($children as $child) { ?>
-                <li><a href="<?php echo $child['href']; ?>"><?php echo $child['name']; ?></a></li>
+</header -->
+
+<header>
+    <div class="container">
+        <div class="logo left-side col-md-3">
+            <?php if ($logo) { ?>
+                <?php if ($home == $og_url) { ?>
+                  <img src="<?php echo $logo; ?>" title="<?php echo $name; ?>" alt="<?php echo $name; ?>" class="img-responsive" />
+                <?php } else { ?>
+                  <a href="<?php echo $home; ?>"><img src="<?php echo $logo; ?>" title="<?php echo $name; ?>" alt="<?php echo $name; ?>" class="img-responsive" /></a>
                 <?php } ?>
-              </ul>
-              <?php } ?>
+            <?php } else { ?>
+                <h1><a href="<?php echo $home; ?>"><?php echo $name; ?></a></h1>
+            <?php } ?>
+        </div>
+        <div class="right-side">
+            <div class="inner-wrapper">
+                <div class="market-info">
+                    <p class="short-market-description">Федеральный поставщик<br /> светодиодного оборудования</p>
+                    <div class="phones">
+                        <span class="hexagon-1 phone-icon">
+                            <img src="catalog/view/theme/svetodiodi/image/theme_images/phone_icon.png" />
+                        </span>
+                        <a class="phone-number phone-number-1"><?php echo $telephone; ?></a>
+                        <span class="phone-separator">/</span>
+                        <a class="phone-number phone-number-2"><?php echo $telephone; ?></a>
+                    </div>
+                </div>
+                <div class="user-area">
+                    <?php if ($logged) { ?>
+                    <div class="cart">
+                        <a class="cart-link" href="<?php echo $shopping_cart; ?>" title="<?php echo $text_shopping_cart; ?>">
+                            <img class="cart-icon" src="catalog/view/theme/svetodiodi/image/theme_images/cart.png" />
+                            <span class="cart-products-count"><?php echo $cart_products_count; ?></span>
+                        </a>
+                    </div>
+                    <div class="personal-cabinet">
+                        <a class="cabinet-link" href="<?php echo $logout; ?>">
+                            <img src="catalog/view/theme/svetodiodi/image/theme_images/personal_cabinet_active.png" />
+                        </a>
+                        <div class="user-informations">
+                            <div class="inner-wrapper">
+                                <a href="<?php echo $my_orders; ?>" class="informations-item"><?php echo $text_my_orders; ?></a>
+                                <span class="informations-separator"></span>
+                                <a href="<?php echo $personal_data; ?>" class="informations-item"><?php echo $text_personal_data; ?></a>
+                            </div>
+                        </div>
+                    </div>
+                    <?php } else { ?>
+                    <div class="personal-cabinet">
+                        <a class="cabinet-link" href="<?php echo $login; ?>">
+                            <img src="catalog/view/theme/svetodiodi/image/theme_images/personal_cabinet_inactive.png" />
+                        </a>
+                    </div>
+                    <?php } ?>
+                </div>
             </div>
-            <a href="<?php echo $category['href']; ?>" class="see-all"><?php echo $text_all; ?> <?php echo $category['name']; ?></a> </div>
-        </li>
-        <?php } else { ?>
-        <li><a href="<?php echo $category['href']; ?>"><?php echo $category['name']; ?></a></li>
-        <?php } ?>
-        <?php } ?>
-      </ul>
+            <div class="inner-outline"></div>
+        </div>
     </div>
-  </nav>
-</div>
-<?php } ?>
+    <div id="top-menu" class="top-menu">
+        <div class="container">
+            <div class="menu-wrapper">
+                <ul>
+                <?php foreach($top_menu as $menu_item) { ?>    
+                    <li>
+                        <a href="<?php echo $menu_item['href']; ?>" title="<?php echo $menu_item['name']; ?>"><?php echo $menu_item['name']; ?></a>
+                    </li>
+                <?php } ?>
+                </ul>
+                <div class="background-left"></div>
+                <div class="background-right"></div>
+            </div>
+        </div>
+    </div>
+</header>
+

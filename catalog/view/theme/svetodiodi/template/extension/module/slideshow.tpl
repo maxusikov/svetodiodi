@@ -75,12 +75,7 @@
         
         // Init autoscroll
         setInterval(function(){
-            if (window.slideshow<?php echo $module; ?>_current_slide >= _length - 1) {
-                window.slideshow<?php echo $module; ?>_current_slide = 0;
-            } else {
-                window.slideshow<?php echo $module; ?>_current_slide++;
-            }
-            
+            window.slideshow<?php echo $module; ?>_current_slide++;
             slideshow_<?php echo $module; ?>_GoToSlide(_carousel, window.slideshow<?php echo $module; ?>_current_slide);
         }, 20000);
     });

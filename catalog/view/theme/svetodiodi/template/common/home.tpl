@@ -9,9 +9,15 @@
     <?php $class = 'col-sm-12'; ?>
     <?php } ?>
     <div id="content" class="<?php echo $class; ?>">
-        <?php echo $content_top; ?><?php echo $content_bottom; ?>
+        <?php echo $content_top; ?>
     </div>
     <?php echo $column_right; ?>
+  </div>
+  <div class="container-row">
+    <?php echo $categories_component; ?>
+  </div>
+  <div id="content-bottom" class="container-row">
+    <?php echo $content_bottom; ?>
   </div>
 </div>
 <?php echo $footer; ?>

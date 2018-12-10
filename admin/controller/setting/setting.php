@@ -77,6 +77,7 @@ class ControllerSettingSetting extends Controller {
 		$data['entry_name'] = $this->language->get('entry_name');
 		$data['entry_owner'] = $this->language->get('entry_owner');
 		$data['entry_address'] = $this->language->get('entry_address');
+                $data['entry_address_stock'] = $this->language->get('entry_address_stock');
 		$data['entry_geocode'] = $this->language->get('entry_geocode');
 		$data['entry_email'] = $this->language->get('entry_email');
 		$data['entry_telephone'] = $this->language->get('entry_telephone');
@@ -541,6 +542,12 @@ class ControllerSettingSetting extends Controller {
 			$data['config_address'] = $this->config->get('config_address');
 		}
 
+                if (isset($this->request->post['config_address_stock'])) {
+			$data['config_address_stock'] = $this->request->post['config_address_stock'];
+		} else {
+			$data['config_address_stock'] = $this->config->get('config_address_stock');
+		}
+                
 		if (isset($this->request->post['config_geocode'])) {
 			$data['config_geocode'] = $this->request->post['config_geocode'];
 		} else {

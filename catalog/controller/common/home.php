@@ -18,6 +18,8 @@ class ControllerCommonHome extends Controller {
 
                 $data['categories_component'] = $this->load->controller('component/category');
                 
+                
+                
 		$this->response->setOutput($this->load->view('common/home', $data));
 	}
 }

@@ -15,3 +15,13 @@ $_['text_order']        = 'История заказов';
 $_['text_wishlist']     = 'Мои закладки';
 $_['text_newsletter']   = 'Рассылка новостей';
 $_['text_powered']      = 'Работает на <a target="_blank" href="http://myopencart.com/">ocStore</a><br /> %s &copy; %s';
+
+$_['text_catalog']             = 'Каталог';
+$_['text_useful_informations'] = 'Полезная информация';
+$_['text_about_company']  = 'О компании';
+$_['text_actions']        = 'Акции';
+$_['text_terms_of_cooperations'] = 'Условия сотрудничества';
+$_['text_price_list']     = 'Прайс-лист';
+$_['text_contacts']       = 'Контакты';
+$_['text_office_address'] = 'Адрес оффиса:';
+$_['text_stock_address']  = 'Адрес склада:';

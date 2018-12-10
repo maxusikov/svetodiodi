@@ -66,8 +66,10 @@
                 <div class="market-info">
                     <p class="short-market-description">Федеральный поставщик<br /> светодиодного оборудования</p>
                     <div class="phones">
-                        <span class="hexagon-1 phone-icon">
-                            <img src="catalog/view/theme/svetodiodi/image/theme_images/phone_icon.png" />
+                        <span class="phone-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="27" height="24" viewBox="0 0 27 24">
+                              <image class="telephone" width="27" height="24" xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAABsAAAAYCAMAAAA8nnbJAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAA7VBMVEUAAAAjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEVwxobz+vV7y49yx4eBzZW95cf////X7933/PhtxYTf8uTh8+WEz5eL0Z0kqEaw4L0mqUex4L3w+fN8y5Cw4LyGz5lxx4eCzpXe8uP4/PkAAACirhxwAAAAM3RSTlMAae/u3t2EEOr5I5GqKvv+OLnEUFIH2tkFeGwY8w6ghjf2HcWiHveID+tu21MBOiusJPqA43/iAAAAAWJLR0QAiAUdSAAAAAlwSFlzAAALEgAACxIB0t1+/AAAAQFJREFUKM9t0mtbAUEUB/DjshFlQ0SE2iIJMS7rINfS9ft/nebWOjOcV//Z3/PszJw5ALJCjLFwRFTUcZwTIBWLM1qnCWJJZtbZns5TlrkXgaWZXZl/yrLDulSUy8vVYDgidlWQVpSLsT9BiteCSmWZp+hPhsTiN9wqKs8Q/TndsQpQc1V8RVwYp7m9A0/HJSKuDKzAvU7rjY0ePNR13L5JnL/vdG9qAA1GccGvstO/BHhsGsivMhOLcklc8CnYYfsh8PNL5KLsS6EV4Pr753c6FqmVUw19PtLrrH6HtndA6eD9Oq5Fqe7+4V8sS5J56fUNasbooFX55EXlDIa5hdTHP14fX4e+o2ldAAAAAElFTkSuQmCC"/>
+                            </svg>
                         </span>
                         <a class="phone-number phone-number-1"><?php echo $telephone_1; ?></a>
                         <span class="phone-separator">/</span>
@@ -96,7 +98,10 @@
                     </div>
                     <?php } else { ?>
                     <div class="personal-cabinet">
-                        <a class="cabinet-link" href="<?php echo $login; ?>">
+                        <!--a class="cabinet-link" href="<?php echo $login; ?>">
+                            <img src="catalog/view/theme/svetodiodi/image/theme_images/personal_cabinet_inactive.png" />
+                        </a-->
+                        <a class="cabinet-link" onclick="javascript:callLoginWindow();">
                             <img src="catalog/view/theme/svetodiodi/image/theme_images/personal_cabinet_inactive.png" />
                         </a>
                     </div>
@@ -122,3 +127,21 @@
         </div>
     </div>
 </header>
+<script type="text/javascript">
+    function callLoginWindow() {
+        var dark_overlay = '<div id="dark-overlay"></div>';
+        
+        var login_form  = '<div id="login-form" class="login-form-wrapper">';
+            login_form += '  <form action="<?php echo $login; ?>" method="GET">';
+            login_form += '  ';
+            login_form += '  ';
+            login_form += '  ';
+            login_form += '  ';
+            login_form += '  ';
+            login_form += '  ';
+            login_form += '  ';
+            
+            login_form += '  </form>';
+            login_form += '</div>';
+    }
+</script>

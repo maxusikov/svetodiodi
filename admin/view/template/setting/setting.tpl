@@ -143,6 +143,17 @@
                       <?php } ?>
                     </div>
                   </div>
+                  
+                  <div class="form-group">
+                    <label class="col-sm-2 control-label" for="input-address-stock<?php echo $language['language_id']; ?>"><?php echo $entry_address_stock; ?></label>
+                    <div class="col-sm-10">
+                      <textarea name="config_langdata[<?php echo $language['language_id']; ?>][address_stock]" placeholder="<?php echo $entry_address; ?>" rows="5" id="input-address-stock<?php echo $language['language_id']; ?>" class="form-control"><?php echo isset($config_langdata[$language['language_id']]) ? $config_langdata[$language['language_id']]['address_stock'] : ''; ?></textarea>
+                      <?php if (isset($error_address[$language['language_id']])) { ?>
+                      <div class="text-danger"><?php echo $error_address[$language['language_id']]; ?></div>
+                      <?php } ?>
+                    </div>
+                  </div>
+                    
                   <div class="form-group">
                     <label class="col-sm-2 control-label" for="input-open<?php echo $language['language_id']; ?>"><span data-toggle="tooltip" data-container="#tab-general" title="<?php echo $help_open; ?>"><?php echo $entry_open; ?></span></label>
                     <div class="col-sm-10">

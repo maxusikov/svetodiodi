@@ -39,6 +39,7 @@ $_['text_ckeditor']                    = 'CKEditor';
 $_['entry_name']                       = 'Название магазина:';
 $_['entry_owner']                      = 'Владелец магазина:';
 $_['entry_address']                    = 'Адрес магазина:';
+$_['entry_address_stock']              = 'Адрес склада:';
 $_['entry_geocode']                    = 'Местоположение';
 $_['entry_email']                      = 'E-Mail';
 $_['entry_telephone']                  = 'Телефон:';

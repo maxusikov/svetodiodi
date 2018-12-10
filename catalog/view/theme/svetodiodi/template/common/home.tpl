@@ -16,8 +16,11 @@
   <div class="container-row">
     <?php echo $categories_component; ?>
   </div>
-  <div id="content-bottom" class="container-row">
-    <?php echo $content_bottom; ?>
-  </div>
+</div>
+<div id="content-bottom" class="container-row">
+  <?php echo $content_bottom; ?>
+</div>
+<div class="left-uzor">
+    <img src="catalog/view/theme/svetodiodi/image/theme_images/uzor2.png" />
 </div>
 <?php echo $footer; ?>

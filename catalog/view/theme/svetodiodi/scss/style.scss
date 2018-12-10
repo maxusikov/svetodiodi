@@ -45,6 +45,7 @@ body {
 .container {
     width: 1170px;
     padding: 0px 0px 0px 0px;
+    margin: 0px auto 0px auto;
     
     .container-row {
         padding: 0px 0px 0px 0px;
@@ -181,9 +182,7 @@ header {
                             margin: 0px 20px 0px 0px;
                             
                             img {
-                                display: flex;
-                                width: 10px;
-                                height: 10px;
+                                
                             }
                         }
                         
@@ -653,6 +652,7 @@ header {
     flex-direction: column;
     width: 100%;
     margin: 30px 0px 0px 0px;
+    z-index: 100;
     
     .category-row {
         display: flex;
@@ -1270,16 +1270,28 @@ header {
 
 // Pages styles
 .common-home {
+    position: relative;
+    
     > .container {
         min-height: 600px;
+        z-index: 100;
         
         .container-row {
             display: flex;
             flex-direction: row;
             align-items: stretch;
             justify-content: space-between;
+            z-index: 100;
         }
     }
+    
+    .left-uzor {
+        position: absolute;
+        left: 0px;
+        top: 180px;
+        z-index: -1;
+    }
+    
     
     #content {
         min-height: auto;
@@ -1287,5 +1299,253 @@ header {
         display: flex;
         flex-direction: row;
         align-items: stretch;
+    }
+    
+    .html-module {
+        margin: 96px 0px 152px 0px;
+        
+        .greentext {
+            color: $primary-color;
+        }
+        
+        .heading-title-wrapper {
+            display: flex;
+            flex-direction: row;
+            height: 52px;
+            
+            .leftside {
+                flex: 1;
+                background-color: $primary-color;
+            }
+            .container-row {
+                display: flex;
+                flex-direction: row;
+                align-items: stretch;
+                justify-content: flex-start;
+                
+                h2 {
+                    min-width: 260px;
+                    margin: 0px 0px 0px 0px;
+                    color: #ffffff;
+                    background-color: $primary-color;
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: flex-start;
+                    position: relative;
+                    
+                    &:after {
+                        content: "";
+                        position: absolute;
+                        display: block;
+                        top: 0px;
+                        right: -13px;
+                        border-left: 13px solid $primary-color;
+                        border-top: 26px solid transparent;
+                        border-bottom: 26px solid transparent;
+                    }
+                }
+            }
+            .rightside {
+                flex: 1;
+            }
+        }
+        .content-wrapper {
+            .subheading {
+                font-family: Calibri, sans-serif;
+                font-size: 18px;
+                font-weight: 600;
+                margin: 47px 0px 37px 0px;
+            }
+            
+            ul {
+                li {
+                    list-style-type: none;
+                    font-family: Calibri, sans-serif;
+                    font-size: 18px;
+                    line-height: 24px;
+                    font-weight: 200;
+                    margin: 10px 0px 0px 0px;
+                    display: flex;
+                    flex-direction: row;
+                    
+                    .company-name {
+                        font-weight: 600;
+                    }
+                    
+                    &:first-child {
+                        margin: 0px 0px 0px 0px;
+                    }
+
+                    .hexagon-list-style-type {
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+                        justify-content: center;
+                        height: 15px;
+                        min-width: 10px;
+                        width: 10px;
+                        position: relative;
+                        background-color: $primary-color;
+                        margin: 5px 20px 0px 0px;
+
+                        &:before {
+                            content: "";
+                            width: 0;
+                            height: 0;
+                            position: absolute;
+                            top: 0px;
+                            left: -3.75px;
+                            border-right: 3.75px solid $primary-color;
+                            border-top: 7.5px solid transparent;
+                            border-bottom: 7.5px solid transparent;
+                        }
+                        &:after {
+                            content: "";
+                            width: 0;
+                            height: 0;
+                            position: absolute;
+                            top: 0px;
+                            right: -3.75px;
+                            border-left: 3.75px solid $primary-color;
+                            border-top: 7.5px solid transparent;
+                            border-bottom: 7.5px solid transparent;
+                        }
+                        
+                        .inner-hexagon {
+                            display: flex;
+                            flex-direction: row;
+                            align-items: center;
+                            justify-content: center;
+                            height: 9px;
+                            min-width: 5px;
+                            width: 5px;
+                            position: relative;
+                            background-color: #ffffff;
+
+                            &:before {
+                                content: "";
+                                width: 0;
+                                height: 0;
+                                position: absolute;
+                                top: 0px;
+                                left: -2.25px;
+                                border-right: 2.25px solid #ffffff;
+                                border-top: 4.5px solid transparent;
+                                border-bottom: 4.5px solid transparent;
+                            }
+                            &:after {
+                                content: "";
+                                width: 0;
+                                height: 0;
+                                position: absolute;
+                                top: 0px;
+                                right: -2.25px;
+                                border-left: 2.25px solid #ffffff;
+                                border-top: 4.5px solid transparent;
+                                border-bottom: 4.5px solid transparent;
+                            }
+                        }
+                    }
+
+                }
+            }
+        }
+    }
+}
+
+footer {
+    margin-top: 0px;
+    height: 446px;
+    background-color: $primary-text-color;
+    padding: 0px 0px 0px 0px;
+    z-index: 1;
+    position: relative;
+
+    .right-uzor {
+        position: absolute;
+        right: 0px;
+        bottom: 0px;
+        transform: scaleX(-1);
+        z-index: 10;
+        overflow: hidden;
+        
+        img {
+            margin-bottom: -100px;
+        }
+    }
+    
+    .container {
+        .container-row {
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            justify-content: space-between;
+
+            .area {
+                margin: 47px 0px 0px 0px;
+                flex: 1;
+
+                .area-heading {
+                    font-size: 20px;
+                    line-height: 20px;
+                    color: #ffffff;
+                    margin: 0px 0px 18px 0px;
+                }
+                ul.area-list {
+                    li {
+                        font-family: Calibri, sans-serif;
+                        font-size: 18px;
+                        font-weight: 200;
+                        color: #ffffff;
+                        line-height: 30px;
+
+                        a {
+                            color: #ffffff;
+                        }
+                    }
+                }
+            }
+
+            .categories {
+                margin-right: 80px;
+            }
+            .useful-informations {
+
+            }
+            .contacts {
+                ul.area-list {
+                    li {
+                        display: flex;
+                        flex-direction: row;
+                        align-items: flex-start;
+                        justify-content: flex-start;
+                        line-height: normal;
+                        margin-bottom: 25px;
+
+                        .icon {
+                            margin: 0px 13px 0px 0px;
+                        }
+
+                        &.telephone {
+                            .separator {
+                                color: #23a845;
+                                margin: 0px 8px 0px 8px;
+                            }
+                        }
+
+                        &.address-office, &.address-stock {
+                            font-size: 15px;
+
+                            .address-heading {
+                                display: block;
+                                font-size: 18px;
+                                margin: 0px 0px 0px 5px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 }

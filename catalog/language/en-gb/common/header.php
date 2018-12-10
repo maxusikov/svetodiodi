@@ -23,3 +23,9 @@ $_['text_price_list']    = 'Price list';
 $_['text_contacts']      = 'Contacts';
 $_['text_my_orders']     = 'My orders';
 $_['text_personal_data'] = 'Personal data';
+
+$_['text_enter']    = 'Sign in';
+$_['text_login']    = 'Login*';
+$_['text_password'] = 'Password*';
+$_['text_need_registration'] = 'No login and password? Need to';
+$_['text_registration']      = 'register';

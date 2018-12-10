@@ -128,6 +128,12 @@ class ControllerCommonHeader extends Controller {
 
                 $data['cart_products_count'] = count($this->load->controller('common/cart/getCartField', 'products'));
                 
+                $data['text_enter'] = $this->language->get('text_enter');
+                $data['text_login'] = $this->language->get('text_login');
+                $data['text_password'] = $this->language->get('text_password');
+                $data['text_need_registration'] = $this->language->get('text_need_registration');
+                $data['text_registration'] = $this->language->get('text_registration');
+                
 		// For page specific css
 		if (isset($this->request->get['route'])) {
 			if (isset($this->request->get['product_id'])) {

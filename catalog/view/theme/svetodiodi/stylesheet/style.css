@@ -24,7 +24,7 @@ body {
 
 #column-left {
   padding: 0px 0px 0px 0px;
-  z-index: 10000; }
+  z-index: 100; }
 
 #content {
   padding: 0px 0px 0px 0px; }
@@ -97,6 +97,119 @@ body {
     border-top: 6px solid transparent;
     border-bottom: 6px solid transparent; }
 
+#modal-overlay {
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  left: 0px;
+  height: 0px;
+  background-color: rgba(255, 255, 255, 0.9);
+  z-index: 999;
+  display: block;
+  opacity: 0;
+  transition: opacity 0.2s ease-out 0.3s, height 0.2s ease-out 0.3s;
+  pointer-events: auto; }
+  #modal-overlay.active {
+    opacity: 1;
+    height: 100vh;
+    transition: opacity 0.2s ease-out, height 0.2s ease-out; }
+
+#login-modal {
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  left: 0px;
+  bottom: 0px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  z-index: 1100;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease-out, visibility 0.01s 0.3s; }
+  #login-modal .form-wrapper {
+    border: 5px solid #23a845;
+    pointer-events: auto;
+    position: relative;
+    background-color: #ffffff;
+    width: 650px; }
+    #login-modal .form-wrapper .close-button {
+      position: absolute;
+      right: 19px;
+      top: 19px;
+      cursor: pointer; }
+      #login-modal .form-wrapper .close-button svg {
+        width: 20px;
+        height: 20px;
+        stroke: #191916; }
+    #login-modal .form-wrapper form {
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      justify-content: center; }
+      #login-modal .form-wrapper form h3.form-heading {
+        color: #000000;
+        font-size: 30px;
+        line-height: 30px;
+        margin: 95px 0px 56px 0px;
+        text-align: center; }
+      #login-modal .form-wrapper form .inputs-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: center;
+        margin: 0px 0px 0px 0px; }
+        #login-modal .form-wrapper form .inputs-wrapper input {
+          display: block;
+          font-family: Calibri, sans-serif;
+          font-size: 18px;
+          font-weight: 200;
+          color: #000000;
+          border: 1px solid #d3d3d3;
+          margin: 0px 142px;
+          padding: 11px 23px 11px 23px;
+          box-shadow: none;
+          outline: none; }
+          #login-modal .form-wrapper form .inputs-wrapper input.password {
+            margin-top: 21px; }
+          #login-modal .form-wrapper form .inputs-wrapper input:placeholder {
+            color: #7f7f7f; }
+          #login-modal .form-wrapper form .inputs-wrapper input:focus {
+            border: 1px solid #23a845; }
+      #login-modal .form-wrapper form .need-registration-text {
+        display: block;
+        font-family: Calibri, sans-serif;
+        font-size: 18px;
+        font-weight: 200;
+        text-align: center;
+        margin: 16px 20px 0px 20px; }
+        #login-modal .form-wrapper form .need-registration-text .registration {
+          color: #23a845;
+          font-weight: 400;
+          text-decoration: underline; }
+      #login-modal .form-wrapper form .submit {
+        display: block;
+        font-family: Calibri, sans-serif;
+        font-size: 18px;
+        font-weight: 600;
+        color: #373737;
+        text-transform: uppercase;
+        border: 3px solid #23a845;
+        width: 163px;
+        height: 43px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        margin: 47px auto 156px auto;
+        cursor: pointer; }
+  #login-modal.active {
+    visibility: visible;
+    opacity: 1;
+    transition: visibility 0.01s 0.3s,opacity 0.3s ease-out 0.3s; }
+
 header {
   position: relative; }
   header .container {
@@ -109,7 +222,7 @@ header {
       flex-direction: row;
       align-items: center;
       justify-content: center;
-      z-index: 1000; }
+      z-index: 100; }
     header .container .right-side {
       flex: 1;
       display: flex;
@@ -186,7 +299,8 @@ header {
             position: relative; }
             header .container .right-side .inner-wrapper .user-area .personal-cabinet .cabinet-link {
               display: block;
-              margin: 0px 0px 0px 20px; }
+              margin: 0px 0px 0px 20px;
+              cursor: pointer; }
             header .container .right-side .inner-wrapper .user-area .personal-cabinet .user-informations {
               display: none;
               position: absolute;
@@ -267,6 +381,64 @@ header {
           width: 100vw;
           height: 100%;
           background: url("../image/theme_images/menu_background_2.png") transparent 0px 0px repeat-x; }
+
+footer {
+  margin-top: 0px;
+  height: 446px;
+  background-color: #333334;
+  padding: 0px 0px 0px 0px;
+  z-index: 1;
+  position: relative; }
+  footer .right-uzor {
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    transform: scaleX(-1);
+    z-index: 10;
+    overflow: hidden; }
+    footer .right-uzor img {
+      margin-bottom: -100px; }
+  footer .container .container-row {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between; }
+    footer .container .container-row .area {
+      margin: 47px 0px 0px 0px;
+      flex: 1; }
+      footer .container .container-row .area .area-heading {
+        font-size: 20px;
+        line-height: 20px;
+        color: #ffffff;
+        margin: 0px 0px 18px 0px; }
+      footer .container .container-row .area ul.area-list li {
+        font-family: Calibri, sans-serif;
+        font-size: 18px;
+        font-weight: 200;
+        color: #ffffff;
+        line-height: 30px; }
+        footer .container .container-row .area ul.area-list li a {
+          color: #ffffff; }
+    footer .container .container-row .categories {
+      margin-right: 80px; }
+    footer .container .container-row .contacts ul.area-list li {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      justify-content: flex-start;
+      line-height: normal;
+      margin-bottom: 25px; }
+      footer .container .container-row .contacts ul.area-list li .icon {
+        margin: 0px 13px 0px 0px; }
+      footer .container .container-row .contacts ul.area-list li.telephone .separator {
+        color: #23a845;
+        margin: 0px 8px 0px 8px; }
+      footer .container .container-row .contacts ul.area-list li.address-office, footer .container .container-row .contacts ul.area-list li.address-stock {
+        font-size: 15px; }
+        footer .container .container-row .contacts ul.area-list li.address-office .address-heading, footer .container .container-row .contacts ul.area-list li.address-stock .address-heading {
+          display: block;
+          font-size: 18px;
+          margin: 0px 0px 0px 5px; }
 
 .categories-module {
   background-color: #ffffff;
@@ -811,6 +983,8 @@ header {
 
 .common-home {
   position: relative; }
+  .common-home.fixed-scroll {
+    overflow: hidden; }
   .common-home > .container {
     min-height: 600px;
     z-index: 100; }
@@ -947,63 +1121,5 @@ header {
             border-left: 2.25px solid #ffffff;
             border-top: 4.5px solid transparent;
             border-bottom: 4.5px solid transparent; }
-
-footer {
-  margin-top: 0px;
-  height: 446px;
-  background-color: #333334;
-  padding: 0px 0px 0px 0px;
-  z-index: 1;
-  position: relative; }
-  footer .right-uzor {
-    position: absolute;
-    right: 0px;
-    bottom: 0px;
-    transform: scaleX(-1);
-    z-index: 10;
-    overflow: hidden; }
-    footer .right-uzor img {
-      margin-bottom: -100px; }
-  footer .container .container-row {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    justify-content: space-between; }
-    footer .container .container-row .area {
-      margin: 47px 0px 0px 0px;
-      flex: 1; }
-      footer .container .container-row .area .area-heading {
-        font-size: 20px;
-        line-height: 20px;
-        color: #ffffff;
-        margin: 0px 0px 18px 0px; }
-      footer .container .container-row .area ul.area-list li {
-        font-family: Calibri, sans-serif;
-        font-size: 18px;
-        font-weight: 200;
-        color: #ffffff;
-        line-height: 30px; }
-        footer .container .container-row .area ul.area-list li a {
-          color: #ffffff; }
-    footer .container .container-row .categories {
-      margin-right: 80px; }
-    footer .container .container-row .contacts ul.area-list li {
-      display: flex;
-      flex-direction: row;
-      align-items: flex-start;
-      justify-content: flex-start;
-      line-height: normal;
-      margin-bottom: 25px; }
-      footer .container .container-row .contacts ul.area-list li .icon {
-        margin: 0px 13px 0px 0px; }
-      footer .container .container-row .contacts ul.area-list li.telephone .separator {
-        color: #23a845;
-        margin: 0px 8px 0px 8px; }
-      footer .container .container-row .contacts ul.area-list li.address-office, footer .container .container-row .contacts ul.area-list li.address-stock {
-        font-size: 15px; }
-        footer .container .container-row .contacts ul.area-list li.address-office .address-heading, footer .container .container-row .contacts ul.area-list li.address-stock .address-heading {
-          display: block;
-          font-size: 18px;
-          margin: 0px 0px 0px 5px; }
 
 /*# sourceMappingURL=style.css.map */

@@ -47,7 +47,26 @@
 <?php } ?>
 </head>
 <body class="<?php echo $class; ?>">
-
+<div id="modal-overlay" onclick="javascript:toggleLoginModal(false);"></div>
+<div id="login-modal">
+    <div class="form-wrapper">
+        <span class="close-button" onclick="javascript:toggleLoginModal(false);">
+            <svg width="30" height="30">
+                <line x1="0" y1="0" x2="20" y2="20" stroke="#000000" stroke-width="2" />
+                <line x1="0" y1="20" x2="20" y2="0" stroke="#000000" stroke-width="2" />
+            </svg>
+        </span>
+        <form action="<?php echo $login; ?>" method="POST" enctype="multipart/form-data">
+            <h3 class="form-heading"><?php echo $text_enter; ?></h3>
+            <div class="inputs-wrapper">
+                <input type="text" name="email" class="login" value="" placeholder="<?php echo $text_login; ?>" />
+                <input type="password" name="password" class="password" value="" placeholder="<?php echo $text_password; ?>" />
+            </div>
+            <span class="need-registration-text"><?php echo $text_need_registration; ?>&nbsp;<a href="" class="registration"><?php echo $text_registration; ?></a></span>
+            <a class="submit button" onclick="javascript:$(this).closest('form').submit();"><?php echo $text_enter; ?></a>
+        </form>
+    </div>
+</div>
 <header>
     <div class="container">
         <div class="logo left-side col-md-3">
@@ -101,7 +120,7 @@
                         <!--a class="cabinet-link" href="<?php echo $login; ?>">
                             <img src="catalog/view/theme/svetodiodi/image/theme_images/personal_cabinet_inactive.png" />
                         </a-->
-                        <a class="cabinet-link" onclick="javascript:callLoginWindow();">
+                        <a class="cabinet-link" onclick="javascript:toggleLoginModal();">
                             <img src="catalog/view/theme/svetodiodi/image/theme_images/personal_cabinet_inactive.png" />
                         </a>
                     </div>
@@ -128,20 +147,17 @@
     </div>
 </header>
 <script type="text/javascript">
-    function callLoginWindow() {
-        var dark_overlay = '<div id="dark-overlay"></div>';
-        
-        var login_form  = '<div id="login-form" class="login-form-wrapper">';
-            login_form += '  <form action="<?php echo $login; ?>" method="GET">';
-            login_form += '  ';
-            login_form += '  ';
-            login_form += '  ';
-            login_form += '  ';
-            login_form += '  ';
-            login_form += '  ';
-            login_form += '  ';
-            
-            login_form += '  </form>';
-            login_form += '</div>';
+    function toggleLoginModal(turnOn = true) {
+        if (turnOn) {
+            $('#modal-overlay').addClass('active');
+            $('#login-modal').addClass('active');
+            $(window).on('mousewheel', function(){
+                return false;
+            });
+        } else {
+            $('#modal-overlay').removeClass('active');
+            $('#login-modal').removeClass('active');
+            $(window).off('mousewheel');
+        }
     }
 </script>

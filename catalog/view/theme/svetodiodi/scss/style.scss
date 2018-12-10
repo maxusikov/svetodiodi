@@ -35,7 +35,7 @@ body {
 
 #column-left {
     padding: 0px 0px 0px 0px;
-    z-index: 10000;
+    z-index: 100;
 }
 
 #content {
@@ -121,6 +121,149 @@ body {
     }
 }
 
+// Modal dialogs
+#modal-overlay {
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    left: 0px;
+    height: 0px;
+    background-color: rgba(255,255,255, 0.9);
+    z-index: 999;
+    display: block;
+    opacity: 0;
+    transition: opacity 0.2s ease-out 0.3s, height 0.2s ease-out 0.3s;
+    pointer-events: auto;
+    
+    &.active {
+        opacity: 1;
+        height: 100vh;
+        transition: opacity 0.2s ease-out, height 0.2s ease-out;
+    }
+}
+
+#login-modal {
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    left: 0px;
+    bottom: 0px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    z-index: 1100;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease-out, visibility 0.01s 0.3s;
+    
+    .form-wrapper {
+        border: 5px solid $primary-color;
+        pointer-events: auto;
+        position: relative;
+        background-color: #ffffff;
+        width: 650px;
+        
+        .close-button {
+            position: absolute;
+            right: 19px;
+            top: 19px;
+            cursor: pointer;
+            
+            svg {
+                width: 20px;
+                height: 20px;
+                stroke: #191916;
+            }
+        }
+        
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+            justify-content: center;
+            
+            h3.form-heading {
+                color: #000000;
+                font-size: 30px;
+                line-height: 30px;
+                margin: 95px 0px 56px 0px;
+                text-align: center;
+            }
+            .inputs-wrapper {
+                display: flex;
+                flex-direction: column;
+                align-items: stretch;
+                justify-content: center;
+                margin: 0px 0px 0px 0px;
+                
+                input {
+                    display: block;
+                    font-family: Calibri, sans-serif;
+                    font-size: 18px;
+                    font-weight: 200;
+                    color: #000000;
+                    border: 1px solid #d3d3d3;
+                    margin: 0px 142px;
+                    padding: 11px 23px 11px 23px;
+                    box-shadow: none;
+                    outline: none;
+                    
+                    &.password {
+                        margin-top: 21px;
+                    }
+                    
+                    &:placeholder {
+                        color: #7f7f7f;
+                    }
+                    
+                    &:focus {
+                        border: 1px solid $primary-color;
+                    }
+                }
+            }
+            .need-registration-text {
+                display: block;
+                font-family: Calibri, sans-serif;
+                font-size: 18px;
+                font-weight: 200;
+                text-align: center;
+                margin: 16px 20px 0px 20px;
+                
+                .registration {
+                    color: $primary-color;
+                    font-weight: 400;
+                    text-decoration: underline;
+                }
+            }
+            .submit {
+                display: block;
+                font-family: Calibri, sans-serif;
+                font-size: 18px;
+                font-weight: 600;
+                color: #373737;
+                text-transform: uppercase;
+                border: 3px solid $primary-color;
+                width: 163px;
+                height: 43px;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+                margin: 47px auto 156px auto;
+                cursor: pointer;
+            }
+        }
+    }
+    
+    &.active {
+        visibility: visible;
+        opacity: 1;
+        transition: visibility 0.01s 0.3s,opacity 0.3s ease-out 0.3s;
+    }
+}
+
 header {
     position: relative;
     
@@ -136,7 +279,7 @@ header {
                 flex-direction: row;
                 align-items: center;
                 justify-content: center;
-                z-index: 1000;
+                z-index: 100;
             }
         }
         
@@ -246,6 +389,7 @@ header {
                         .cabinet-link {
                             display: block;
                             margin: 0px 0px 0px 20px;
+                            cursor: pointer;
                         }
                         
                         .user-informations {
@@ -367,6 +511,103 @@ header {
                     width: 100vw;
                     height: 100%;
                     background: url('../image/theme_images/menu_background_2.png') transparent 0px 0px repeat-x;
+                }
+            }
+        }
+    }
+}
+
+
+footer {
+    margin-top: 0px;
+    height: 446px;
+    background-color: $primary-text-color;
+    padding: 0px 0px 0px 0px;
+    z-index: 1;
+    position: relative;
+
+    .right-uzor {
+        position: absolute;
+        right: 0px;
+        bottom: 0px;
+        transform: scaleX(-1);
+        z-index: 10;
+        overflow: hidden;
+        
+        img {
+            margin-bottom: -100px;
+        }
+    }
+    
+    .container {
+        .container-row {
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            justify-content: space-between;
+
+            .area {
+                margin: 47px 0px 0px 0px;
+                flex: 1;
+
+                .area-heading {
+                    font-size: 20px;
+                    line-height: 20px;
+                    color: #ffffff;
+                    margin: 0px 0px 18px 0px;
+                }
+                ul.area-list {
+                    li {
+                        font-family: Calibri, sans-serif;
+                        font-size: 18px;
+                        font-weight: 200;
+                        color: #ffffff;
+                        line-height: 30px;
+
+                        a {
+                            color: #ffffff;
+                        }
+                    }
+                }
+            }
+
+            .categories {
+                margin-right: 80px;
+            }
+            .useful-informations {
+
+            }
+            .contacts {
+                ul.area-list {
+                    li {
+                        display: flex;
+                        flex-direction: row;
+                        align-items: flex-start;
+                        justify-content: flex-start;
+                        line-height: normal;
+                        margin-bottom: 25px;
+
+                        .icon {
+                            margin: 0px 13px 0px 0px;
+                        }
+
+                        &.telephone {
+                            .separator {
+                                color: #23a845;
+                                margin: 0px 8px 0px 8px;
+                            }
+                        }
+
+                        &.address-office, &.address-stock {
+                            font-size: 15px;
+
+                            .address-heading {
+                                display: block;
+                                font-size: 18px;
+                                margin: 0px 0px 0px 5px;
+                            }
+                        }
+                    }
                 }
             }
         }
@@ -1272,6 +1513,10 @@ header {
 .common-home {
     position: relative;
     
+    &.fixed-scroll {
+        overflow: hidden;
+    }
+    
     > .container {
         min-height: 600px;
         z-index: 100;
@@ -1454,98 +1699,6 @@ header {
     }
 }
 
-footer {
-    margin-top: 0px;
-    height: 446px;
-    background-color: $primary-text-color;
-    padding: 0px 0px 0px 0px;
-    z-index: 1;
-    position: relative;
 
-    .right-uzor {
-        position: absolute;
-        right: 0px;
-        bottom: 0px;
-        transform: scaleX(-1);
-        z-index: 10;
-        overflow: hidden;
-        
-        img {
-            margin-bottom: -100px;
-        }
-    }
-    
-    .container {
-        .container-row {
-            display: flex;
-            flex-direction: row;
-            align-items: flex-start;
-            justify-content: space-between;
 
-            .area {
-                margin: 47px 0px 0px 0px;
-                flex: 1;
 
-                .area-heading {
-                    font-size: 20px;
-                    line-height: 20px;
-                    color: #ffffff;
-                    margin: 0px 0px 18px 0px;
-                }
-                ul.area-list {
-                    li {
-                        font-family: Calibri, sans-serif;
-                        font-size: 18px;
-                        font-weight: 200;
-                        color: #ffffff;
-                        line-height: 30px;
-
-                        a {
-                            color: #ffffff;
-                        }
-                    }
-                }
-            }
-
-            .categories {
-                margin-right: 80px;
-            }
-            .useful-informations {
-
-            }
-            .contacts {
-                ul.area-list {
-                    li {
-                        display: flex;
-                        flex-direction: row;
-                        align-items: flex-start;
-                        justify-content: flex-start;
-                        line-height: normal;
-                        margin-bottom: 25px;
-
-                        .icon {
-                            margin: 0px 13px 0px 0px;
-                        }
-
-                        &.telephone {
-                            .separator {
-                                color: #23a845;
-                                margin: 0px 8px 0px 8px;
-                            }
-                        }
-
-                        &.address-office, &.address-stock {
-                            font-size: 15px;
-
-                            .address-heading {
-                                display: block;
-                                font-size: 18px;
-                                margin: 0px 0px 0px 5px;
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
-}

@@ -119,7 +119,7 @@ class ControllerCommonFooter extends Controller {
                     'number' => $this->config->get('config_telephone')
                 ];
                 $data['contacts']['telephone_2'] = [
-                    'number' => $this->config->get('config_telephone')
+                    'number' => $this->config->get('config_telephone_2')
                 ];
                 $data['contacts']['email'] = [
                     'address' => $this->config->get('config_email')

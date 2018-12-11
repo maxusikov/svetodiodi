@@ -92,7 +92,7 @@
                         </span>
                         <a class="phone-number phone-number-1"><?php echo $telephone_1; ?></a>
                         <span class="phone-separator">/</span>
-                        <a class="phone-number phone-number-2"><?php echo $telephone_1; ?></a>
+                        <a class="phone-number phone-number-2"><?php echo $telephone_2; ?></a>
                     </div>
                 </div>
                 <div class="user-area">

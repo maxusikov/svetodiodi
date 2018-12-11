@@ -49,7 +49,7 @@ class ControllerAccountRegister extends Controller {
 			'text' => $this->language->get('text_home'),
 			'href' => $this->url->link('common/home')
 		);
-
+                
 		$data['breadcrumbs'][] = array(
 			'text' => $this->language->get('text_account'),
 			'href' => $this->url->link('account/account', '', true)
@@ -59,7 +59,7 @@ class ControllerAccountRegister extends Controller {
 			'text' => $this->language->get('text_register'),
 			'href' => $this->url->link('account/register', '', true)
 		);
-
+                
 		$data['heading_title'] = $this->language->get('heading_title');
 
 		$data['text_account_already'] = sprintf($this->language->get('text_account_already'), $this->url->link('account/login', '', true));
@@ -72,10 +72,13 @@ class ControllerAccountRegister extends Controller {
 		$data['text_select'] = $this->language->get('text_select');
 		$data['text_none'] = $this->language->get('text_none');
 		$data['text_loading'] = $this->language->get('text_loading');
+                $data['text_send'] = $this->language->get('text_send');
+                $data['text_manager_call'] = $this->language->get('text_manager_call');
 
 		$data['entry_customer_group'] = $this->language->get('entry_customer_group');
 		$data['entry_firstname'] = $this->language->get('entry_firstname');
 		$data['entry_lastname'] = $this->language->get('entry_lastname');
+                $data['entry_fullname'] = $this->language->get('entry_fullname');
 		$data['entry_email'] = $this->language->get('entry_email');
 		$data['entry_telephone'] = $this->language->get('entry_telephone');
 		$data['entry_fax'] = $this->language->get('entry_fax');
@@ -109,6 +112,12 @@ class ControllerAccountRegister extends Controller {
 			$data['error_lastname'] = $this->error['lastname'];
 		} else {
 			$data['error_lastname'] = '';
+		}
+                
+                if (isset($this->error['fullname'])) {
+			$data['error_fullname'] = $this->error['fullname'];
+		} else {
+			$data['error_fullname'] = '';
 		}
 
 		if (isset($this->error['email'])) {
@@ -203,6 +212,12 @@ class ControllerAccountRegister extends Controller {
 			$data['lastname'] = $this->request->post['lastname'];
 		} else {
 			$data['lastname'] = '';
+		}
+                
+                if (isset($this->request->post['fullname'])) {
+			$data['fullname'] = $this->request->post['fullname'];
+		} else {
+			$data['fullname'] = '';
 		}
 
 		if (isset($this->request->post['email'])) {
@@ -362,6 +377,10 @@ class ControllerAccountRegister extends Controller {
 			$this->error['lastname'] = $this->language->get('error_lastname');
 		}
 
+                if ((utf8_strlen(trim($this->request->post['fullname'])) < 1) || (utf8_strlen(trim($this->request->post['fullname'])) > 64)) {
+			$this->error['fullname'] = $this->language->get('error_fullname');
+		}
+                
 		if ((utf8_strlen($this->request->post['email']) > 96) || !preg_match($this->config->get('config_mail_regexp'), $this->request->post['email'])) {
 			$this->error['email'] = $this->language->get('error_email');
 		}

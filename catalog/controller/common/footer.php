@@ -94,7 +94,7 @@ class ControllerCommonFooter extends Controller {
                     ],
                     'actions' => [
                         'name' => $this->language->get('text_actions'),
-                        'href' => $this->url->link('information/information', 'information_id=8')
+                        'href' => $this->url->link('information/action')
                     ],
                     'tearms_of_cooperation' => [
                         'name' => $this->language->get('text_terms_of_cooperations'),

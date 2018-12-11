@@ -11,11 +11,15 @@ $_['text_your_address']    = 'Your Address';
 $_['text_newsletter']      = 'Newsletter';
 $_['text_your_password']   = 'Your Password';
 $_['text_agree']           = 'I have read and agree to the <a href="%s" class="agree"><b>%s</b></a>';
+$_['text_home']            = 'Home';
+$_['text_send']            = 'Send';
+$_['text_manager_call']    = 'Our manager will contact you as soon as possible';
 
 // Entry
 $_['entry_customer_group'] = 'Customer Group';
 $_['entry_firstname']      = 'First Name';
 $_['entry_lastname']       = 'Last Name';
+$_['entry_fullname']       = 'Full Name';
 $_['entry_email']          = 'E-Mail';
 $_['entry_telephone']      = 'Telephone';
 $_['entry_fax']            = 'Fax';
@@ -34,6 +38,7 @@ $_['entry_confirm']        = 'Password Confirm';
 $_['error_exists']         = 'Warning: E-Mail Address is already registered!';
 $_['error_firstname']      = 'First Name must be between 1 and 32 characters!';
 $_['error_lastname']       = 'Last Name must be between 1 and 32 characters!';
+$_['error_fullname']       = 'Name must be between 1 and 64 characters!';
 $_['error_email']          = 'E-Mail Address does not appear to be valid!';
 $_['error_telephone']      = 'Telephone must be between 3 and 32 characters!';
 $_['error_address_1']      = 'Address 1 must be between 3 and 128 characters!';

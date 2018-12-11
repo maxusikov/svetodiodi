@@ -11,13 +11,17 @@ $_['text_your_address']    = 'Ваш адрес';
 $_['text_newsletter']      = 'Подписка на новости';
 $_['text_your_password']   = 'Ваш пароль';
 $_['text_agree']           = 'Мною прочитаны и я даю согласие с документом <a href="%s" class="agree"><b>%s</b></a>';
-
+$_['text_home']            = 'Главная';
+$_['text_send']            = 'Отправить';
+$_['text_manager_call']    = 'В ближайшее время наш менеджер свяжется с Вами';
+        
 // Entry
 $_['entry_customer_group'] = 'Группа покупателей';
 $_['entry_firstname']      = 'Имя';
 $_['entry_lastname']       = 'Фамилия';
-$_['entry_email']          = 'E-Mail';
-$_['entry_telephone']      = 'Телефон';
+$_['entry_fullname']       = 'Ваше имя*';
+$_['entry_email']          = 'Ваш E-Mail*';
+$_['entry_telephone']      = 'Ваш телефон*';
 $_['entry_fax']            = 'Факс';
 $_['entry_company']        = 'Компания';
 $_['entry_address_1']      = 'Адрес';
@@ -34,6 +38,7 @@ $_['entry_confirm']        = 'Подтвердить';
 $_['error_exists']         = 'Этот E-Mail уже зарегистрирован!';
 $_['error_firstname']      = 'Имя должно содержать от 1 до 32 символов!';
 $_['error_lastname']       = 'Фамилия должна содержать от 1 до 32 символов!';
+$_['error_fullname']       = 'Имя должно содержать от 1 до 64 символов!';
 $_['error_email']          = 'E-Mail введён неправильно!';
 $_['error_telephone']      = 'В телефоне должно быть от 3 до 32 цифр!';
 $_['error_address_1']      = 'Адрес должен содержать от 3 до 128 символов!';

@@ -97,6 +97,27 @@ body {
     border-top: 6px solid transparent;
     border-bottom: 6px solid transparent; }
 
+form input {
+  display: block;
+  font-family: Calibri, sans-serif;
+  font-size: 18px;
+  font-weight: 200;
+  color: #000000;
+  border: 1px solid #d3d3d3;
+  padding: 11px 23px 11px 23px;
+  box-shadow: none;
+  outline: none;
+  background-color: #ffffff; }
+  form input::-webkit-input-placeholder, form input:-moz-placeholder, form input::-moz-placeholder, form input:-ms-input-placeholder {
+    color: #7f7f7f; }
+  form input::-webkit-input-placeholder:after, form input:-moz-placeholder:after, form input::-moz-placeholder:after, form input:-ms-input-placeholder:after {
+    content: '*';
+    color: #23a845; }
+  form input:-webkit-autofill, form input:-webkit-autofill:hover, form input:-webkit-autofill:focus, form input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px white inset; }
+  form input:focus {
+    border: 1px solid #23a845; }
+
 #modal-overlay {
   position: fixed;
   top: 0px;
@@ -107,14 +128,14 @@ body {
   z-index: 999;
   display: block;
   opacity: 0;
-  transition: opacity 0.2s ease-out 0.3s, height 0.2s ease-out 0.3s;
+  transition: opacity 0.2s ease-in 0.3s, height 0.2s ease-in 0.3s;
   pointer-events: auto; }
   #modal-overlay.active {
     opacity: 1;
     height: 100vh;
     transition: opacity 0.2s ease-out, height 0.2s ease-out; }
 
-#login-modal {
+.modal-dialog {
   position: fixed;
   top: 0px;
   right: 0px;
@@ -129,86 +150,74 @@ body {
   visibility: hidden;
   opacity: 0;
   transition: opacity 0.3s ease-out, visibility 0.01s 0.3s; }
-  #login-modal .form-wrapper {
-    border: 5px solid #23a845;
-    pointer-events: auto;
-    position: relative;
-    background-color: #ffffff;
-    width: 650px; }
-    #login-modal .form-wrapper .close-button {
-      position: absolute;
-      right: 19px;
-      top: 19px;
-      cursor: pointer; }
-      #login-modal .form-wrapper .close-button svg {
-        width: 20px;
-        height: 20px;
-        stroke: #191916; }
-    #login-modal .form-wrapper form {
+
+#login-modal .form-wrapper {
+  border: 5px solid #23a845;
+  pointer-events: auto;
+  position: relative;
+  background-color: #ffffff;
+  width: 650px; }
+  #login-modal .form-wrapper .close-button {
+    position: absolute;
+    right: 19px;
+    top: 19px;
+    cursor: pointer; }
+    #login-modal .form-wrapper .close-button svg {
+      width: 20px;
+      height: 20px;
+      stroke: #191916; }
+  #login-modal .form-wrapper form {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center; }
+    #login-modal .form-wrapper form h3.form-heading {
+      color: #000000;
+      font-size: 30px;
+      line-height: 30px;
+      margin: 95px 0px 56px 0px;
+      text-align: center; }
+    #login-modal .form-wrapper form .inputs-wrapper {
       display: flex;
       flex-direction: column;
       align-items: stretch;
-      justify-content: center; }
-      #login-modal .form-wrapper form h3.form-heading {
-        color: #000000;
-        font-size: 30px;
-        line-height: 30px;
-        margin: 95px 0px 56px 0px;
-        text-align: center; }
-      #login-modal .form-wrapper form .inputs-wrapper {
-        display: flex;
-        flex-direction: column;
-        align-items: stretch;
-        justify-content: center;
-        margin: 0px 0px 0px 0px; }
-        #login-modal .form-wrapper form .inputs-wrapper input {
-          display: block;
-          font-family: Calibri, sans-serif;
-          font-size: 18px;
-          font-weight: 200;
-          color: #000000;
-          border: 1px solid #d3d3d3;
-          margin: 0px 142px;
-          padding: 11px 23px 11px 23px;
-          box-shadow: none;
-          outline: none; }
-          #login-modal .form-wrapper form .inputs-wrapper input.password {
-            margin-top: 21px; }
-          #login-modal .form-wrapper form .inputs-wrapper input:placeholder {
-            color: #7f7f7f; }
-          #login-modal .form-wrapper form .inputs-wrapper input:focus {
-            border: 1px solid #23a845; }
-      #login-modal .form-wrapper form .need-registration-text {
-        display: block;
-        font-family: Calibri, sans-serif;
-        font-size: 18px;
-        font-weight: 200;
-        text-align: center;
-        margin: 16px 20px 0px 20px; }
-        #login-modal .form-wrapper form .need-registration-text .registration {
-          color: #23a845;
-          font-weight: 400;
-          text-decoration: underline; }
-      #login-modal .form-wrapper form .submit {
-        display: block;
-        font-family: Calibri, sans-serif;
-        font-size: 18px;
-        font-weight: 600;
-        color: #373737;
-        text-transform: uppercase;
-        border: 3px solid #23a845;
-        width: 163px;
-        height: 43px;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-        margin: 47px auto 156px auto;
-        cursor: pointer; }
-  #login-modal.active {
-    visibility: visible;
-    opacity: 1;
-    transition: visibility 0.01s 0.3s,opacity 0.3s ease-out 0.3s; }
+      justify-content: center;
+      margin: 0px 0px 0px 0px; }
+      #login-modal .form-wrapper form .inputs-wrapper input {
+        margin: 0px 142px; }
+        #login-modal .form-wrapper form .inputs-wrapper input.password {
+          margin-top: 21px; }
+    #login-modal .form-wrapper form .need-registration-text {
+      display: block;
+      font-family: Calibri, sans-serif;
+      font-size: 18px;
+      font-weight: 200;
+      text-align: center;
+      margin: 16px 20px 0px 20px; }
+      #login-modal .form-wrapper form .need-registration-text .registration {
+        color: #23a845;
+        font-weight: 400;
+        text-decoration: underline; }
+    #login-modal .form-wrapper form .submit {
+      display: block;
+      font-family: Calibri, sans-serif;
+      font-size: 18px;
+      font-weight: 600;
+      color: #373737;
+      text-transform: uppercase;
+      border: 3px solid #23a845;
+      width: 163px;
+      height: 43px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      margin: 47px auto 156px auto;
+      cursor: pointer; }
+#login-modal.active {
+  visibility: visible;
+  opacity: 1;
+  transition: visibility 0.01s 0.3s,opacity 0.3s ease-out 0.3s; }
 
 header {
   position: relative; }

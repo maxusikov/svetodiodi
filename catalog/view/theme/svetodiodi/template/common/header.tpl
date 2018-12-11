@@ -48,7 +48,7 @@
 </head>
 <body class="<?php echo $class; ?>">
 <div id="modal-overlay" onclick="javascript:toggleLoginModal(false);"></div>
-<div id="login-modal">
+<div id="login-modal" class="modal-dialog">
     <div class="form-wrapper">
         <span class="close-button" onclick="javascript:toggleLoginModal(false);">
             <svg width="30" height="30">
@@ -62,7 +62,7 @@
                 <input type="text" name="email" class="login" value="" placeholder="<?php echo $text_login; ?>" />
                 <input type="password" name="password" class="password" value="" placeholder="<?php echo $text_password; ?>" />
             </div>
-            <span class="need-registration-text"><?php echo $text_need_registration; ?>&nbsp;<a href="" class="registration"><?php echo $text_registration; ?></a></span>
+            <span class="need-registration-text"><?php echo $text_need_registration; ?>&nbsp;<a href="<?php echo $register; ?>" class="registration"><?php echo $text_registration; ?></a></span>
             <a class="submit button" onclick="javascript:$(this).closest('form').submit();"><?php echo $text_enter; ?></a>
         </form>
     </div>

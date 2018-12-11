@@ -121,6 +121,49 @@ body {
     }
 }
 
+// Forms
+form {
+    input {
+        display: block;
+        font-family: Calibri, sans-serif;
+        font-size: 18px;
+        font-weight: 200;
+        color: #000000;
+        border: 1px solid #d3d3d3;
+        padding: 11px 23px 11px 23px;
+        box-shadow: none;
+        outline: none;
+        background-color: #ffffff;
+        
+        &::-webkit-input-placeholder,
+        &:-moz-placeholder, 
+        &::-moz-placeholder,
+        &:-ms-input-placeholder {
+            color: #7f7f7f;
+        }
+        
+        &::-webkit-input-placeholder:after,
+        &:-moz-placeholder:after,
+        &::-moz-placeholder:after,
+        &:-ms-input-placeholder:after {
+            content:'*';
+            color: $primary-color;
+        }
+        
+        &:-webkit-autofill,
+        &:-webkit-autofill:hover, 
+        &:-webkit-autofill:focus, 
+        &:-webkit-autofill:active  {
+            -webkit-box-shadow: 0 0 0 30px white inset;
+        }
+        
+        &:focus {
+            border: 1px solid $primary-color;
+        }
+    }
+}
+
+
 // Modal dialogs
 #modal-overlay {
     position: fixed;
@@ -132,7 +175,7 @@ body {
     z-index: 999;
     display: block;
     opacity: 0;
-    transition: opacity 0.2s ease-out 0.3s, height 0.2s ease-out 0.3s;
+    transition: opacity 0.2s ease-in 0.3s, height 0.2s ease-in 0.3s;
     pointer-events: auto;
     
     &.active {
@@ -142,7 +185,8 @@ body {
     }
 }
 
-#login-modal {
+// Modals
+.modal-dialog {
     position: fixed;
     top: 0px;
     right: 0px;
@@ -157,6 +201,10 @@ body {
     visibility: hidden;
     opacity: 0;
     transition: opacity 0.3s ease-out, visibility 0.01s 0.3s;
+}
+
+#login-modal {
+    
     
     .form-wrapper {
         border: 5px solid $primary-color;
@@ -198,29 +246,14 @@ body {
                 justify-content: center;
                 margin: 0px 0px 0px 0px;
                 
-                input {
-                    display: block;
-                    font-family: Calibri, sans-serif;
-                    font-size: 18px;
-                    font-weight: 200;
-                    color: #000000;
-                    border: 1px solid #d3d3d3;
+                input {                    
                     margin: 0px 142px;
-                    padding: 11px 23px 11px 23px;
-                    box-shadow: none;
-                    outline: none;
                     
                     &.password {
                         margin-top: 21px;
                     }
                     
-                    &:placeholder {
-                        color: #7f7f7f;
-                    }
                     
-                    &:focus {
-                        border: 1px solid $primary-color;
-                    }
                 }
             }
             .need-registration-text {
@@ -1698,7 +1731,4 @@ footer {
         }
     }
 }
-
-
-
 

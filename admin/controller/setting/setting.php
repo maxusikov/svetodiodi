@@ -328,6 +328,12 @@ class ControllerSettingSetting extends Controller {
 		} else {
 			$data['error_telephone'] = '';
 		}
+                
+                if (isset($this->error['telephone_2'])) {
+			$data['error_telephone_2'] = $this->error['telephone_2'];
+		} else {
+			$data['error_telephone_2'] = '';
+		}
 
 		if (isset($this->error['meta_title'])) {
 			$data['error_meta_title'] = $this->error['meta_title'];
@@ -566,6 +572,12 @@ class ControllerSettingSetting extends Controller {
 			$data['config_telephone'] = $this->config->get('config_telephone');
 		}
 
+                if (isset($this->request->post['config_telephone_2'])) {
+			$data['config_telephone_2'] = $this->request->post['config_telephone_2'];
+		} else {
+			$data['config_telephone_2'] = $this->config->get('config_telephone_2');
+		}
+                
 		if (isset($this->request->post['config_fax'])) {
 			$data['config_fax'] = $this->request->post['config_fax'];
 		} else {

@@ -31,6 +31,13 @@ $_['text_semi_month']                         = 'полмесяца';
 $_['text_month']                              = 'месяц';
 $_['text_year']                               = 'год';
 
+$_['text_home']                               = 'Главная';
+$_['text_request_price']                      = 'Узнать цену';
+$_['text_available_quantity']                 = 'В наличии %d ед. товара';
+$_['text_add_to_cart']                        = 'В корзину';
+$_['text_characteristics']                    = 'Характеристики';
+$_['text_artikul']                            = 'Артикул';
+
 // Entry
 $_['entry_qty']                               = 'Кол-во';
 $_['entry_name']                              = 'Ваше имя:';

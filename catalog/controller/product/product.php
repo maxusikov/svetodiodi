@@ -475,10 +475,52 @@ class ControllerProductProduct extends Controller {
 				}
 			}
 
+                        
 			$data['recurrings'] = $this->model_catalog_product->getProfiles($this->request->get['product_id']);
 
 			$this->model_catalog_product->updateViewed($this->request->get['product_id']);
-
+                        
+                        // Svetodiodi theme [
+                        $data['logged'] = $this->customer->isLogged();
+                        
+                        $data['text_request_price'] = $this->language->get('text_request_price');
+                        $data['text_add_to_cart']   = $this->language->get('text_add_to_cart');
+                        $data['text_available_quantity'] = sprintf($this->language->get('text_available_quantity'), $product_info['quantity']);
+                        $data['text_characteristics'] = $this->language->get('text_characteristics');
+                        
+                        $data['available_quantity'] = $product_info['quantity'];
+                        $data['artikul'] = $this->language->get('text_artikul') . " " . $product_info['sku'];
+                        
+                        $data['price'] = $this->currency->format($this->tax->calculate($product_info['price'], $product_info['tax_class_id'], $this->config->get('config_tax')), $this->session->data['currency']);
+                        
+                        $data['product_characteristics'] = [];
+                        foreach ($data['attribute_groups'] as $attribute_group) {
+                            foreach ($attribute_group['attribute'] as $attribute) {
+                                $data['product_characteristics'][] = [
+                                    'name' => html_entity_decode($attribute['name']),
+                                    'text' => $attribute['text']
+                                ];
+                            }
+                        }
+                        
+                        $product_images_list = $this->model_catalog_product->getProductImages($this->request->get['product_id']);
+                        
+                        $data['product_images'] = [];
+                        
+                        if ($product_info['image']) {
+                            $data['product_images'][] = [
+                                'image' => $this->model_tool_image->resize($product_info['image'], 500, 500)
+                            ];
+			}
+                        
+                        foreach ($product_images_list as $key => $image) {
+                            $data['product_images'][] = [
+                                'image' => $this->model_tool_image->resize($image['image'], 500, 500)
+                            ];
+                        }                        
+                        
+                        // ]  Svetodiodi theme
+                        
 			$data['column_left'] = $this->load->controller('common/column_left');
 			$data['column_right'] = $this->load->controller('common/column_right');
 			$data['content_top'] = $this->load->controller('common/content_top');

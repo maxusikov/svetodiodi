@@ -2238,3 +2238,261 @@ footer {
     }
     
 }
+
+#product-category {
+    #content {
+        .filter {
+            border: 1px solid #e8e8e8;
+        }
+        
+        .category-list {
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+            justify-content: flex-start;
+            
+            .category-row {
+                display: flex;
+                flex-direction: row;
+                align-items: stretch;
+                justify-content: space-between;
+                
+                .category-item {
+                    margin: 0px 0px 30px 30px;
+                    position: relative;
+                    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+                    cursor: pointer;
+                    
+                    &:first-child {
+                        margin-left: 0px;
+                    }
+                    
+                    > a {
+                        display: block;
+                        width: 100%;
+                        
+                        > img {
+                            max-width: 100%;
+                        }
+                        .category-name {
+                            display: block;
+                            font-size: 18px;
+                            color: $primary-text-color;
+                            text-align: center;
+                        }
+                    }
+                    
+                    .border-container {
+                        position: absolute;
+                        top: 0px;
+                        right: 0px;
+                        bottom: 0px;
+                        left: 0px;
+                        pointer-events: none;
+                        border: 2px solid transparent;
+                        border-bottom-width: 6px;
+                        transition: border-color 0.2s ease-out;
+                    }
+                    
+                    &:hover {
+                        .border-container {
+                            border-color: $primary-color;
+                            transition: border-color 0.2s ease-out;
+                        }
+                    }
+                }
+            }
+        }
+        
+        .product-list {
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+            justify-content: flex-start;
+            margin: 50px 0px 160px 0px;
+            
+            .product-row {
+                display: flex;
+                flex-direction: row;
+                align-items: flex-start;
+                justify-content: space-between;
+                margin: 30px 0px 0px 0px;
+                
+                &:first-child {
+                    margin-top: 0px;
+                }
+                
+                .product-item {
+                    flex: 1;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: stretch;
+                    justify-content: flex-start;
+                    margin: 0px 0px 0px 30px;
+                    border: 1px solid #e8e8e8;
+                    
+                    &:first-child {
+                        margin-left: 0px;
+                    }
+                    
+                    .product-info {
+                        display: flex;
+                        flex-direction: row;
+                        align-items: stretch;
+                        justify-content: stretch;
+                        
+                        .product-image {
+                            width: 237px;
+                            
+                            img {
+                                width: 100%;
+                            }
+                        }
+                        
+                        .rightside {
+                            flex: 1;
+                            display: flex;
+                            flex-direction: column;
+                            align-items: stretch;
+                            justify-content: flex-start;
+                            padding: 27px 23px 27px 23px;
+                            
+                            .product-name {
+                                font-family: Calibri, sans-serif;
+                                font-size: 18px;
+                                font-weight: 600;
+                                color: #000000;
+                                margin: 0px 0px 18px 0px;
+                            }
+                            
+                            .product-data {
+                                display: flex;
+                                flex-direction: column;
+                                align-items: stretch;
+                                justify-content: flex-start;
+                                
+                                .product-data-item {
+                                    display: flex;
+                                    flex-direction: row;
+                                    margin: 0px 0px 0px 0px;
+                                    
+                                    &:first-child {
+                                        margin: 0px 0px 0px 0px;
+                                    }
+                                    
+                                    .item-name, .item-gap, .item-value {
+                                        font-family: Calibri, sans-serif;
+                                        font-size: 16px;
+                                        font-weight: 400;
+                                        color: #000000;
+                                    }
+                                    
+                                    .item-name {}
+                                    .item-gap {
+                                        flex: 1;
+                                    }
+                                    .item-value {}
+                                }
+                            }
+                        }
+                    }
+                    
+                    .product-cart {
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+                        justify-content: center;
+                        background-color: #f6f7f6;
+                        padding: 16px 0px 16px 0px;
+
+                        .price {
+                            font-family: Calibri, sans-serif;
+                            font-size: 36px;
+                            font-weight: 600;
+                            color: $primary-color;
+                            text-transform: uppercase;
+                        }
+
+                        .quantity {
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                            justify-content: space-between;
+                            
+                            .availability {
+                                font-family: Calibri, sans-serif;
+                                font-size: 16px;
+                                font-weight: 400;
+                                color: #373737;
+                            }
+                            
+                            .quantity-counter {
+                                min-width: 101px;
+                                height: 28px;
+                                font-family: Calibri, sans-serif;
+                                border: 1px solid #a6a5a5;
+                                background-color: #ffffff;
+                                display: flex;
+                                flex-direction: row;
+                                align-items: stretch;
+                                justify-content: space-between;
+                                margin: 10px 50px 0px 50px;
+                                
+                                .minus, .plus {
+                                    font-family: Calibri, sans-serif;
+                                    font-size: 18px;
+                                    font-weight: 600;
+                                    width: 28px;
+                                    display: flex;
+                                    flex-direction: row;
+                                    align-items: center;
+                                    justify-content: center;
+                                    cursor: pointer;
+                                    user-select: none;
+                                    -webkit-touch-callout: none; /* iOS Safari */
+                                    -webkit-user-select: none; /* Safari */
+                                    -khtml-user-select: none; /* Konqueror HTML */
+                                    -moz-user-select: none; /* Firefox */
+                                    -ms-user-select: none; /* Internet Explorer/Edge */
+                                    color: #a6a5a5;
+                                    background-color: transparent;
+                                    transition: color 0.2s ease-out, background-color 0.2s ease-out;
+
+                                    &:hover {
+                                        color: #ffffff;
+                                        background-color: $primary-color;
+                                        transition: color 0.2s ease-out, background-color 0.2s ease-out;
+                                    }
+                                }
+                                
+                                .number {
+                                    color: #373737;
+                                    font-size: 18px;
+                                    font-weight: 400;
+                                    display: flex;
+                                    flex-direction: row;
+                                    align-items: center;
+                                    justify-content: center;
+                                }
+                            }
+                            
+                            
+
+                            
+                        }
+
+                        .add-to-cart {
+
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+#filter {
+    margin: 43px 0px 0px 0px;
+    
+    
+}

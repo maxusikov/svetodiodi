@@ -378,6 +378,69 @@ class ControllerProductCategory extends Controller {
 
 			$data['continue'] = $this->url->link('common/home');
 
+                        // Svetodiodi theme [
+                        $data['logged'] = $this->customer->isLogged();
+                        
+                        $categories_result = $this->model_catalog_category->getCategories($category_id);
+                        
+                        $data['category_categories'] = [];
+                        
+                        foreach ($categories_result as $category) {
+                            $data['category_categories'][] = [
+                                'name' => $category['name'],
+                                'href' => $this->url->link('product/category', 'path=' . $category['category_id']),
+                                'image' => $this->model_tool_image->resize($category['image'], 500, 500)
+                            ];
+                        }
+                        
+                        $data['text_artikul'] = $this->language->get('text_artikul');
+                        $data['text_add_to_cart'] = $this->language->get('text_add_to_cart');
+                        $data['text_request_price'] = $this->language->get('text_request_price');
+                        $data['text_available'] = $this->language->get('text_available');
+                        $data['text_not_available'] = $this->language->get('text_not_available');
+                        
+                        $data['category_products'] = [];
+                        
+                        if (!$data['category_categories']) {
+                            $category_products = $this->model_catalog_product->getProducts($filter_data);
+                            
+                            foreach ($category_products as $product) {
+                                $product_attributes = $this->model_catalog_product->getProductAttributes($product['product_id']);
+                                //$product_options = $this->model_catalog_product->getProductOptions($product['product_id']);
+                                
+                                $product_options = [
+                                    [
+                                        'name' => 'Мощность',
+                                        'value' => '100 В'
+                                    ],
+                                    [
+                                        'name' => 'Выходное напряжение',
+                                        'value' => '12 В'
+                                    ],
+                                    [
+                                        'name' => 'Гарантия',
+                                        'value' => '2 года'
+                                    ]
+                                ];
+                                
+                                $data['category_products'][] = [
+                                    'id'         => $product['product_id'],
+                                    'name'       => $product['name'],
+                                    'sku'        => $product['sku'],
+                                    'price'      => $this->currency->format($product['price'], $this->session->data['currency']),
+                                    'href'       => $this->url->link('product/product', 'path='. $this->request->get['path'] . '&product_id=' . $result['product_id'] . $url),
+                                    'image'      => $this->model_tool_image->resize($product['image'], 500, 500),
+                                    'available_quantity' => $product['quantity'],
+                                    'attributes' => $product_attributes,
+                                    'options'    => $product_options
+                                ];
+                            }
+                            
+                        }
+                        
+                        // ] Svetodiodi theme 
+                        
+                        
 			$data['column_left'] = $this->load->controller('common/column_left');
 			$data['column_right'] = $this->load->controller('common/column_right');
 			$data['content_top'] = $this->load->controller('common/content_top');

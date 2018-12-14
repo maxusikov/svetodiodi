@@ -22,11 +22,88 @@
     <?php } else { ?>
     <?php $class = 'col-sm-12'; ?>
     <?php } ?>
-    <div id="content" class="<?php echo $class; ?>"><?php echo $content_top; ?>
-      <?php if ($category_categories) { ?>
-      <div id="filter" class="filter">
+    
+    <script type="text/javascript">
+        function selectDropdownOption(option_element, option_value) {
+            var o_el = $(option_element);
+            var o_el_list = o_el.closest('.filter-select-list');
+            
+            if (o_el_list.hasClass('opened')) {
+                o_el_list.find('li').removeClass('selected');
+                o_el.closest('.dropdown-list').find('input[type="hidden"]').val(option_value);
+                o_el.closest('li').addClass('selected');
+                o_el_list.removeClass('opened');
+                o_el.closest('.filter-item-body').find('.dropdown-arrow').removeClass('active');
+            } else {
+                o_el_list.addClass('opened');
+                o_el.closest('.filter-item-body').find('.dropdown-arrow').addClass('active');
+            }
+        }
         
+    </script>
+    
+    <div id="content" class="<?php echo $class; ?>"><?php echo $content_top; ?>
+      <div id="filter" class="filter">
+        <div class="filter-list">
+          <div class="filter-item dropdown-list">
+            <span class="filter-item-heading">Выбрать серию</span>
+            <div class="filter-item-body">
+                <ul class="filter-select-list">
+                    <li class="selected">
+                        <a onclick="javascript:selectDropdownOption($(this), 10);">Standard</a>
+                    </li>
+                    <li>
+                        <a onclick="javascript:selectDropdownOption($(this), 11);">BLACK</a>
+                    </li>
+                    <li>
+                        <a onclick="javascript:selectDropdownOption($(this), 12);">PREMIUM</a>
+                    </li>
+                    <li>
+                        <a onclick="javascript:selectDropdownOption($(this), 13);">ULTRA SLIM</a>
+                    </li>
+                    <li>
+                        <a onclick="javascript:selectDropdownOption($(this), 14);">SUPER SLIM</a>
+                    </li>
+                </ul>
+                <div class="dropdown-arrow">
+                    <span class="arrow-figure"></span>
+                </div>
+            </div>
+            <input type="hidden" name="series" value="10" />
+          </div>
+          <div class="filter-item checkbox">
+            <span class="filter-item-heading">Степень защиты</span>
+            <div class="filter-item-body">
+              
+            </div>
+          </div>
+          <div class="filter-item dropdown-list">
+            <span class="filter-item-heading">Гарантия</span>
+            <div class="filter-item-body">
+                <ul class="filter-select-list">
+                    <li class="selected">
+                        <a onclick="javascript:selectDropdownOption($(this), 1);">1 год</a>
+                    </li>
+                    <li>
+                        <a onclick="javascript:selectDropdownOption($(this), 2);">2 года</a>
+                    </li>
+                </ul>
+                <div class="dropdown-arrow">
+                    <span class="arrow-figure"></span>
+                </div>
+            </div>
+            <input type="hidden" name="guarantee" value="10" />
+          </div>
+          <div class="filter-item checkbox">
+            <span class="filter-item-heading">Выходное напряжение</span>
+            <div class="filter-item-body">
+              
+            </div>
+          </div>
+        </div>
       </div>
+        
+      <?php if ($category_categories) { ?>
       <div class="category-list">
         <?php foreach (array_chunk($category_categories, 3) as $categories_row) { ?>
           <div class="category-row">

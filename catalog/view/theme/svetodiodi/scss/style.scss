@@ -188,6 +188,34 @@ body {
     }
 }
 
+.alert {
+    border-radius: 0px;
+    border: none;
+    padding: 8px 12px 8px 12px;
+    
+    &.alert-success {
+        color: #ffffff;
+        background-color: $primary-color;
+        
+        a {
+            color: #ffffff;
+        }
+        
+        .close {
+            font-size: 21px;
+            font-weight: 700;
+            line-height: 1;
+            color: #ffffff;
+            text-shadow: none;
+            opacity: 0.2;
+            
+            &:hover {
+                opacity: 0.8;
+            }
+        }
+    }
+}
+
 // Forms
 form {
     display: flex;

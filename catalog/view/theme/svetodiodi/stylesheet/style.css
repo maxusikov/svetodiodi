@@ -149,6 +149,25 @@ body {
     border-top: 6px solid transparent;
     border-bottom: 6px solid transparent; }
 
+.alert {
+  border-radius: 0px;
+  border: none;
+  padding: 8px 12px 8px 12px; }
+  .alert.alert-success {
+    color: #ffffff;
+    background-color: #23a845; }
+    .alert.alert-success a {
+      color: #ffffff; }
+    .alert.alert-success .close {
+      font-size: 21px;
+      font-weight: 700;
+      line-height: 1;
+      color: #ffffff;
+      text-shadow: none;
+      opacity: 0.2; }
+      .alert.alert-success .close:hover {
+        opacity: 0.8; }
+
 form {
   display: flex;
   flex-direction: column;

@@ -263,7 +263,7 @@ $('#button-cart').on('click', function() {
 			}
 
 			if (json['success']) {
-				$('.breadcrumb').after('<div class="alert alert-success">' + json['success'] + '<button type="button" class="close" data-dismiss="alert">&times;</button></div>');
+				$('.breadcrumb').after('<div class="alert alert-success">' + json['success'] + '<button type="button" class="close" data-dismiss="alert"><svg width="16" height="16"><line stroke="#ffffff" stroke-width="3" x1="0" y1="0" x2="16" y2="16"></line><line stroke="#ffffff" stroke-width="3" x1="0" y1="16" x2="16" y2="0"></line></svg></button></div>');
 
 				$('#cart > button').html('<span id="cart-total"><i class="fa fa-shopping-cart"></i> ' + json['total'] + '</span>');
 

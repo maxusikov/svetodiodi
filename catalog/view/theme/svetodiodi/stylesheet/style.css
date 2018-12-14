@@ -1762,7 +1762,7 @@ footer {
               font-size: 16px;
               font-weight: 400;
               color: #666667;
-              margin: 0px 27px 0px 27px; }
+              padding: 0px 27px 0px 27px; }
             #filter .filter-list .filter-item.dropdown-list .filter-item-body ul.filter-select-list li.selected {
               display: block;
               transition: color 0.3s ease-out, background-color 0.3s ease-out; }
@@ -1787,7 +1787,8 @@ footer {
           align-items: center;
           justify-content: center;
           z-index: 1100;
-          margin: 0px 10px 0px 0px; }
+          margin: 0px 10px 0px 0px;
+          pointer-events: none; }
           #filter .filter-list .filter-item.dropdown-list .filter-item-body .dropdown-arrow .arrow-figure {
             display: block;
             width: 8px;

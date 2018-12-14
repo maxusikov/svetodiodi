@@ -2594,7 +2594,7 @@ footer {
                                 font-size: 16px;
                                 font-weight: 400;
                                 color: #666667;
-                                margin: 0px 27px 0px 27px;
+                                padding: 0px 27px 0px 27px;
                             }
                             
                             &.selected {
@@ -2636,6 +2636,7 @@ footer {
                         justify-content: center;
                         z-index: 1100;
                         margin: 0px 10px 0px 0px;
+                        pointer-events: none;
                         
                         .arrow-figure {
                             display: block;

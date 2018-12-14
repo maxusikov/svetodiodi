@@ -2520,7 +2520,7 @@ footer {
     flex-direction: row;
     align-items: stretch;
     justify-content: stretch;
-    height: 137px;
+    min-height: 137px;
     border: 1px solid #e8e8e8;
     margin: 43px 0px 0px 0px;
     padding: 26px 24px 26px 24px;
@@ -2618,12 +2618,15 @@ footer {
                                         transition: color 0.3s ease-out;
                                     }
                                 }
+                                
+                                &:hover {
+                                    background-color: #23a8454f;
+                                }
                             }
                         }
                     }
                     
                     .dropdown-arrow {
-                        background-color: transparent;
                         border-radius: 50%;
                         width: 15px;
                         height: 15px;
@@ -2633,7 +2636,6 @@ footer {
                         justify-content: center;
                         z-index: 1100;
                         margin: 0px 10px 0px 0px;
-                        transition: background-color 0.3s ease-out;
                         
                         .arrow-figure {
                             display: block;
@@ -2647,12 +2649,76 @@ footer {
                         }
                         
                         &.active {
-                            background-color: rgba(255, 255, 255, 0.7);
-                            transition: background-color 0.3s ease-out;
-                            
                             .arrow-figure {
                                 transform: rotateZ(45deg);
                                 transition: rotateZ 0.3s ease-out;
+                            }
+                        }
+                    }
+                }
+            }
+            
+            &.checkbox {
+                .filter-item-body {
+                    ul.filter-checkbox-list {
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+                        justify-content: space-between;
+                        
+                        li.checkbox-item {
+                            display: flex;
+                            flex-direction: row;
+                            align-items: center;
+                            justify-content: center;
+                            padding: 5px 10px 5px 10px;
+                            margin: 0px 0px 0px 10px;
+                            cursor: pointer;
+                            
+                            &:first-child {
+                                margin: 0px 0px 0px 0px;
+                            }
+                            
+                            a {
+                                display: flex;
+                                flex-direction: row;
+                                align-items: center;
+                                justify-content: space-between;
+                                
+                                .checkbox-mark {
+                                    display: block;
+                                    width: 7px;
+                                    height: 7px;
+                                    margin: 0px 14px 0px 0px;
+                                    background-color: rgba(0, 0, 0, 0.1);
+                                }
+                                
+                                .item-label {
+                                    font-family: Calibri, sans-serif;
+                                    font-size: 16px;
+                                    font-weight: 400;
+                                    color: #666667;
+                                    white-space: nowrap;
+                                    user-select: none;
+                                }
+                            }
+                            
+                            &:hover {
+                                background-color: #23a8454f;
+                                
+                                a {
+                                    .checkbox-mark {
+                                        background-color: #ffffff;
+                                    }
+                                }
+                            }
+                            
+                            &.selected {
+                                a {
+                                    .checkbox-mark {
+                                        background-color: $primary-color;
+                                    }
+                                }
                             }
                         }
                     }

@@ -22,26 +22,6 @@
     <?php } else { ?>
     <?php $class = 'col-sm-12'; ?>
     <?php } ?>
-    
-    <script type="text/javascript">
-        function selectDropdownOption(option_element, option_value) {
-            var o_el = $(option_element);
-            var o_el_list = o_el.closest('.filter-select-list');
-            
-            if (o_el_list.hasClass('opened')) {
-                o_el_list.find('li').removeClass('selected');
-                o_el.closest('.dropdown-list').find('input[type="hidden"]').val(option_value);
-                o_el.closest('li').addClass('selected');
-                o_el_list.removeClass('opened');
-                o_el.closest('.filter-item-body').find('.dropdown-arrow').removeClass('active');
-            } else {
-                o_el_list.addClass('opened');
-                o_el.closest('.filter-item-body').find('.dropdown-arrow').addClass('active');
-            }
-        }
-        
-    </script>
-    
     <div id="content" class="<?php echo $class; ?>"><?php echo $content_top; ?>
       <div id="filter" class="filter">
         <div class="filter-list">
@@ -74,9 +54,25 @@
           <div class="filter-item checkbox">
             <span class="filter-item-heading">Степень защиты</span>
             <div class="filter-item-body">
-              
+                <ul class="filter-checkbox-list">
+                    <li class="checkbox-item">
+                        <a onclick="javascript:toggleCheckboxItem($(this), 1);">
+                            <span class="checkbox-mark"></span>
+                            <span class="item-label">Открытые IP20</span>
+                        </a>
+                        <input type="hidden" name="protection_level[1]" value="0" />
+                    </li>
+                    <li class="checkbox-item">
+                        <a onclick="javascript:toggleCheckboxItem($(this), 2);">
+                            <span class="checkbox-mark"></span>
+                            <span class="item-label">Влагозащищенные IP67</span>
+                        </a>
+                        <input type="hidden" name="protection_level[2]" value="0" />
+                    </li>
+                </ul>
             </div>
           </div>
+            
           <div class="filter-item dropdown-list">
             <span class="filter-item-heading">Гарантия</span>
             <div class="filter-item-body">
@@ -97,12 +93,34 @@
           <div class="filter-item checkbox">
             <span class="filter-item-heading">Выходное напряжение</span>
             <div class="filter-item-body">
-              
+                <ul class="filter-checkbox-list">
+                    <li class="checkbox-item">
+                        <a onclick="javascript:toggleCheckboxItem($(this), 5);">
+                            <span class="checkbox-mark"></span>
+                            <span class="item-label">5В</span>
+                        </a>
+                        <input type="hidden" name="protection_level[5]" value="0" />
+                    </li>
+                    <li class="checkbox-item">
+                        <a onclick="javascript:toggleCheckboxItem($(this), 12);">
+                            <span class="checkbox-mark"></span>
+                            <span class="item-label">12В</span>
+                        </a>
+                        <input type="hidden" name="protection_level[12]" value="0" />
+                    </li>
+                    <li class="checkbox-item">
+                        <a onclick="javascript:toggleCheckboxItem($(this), 24);">
+                            <span class="checkbox-mark"></span>
+                            <span class="item-label">24В</span>
+                        </a>
+                        <input type="hidden" name="protection_level[24]" value="0" />
+                    </li>
+                </ul>
             </div>
           </div>
         </div>
       </div>
-        
+
       <?php if ($category_categories) { ?>
       <div class="category-list">
         <?php foreach (array_chunk($category_categories, 3) as $categories_row) { ?>
@@ -192,6 +210,40 @@
     <?php echo $column_right; ?></div>
 </div>
 <?php echo $footer; ?>
+
+<script type="text/javascript">
+    function toggleCheckboxItem(item_element, item_value) {
+        var item = $(item_element).closest('.checkbox-item');
+        
+        console.log('input[name="protection_level[' + item_value + ']"]');
+        
+        if (item.hasClass('selected')) {
+            item.removeClass('selected');
+            item.find('input[type="hidden"]').val(0);
+        } else {
+            item.addClass('selected');
+            item.find('input[type="hidden"]').val(1);
+        }
+    }
+</script>
+
+<script type="text/javascript">
+    function selectDropdownOption(option_element, option_value) {
+        var o_el = $(option_element);
+        var o_el_list = o_el.closest('.filter-select-list');
+
+        if (o_el_list.hasClass('opened')) {
+            o_el_list.find('li').removeClass('selected');
+            o_el.closest('.dropdown-list').find('input[type="hidden"]').val(option_value);
+            o_el.closest('li').addClass('selected');
+            o_el_list.removeClass('opened');
+            o_el.closest('.filter-item-body').find('.dropdown-arrow').removeClass('active');
+        } else {
+            o_el_list.addClass('opened');
+            o_el.closest('.filter-item-body').find('.dropdown-arrow').addClass('active');
+        }
+    }
+</script>
 
 <script type="text/javascript">
 function changeOrderProductQuantity(product_container, increase = true) {

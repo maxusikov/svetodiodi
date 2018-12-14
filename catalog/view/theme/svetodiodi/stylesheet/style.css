@@ -1702,7 +1702,7 @@ footer {
   flex-direction: row;
   align-items: stretch;
   justify-content: stretch;
-  height: 137px;
+  min-height: 137px;
   border: 1px solid #e8e8e8;
   margin: 43px 0px 0px 0px;
   padding: 26px 24px 26px 24px; }
@@ -1776,8 +1776,9 @@ footer {
                 #filter .filter-list .filter-item.dropdown-list .filter-item-body ul.filter-select-list.opened li.selected a {
                   color: #ffffff;
                   transition: color 0.3s ease-out; }
+              #filter .filter-list .filter-item.dropdown-list .filter-item-body ul.filter-select-list.opened li:hover {
+                background-color: #23a8454f; }
         #filter .filter-list .filter-item.dropdown-list .filter-item-body .dropdown-arrow {
-          background-color: transparent;
           border-radius: 50%;
           width: 15px;
           height: 15px;
@@ -1786,8 +1787,7 @@ footer {
           align-items: center;
           justify-content: center;
           z-index: 1100;
-          margin: 0px 10px 0px 0px;
-          transition: background-color 0.3s ease-out; }
+          margin: 0px 10px 0px 0px; }
           #filter .filter-list .filter-item.dropdown-list .filter-item-body .dropdown-arrow .arrow-figure {
             display: block;
             width: 8px;
@@ -1797,11 +1797,47 @@ footer {
             margin-bottom: 1px;
             transform: rotateZ(-45deg);
             transition: rotateZ 0.3s ease-out; }
-          #filter .filter-list .filter-item.dropdown-list .filter-item-body .dropdown-arrow.active {
-            background-color: rgba(255, 255, 255, 0.7);
-            transition: background-color 0.3s ease-out; }
-            #filter .filter-list .filter-item.dropdown-list .filter-item-body .dropdown-arrow.active .arrow-figure {
-              transform: rotateZ(45deg);
-              transition: rotateZ 0.3s ease-out; }
+          #filter .filter-list .filter-item.dropdown-list .filter-item-body .dropdown-arrow.active .arrow-figure {
+            transform: rotateZ(45deg);
+            transition: rotateZ 0.3s ease-out; }
+      #filter .filter-list .filter-item.checkbox .filter-item-body ul.filter-checkbox-list {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between; }
+        #filter .filter-list .filter-item.checkbox .filter-item-body ul.filter-checkbox-list li.checkbox-item {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: center;
+          padding: 5px 10px 5px 10px;
+          margin: 0px 0px 0px 10px;
+          cursor: pointer; }
+          #filter .filter-list .filter-item.checkbox .filter-item-body ul.filter-checkbox-list li.checkbox-item:first-child {
+            margin: 0px 0px 0px 0px; }
+          #filter .filter-list .filter-item.checkbox .filter-item-body ul.filter-checkbox-list li.checkbox-item a {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between; }
+            #filter .filter-list .filter-item.checkbox .filter-item-body ul.filter-checkbox-list li.checkbox-item a .checkbox-mark {
+              display: block;
+              width: 7px;
+              height: 7px;
+              margin: 0px 14px 0px 0px;
+              background-color: rgba(0, 0, 0, 0.1); }
+            #filter .filter-list .filter-item.checkbox .filter-item-body ul.filter-checkbox-list li.checkbox-item a .item-label {
+              font-family: Calibri, sans-serif;
+              font-size: 16px;
+              font-weight: 400;
+              color: #666667;
+              white-space: nowrap;
+              user-select: none; }
+          #filter .filter-list .filter-item.checkbox .filter-item-body ul.filter-checkbox-list li.checkbox-item:hover {
+            background-color: #23a8454f; }
+            #filter .filter-list .filter-item.checkbox .filter-item-body ul.filter-checkbox-list li.checkbox-item:hover a .checkbox-mark {
+              background-color: #ffffff; }
+          #filter .filter-list .filter-item.checkbox .filter-item-body ul.filter-checkbox-list li.checkbox-item.selected a .checkbox-mark {
+            background-color: #23a845; }
 
 /*# sourceMappingURL=style.css.map */

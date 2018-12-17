@@ -47,7 +47,7 @@
 <?php } ?>
 </head>
 <body class="<?php echo $class; ?>">
-<div id="modal-overlay" onclick="javascript:toggleLoginModal(false);"></div>
+<div id="modal-overlay" onclick="javascript:removeModal();"></div>
 <div id="login-modal" class="modal-dialog">
     <div class="form-wrapper">
         <span class="close-button" onclick="javascript:toggleLoginModal(false);">
@@ -64,6 +64,25 @@
             </div>
             <span class="need-registration-text"><?php echo $text_need_registration; ?>&nbsp;<a href="<?php echo $register; ?>" class="registration"><?php echo $text_registration; ?></a></span>
             <a class="submit button" onclick="javascript:$(this).closest('form').submit();"><?php echo $text_enter; ?></a>
+        </form>
+    </div>
+</div>
+<div id="order-modal" class="modal-dialog">
+    <div class="form-wrapper">
+        <span class="close-button" onclick="javascript:toggleOrderModal(false);">
+            <svg width="30" height="30">
+                <line x1="0" y1="0" x2="20" y2="20" stroke="#000000" stroke-width="2" />
+                <line x1="0" y1="20" x2="20" y2="0" stroke="#000000" stroke-width="2" />
+            </svg>
+        </span>
+        <form action="<?php echo $send_order; ?>" method="POST" enctype="multipart/form-data">
+            <h3 class="form-heading"><?php echo $text_make_order; ?></h3>
+            <div class="inputs-wrapper">
+                <input type="text" name="name" class="name" value="" placeholder="<?php echo $entry_name; ?>" />
+                <input type="email" name="password" class="email" value="" placeholder="<?php echo $entry_email; ?>" />
+                <input type="tel" name="telephone" class="telephone" value="" placeholder="<?php echo $entry_telephone; ?>" />
+            </div>
+            <a class="submit button" onclick="javascript:$(this).closest('form').submit();"><?php echo $text_send; ?></a>
         </form>
     </div>
 </div>
@@ -159,5 +178,27 @@
             $('#login-modal').removeClass('active');
             $(window).off('mousewheel');
         }
+    }
+</script>
+<script type="text/javascript">
+    function toggleOrderModal(turnOn = true) {
+        if (turnOn) {
+            $('#modal-overlay').addClass('active');
+            $('#order-modal').addClass('active');
+            $(window).on('mousewheel', function(){
+                return false;
+            });
+        } else {
+            $('#modal-overlay').removeClass('active');
+            $('#order-modal').removeClass('active');
+            $(window).off('mousewheel');
+        }
+    }
+</script>
+<script type="text/javascript">
+    function removeModal() {
+        $('#modal-overlay').removeClass('active');
+        $('.modal-dialog').removeClass('active');
+        $(window).off('mousewheel');
     }
 </script>

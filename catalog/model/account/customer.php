@@ -176,4 +176,60 @@ class ModelAccountCustomer extends Model {
 	public function deleteLoginAttempts($email) {
 		$this->db->query("DELETE FROM `" . DB_PREFIX . "customer_login` WHERE email = '" . $this->db->escape(utf8_strtolower($email)) . "'");
 	}
+        
+        // Svetodiod theme
+        public function addCustomerPersonalData($personal_data) {
+            $sql  = "INSERT INTO `" . DB_PREFIX . "customer_personal_data` SET ";
+            $sql .= "customer_id='" . (int)$personal_data['customer_id'] . "', ";
+            $sql .= "naming='" . (string)$personal_data['naming'] . "', ";
+            $sql .= "telephone='" . (string)$personal_data['telephone'] . "', ";
+            $sql .= "fax='" . (string)$personal_data['fax'] . "', ";
+            $sql .= "email='" . (string)$personal_data['email'] . "', ";
+            $sql .= "kontragent_type='" . (int)$personal_data['kontragent_type'] . "', ";
+            $sql .= "full_naming='" . (string)$personal_data['full_naming'] . "', ";
+            $sql .= "legal_address='" . (string)$personal_data['legal_address'] . "', ";
+            $sql .= "INN='" . (string)$personal_data['INN'] . "', ";
+            $sql .= "KPP='" . (string)$personal_data['KPP'] . "', ";
+            $sql .= "OGRN='" . (string)$personal_data['OGRN'] . "', ";
+            $sql .= "OKPO='" . (string)$personal_data['OKPO'] . "', ";
+            $sql .= "BIK='" . (string)$personal_data['BIK'] . "', ";
+            $sql .= "bank='" . (string)$personal_data['bank'] . "', ";
+            $sql .= "address='" . (string)$personal_data['address'] . "', ";
+            $sql .= "correspondent_account='" . (string)$personal_data['correspondent_account'] . "', ";
+            $sql .= "checking_account='" . (string)$personal_data['checking_account'] . "'";
+            
+            $result = $this->db->query($sql);
+            return $this->db->getLastId();
+        }
+        
+        public function getCustomerPersonalData($customer_id){
+            $sql = "SELECT * FROM `" . DB_PREFIX . "customer_personal_data` WHERE customer_id='" . (int)$customer_id . "'";
+            $query = $this->db->query($sql);
+            
+            return $query->row;
+        }
+        
+        public function updateCustomerPersonalData($personal_data){
+            $sql  = "UPDATE `" . DB_PREFIX . "customer_personal_data` SET ";
+            $sql .= "naming='" . (string)$personal_data['naming'] . "', ";
+            $sql .= "telephone='" . (string)$personal_data['telephone'] . "', ";
+            $sql .= "fax='" . (string)$personal_data['fax'] . "', ";
+            $sql .= "email='" . (string)$personal_data['email'] . "', ";
+            $sql .= "kontragent_type='" . (int)$personal_data['kontragent_type'] . "', ";
+            $sql .= "full_naming='" . (string)$personal_data['full_naming'] . "', ";
+            $sql .= "legal_address='" . (string)$personal_data['legal_address'] . "', ";
+            $sql .= "INN='" . (string)$personal_data['INN'] . "', ";
+            $sql .= "KPP='" . (string)$personal_data['KPP'] . "', ";
+            $sql .= "OGRN='" . (string)$personal_data['OGRN'] . "', ";
+            $sql .= "OKPO='" . (string)$personal_data['OKPO'] . "', ";
+            $sql .= "BIK='" . (string)$personal_data['BIK'] . "', ";
+            $sql .= "bank='" . (string)$personal_data['bank'] . "', ";
+            $sql .= "address='" . (string)$personal_data['address'] . "', ";
+            $sql .= "correspondent_account='" . (string)$personal_data['correspondent_account'] . "', ";
+            $sql .= "checking_account='" . (string)$personal_data['checking_account'] . "' ";
+            $sql .= "WHERE customer_id='" . (int)$personal_data['customer_id'] . "'";
+            
+            $result = $this->db->query($sql);
+            return $result;
+        }
 }

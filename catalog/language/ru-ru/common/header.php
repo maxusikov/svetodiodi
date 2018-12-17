@@ -23,9 +23,15 @@ $_['text_price_list']    = 'Прайс-лист';
 $_['text_contacts']      = 'Контакты';
 $_['text_my_orders']     = 'Мои заказы';
 $_['text_personal_data'] = 'Персональные данные';
+$_['text_send']          = 'Отправить';
+$_['text_make_order']    = 'Заказать';
 
 $_['text_enter']    = 'Войти';
 $_['text_login']    = 'Логин*';
 $_['text_password'] = 'Пароль*';
 $_['text_need_registration'] = 'Нет логина и пароля? Необходимо';
 $_['text_registration']      = 'зарегистрироваться';
+
+$_['entry_name'] = 'Ваше имя';
+$_['entry_email'] = 'Ваш E-mail';
+$_['entry_telephone'] = 'Ваш телефон';

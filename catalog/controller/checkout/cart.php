@@ -23,10 +23,12 @@ class ControllerCheckoutCart extends Controller {
 			$data['text_recurring_item'] = $this->language->get('text_recurring_item');
 			$data['text_next'] = $this->language->get('text_next');
 			$data['text_next_choice'] = $this->language->get('text_next_choice');
-
+                        $data['text_home'] = $this->language->get('text_home');
+                        
 			$data['column_image'] = $this->language->get('column_image');
 			$data['column_name'] = $this->language->get('column_name');
 			$data['column_model'] = $this->language->get('column_model');
+                        $data['column_sku'] = $this->language->get('column_sku');
 			$data['column_quantity'] = $this->language->get('column_quantity');
 			$data['column_price'] = $this->language->get('column_price');
 			$data['column_total'] = $this->language->get('column_total');
@@ -71,10 +73,14 @@ class ControllerCheckoutCart extends Controller {
 			$this->load->model('tool/image');
 			$this->load->model('tool/upload');
 
+                        $data['text_order'] = $this->language->get('text_order');
+                        
 			$data['products'] = array();
 
 			$products = $this->cart->getProducts();
 
+                        $this->load->model('catalog/product');
+                        
 			foreach ($products as $product) {
 				$product_total = 0;
 
@@ -148,10 +154,15 @@ class ControllerCheckoutCart extends Controller {
 					}
 				}
 
+                                $product_for_data = $this->model_catalog_product->getProduct($product['product_id']);
+                                
 				$data['products'][] = array(
 					'cart_id'   => $product['cart_id'],
 					'thumb'     => $image,
 					'name'      => $product['name'],
+                                        'product_id' => $product_for_data['product_id'],
+                                        'sku'       => $product_for_data['sku'],
+                                        'available_quantity' => $product_for_data['quantity'],
 					'model'     => $product['model'],
 					'option'    => $option_data,
 					'recurring' => $recurring,

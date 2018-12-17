@@ -77,6 +77,8 @@ class ControllerCommonHeader extends Controller {
 		$data['text_all'] = $this->language->get('text_all');
                 $data['text_my_orders'] = $this->language->get('text_my_orders');
                 $data['text_personal_data'] = $this->language->get('text_personal_data');
+                $data['text_send'] = $this->language->get('text_send');
+                $data['text_make_order'] = $this->language->get('text_make_order');
                 
 		$data['home'] = $this->url->link('common/home');
 		$data['wishlist'] = $this->url->link('account/wishlist', '', true);
@@ -94,7 +96,11 @@ class ControllerCommonHeader extends Controller {
 		$data['telephone_1'] = $this->config->get('config_telephone');
                 $data['telephone_2'] = $this->config->get('config_telephone_2');
                 $data['my_orders'] = $this->url->link('account/order', true);
-                $data['personal_data'] = $this->url->link('account/account', true);
+                $data['personal_data'] = $this->url->link('account/personal', true);
+                
+                $data['entry_name'] = $this->language->get('entry_name');
+                $data['entry_email'] = $this->language->get('entry_email');
+                $data['entry_telephone'] = $this->language->get('entry_telephone');
                 
 		// Menu
                 $top_menu = [
@@ -112,7 +118,7 @@ class ControllerCommonHeader extends Controller {
                     ],
                     'price_list' => [
                         'name' => $this->language->get('text_price_list'),
-                        'href' => $this->url->link('information/information', 'information_id=6')
+                        'href' => $this->url->link('information/pricelist')
                     ],
                     'contacts' => [
                         'name' => $this->language->get('text_contacts'),

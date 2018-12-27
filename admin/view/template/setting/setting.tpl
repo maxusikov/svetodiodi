@@ -145,11 +145,31 @@
                   </div>
                   
                   <div class="form-group">
+                    <label class="col-sm-2 control-label" for="input-office-geolocation<?php echo $language['language_id']; ?>"><?php echo $entry_office_geolocation; ?></label>
+                    <div class="col-sm-10">
+                      <input name="config_langdata[<?php echo $language['language_id']; ?>][office_geolocation]" placeholder="<?php echo $entry_office_geolocation; ?>" rows="5" id="input-office-geolocation<?php echo $language['language_id']; ?>" class="form-control" value="<?php echo isset($config_langdata[$language['language_id']]) ? $config_langdata[$language['language_id']]['office_geolocation'] : ''; ?>" placeholder="<?php echo $entry_office_geolocation; ?>" />
+                      <?php if (isset($error_office_geolocation[$language['language_id']])) { ?>
+                      <div class="text-danger"><?php echo $error_office_geolocation[$language['language_id']]; ?></div>
+                      <?php } ?>
+                    </div>
+                  </div>
+                    
+                  <div class="form-group">
                     <label class="col-sm-2 control-label" for="input-address-stock<?php echo $language['language_id']; ?>"><?php echo $entry_address_stock; ?></label>
                     <div class="col-sm-10">
                       <textarea name="config_langdata[<?php echo $language['language_id']; ?>][address_stock]" placeholder="<?php echo $entry_address; ?>" rows="5" id="input-address-stock<?php echo $language['language_id']; ?>" class="form-control"><?php echo isset($config_langdata[$language['language_id']]) ? $config_langdata[$language['language_id']]['address_stock'] : ''; ?></textarea>
                       <?php if (isset($error_address[$language['language_id']])) { ?>
                       <div class="text-danger"><?php echo $error_address[$language['language_id']]; ?></div>
+                      <?php } ?>
+                    </div>
+                  </div>
+                    
+                  <div class="form-group">
+                    <label class="col-sm-2 control-label" for="input-stock-geolocation<?php echo $language['language_id']; ?>"><?php echo $entry_stock_geolocation; ?></label>
+                    <div class="col-sm-10">
+                        <input name="config_langdata[<?php echo $language['language_id']; ?>][stock_geolocation]" placeholder="<?php echo $entry_stock_geolocation; ?>" rows="5" id="input-stock-geolocation<?php echo $language['language_id']; ?>" class="form-control" value="<?php echo isset($config_langdata[$language['language_id']]) ? $config_langdata[$language['language_id']]['stock_geolocation'] : ''; ?>" placeholder="<?php echo $entry_stock_geolocation; ?>" />
+                      <?php if (isset($error_stock_geolocation[$language['language_id']])) { ?>
+                      <div class="text-danger"><?php echo $error_stock_geolocation[$language['language_id']]; ?></div>
                       <?php } ?>
                     </div>
                   </div>

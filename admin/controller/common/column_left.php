@@ -624,6 +624,14 @@ class ControllerCommonColumnLeft extends Controller {
 					'children' => array()		
 				);
 			}
+                        
+                        if ($this->user->hasPermission('access', 'tool/mystock')) {
+				$tool[] = array(
+					'name'	   => $this->language->get('text_mystock'),
+					'href'     => $this->url->link('tool/mystock', 'token=' . $this->session->data['token'], true),
+					'children' => array()		
+				);
+			}
 			
 			if ($this->user->hasPermission('access', 'tool/log')) {
 				$tool[] = array(

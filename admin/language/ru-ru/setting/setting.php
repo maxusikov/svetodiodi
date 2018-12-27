@@ -174,6 +174,8 @@ $_['entry_seo_url_postfix']			       = 'Окончание ЧПУ';
 $_['entry_seo_url_postfix_help']	     = 'Например .html (только для SeoPro)';
 $_['entry_seo_pro_utm']                = 'UTM-метки для SeoPro (только для карточки товара)';
 $_['entry_status']                     = 'Статус';
+$_['entry_office_geolocation']         = 'Геолокация оффиса';
+$_['entry_stock_geolocation']          = 'Геолокация склада';
 
 // Help
 $_['help_geocode']                     = 'Укажите вручную Geocode вашего магазина, указав ширину и долготу. ПРИМЕР: (54.718681, 20.499113) БЕЗ СКОБОК И КАВЫЧЕК!';

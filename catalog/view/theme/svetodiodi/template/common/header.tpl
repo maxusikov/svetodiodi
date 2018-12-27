@@ -42,6 +42,7 @@
 <?php foreach ($scripts as $script) { ?>
 <script src="<?php echo $script; ?>" type="text/javascript"></script>
 <?php } ?>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCI7R55xO_ffkQ1ofVuKnY1TRI92i_mAwM"></script>
 <?php foreach ($analytics as $analytic) { ?>
 <?php echo $analytic; ?>
 <?php } ?>

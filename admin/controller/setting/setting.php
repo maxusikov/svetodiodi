@@ -195,7 +195,10 @@ class ControllerSettingSetting extends Controller {
 		$data['entry_sms_alert'] = $this->language->get('entry_sms_alert');
 		$data['entry_sms_copy'] = $this->language->get('entry_sms_copy');
 		$data['entry_status'] = $this->language->get('entry_status');
-
+                $data['entry_office_geolocation'] = $this->language->get('entry_office_geolocation');
+                $data['entry_stock_geolocation'] = $this->language->get('entry_stock_geolocation');
+                
+                
 		$data['help_geocode'] = $this->language->get('help_geocode');
 		$data['help_open'] = $this->language->get('help_open');
 		$data['help_comment'] = $this->language->get('help_comment');

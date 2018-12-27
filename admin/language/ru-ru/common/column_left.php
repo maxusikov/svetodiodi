@@ -32,6 +32,7 @@ $_['text_contact']          				= 'Почтовая рассылка';
 $_['text_marketing']          				= 'Маркетинг';
 $_['text_menu']                             = 'Менеджер меню';
 $_['text_modification']          			= 'Менеджер дополнений';
+$_['text_mystock']          					= 'Мой склад';
 $_['text_manufacturer']          			= 'Производители';
 $_['text_option']          					= 'Опции';
 $_['text_order']          					= 'Заказы';

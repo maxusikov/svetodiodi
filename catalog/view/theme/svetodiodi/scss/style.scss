@@ -445,6 +445,7 @@ form {
                 margin: 95px 0px 56px 0px;
                 text-align: center;
             }
+            
             .inputs-wrapper {
                 display: flex;
                 flex-direction: column;
@@ -3169,6 +3170,148 @@ footer {
                 margin: 100px 0px 0px 0px;
                 
                 .submit {}
+            }
+        }
+    }
+}
+
+.information-contact {
+    #content {
+        .content-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+            justify-content: flex-start;
+            margin: 98px 0px 0px 0px;
+            
+            .contacts {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: flex-start;
+                
+                .telephones {
+                    flex: 1;
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: flex-start;
+                    padding: 0px 0px 20px 0px;
+                    border-bottom: 1px solid #bbbbbb;
+                    margin: 0px 30px 0px 0px;
+                    
+                    .telephone {
+                        display: flex;
+                        flex-direction: row;
+                        align-items: stretch;
+                        justify-content: flex-start;
+                        font-size: 24px;
+                        font-weight: 400;
+                        color: #000000;
+                        margin: 0px 0px 0px 17px;
+                        
+                        .greentext {
+                            color: $primary-color;
+                        }
+                    }
+                }
+                .email {
+                    flex: 1;
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: flex-start;
+                    font-size: 24px;
+                    font-weight: 400;
+                    color: #000000;
+                    padding: 0px 0px 20px 0px;
+                    border-bottom: 1px solid #bbbbbb;
+                    
+                    .email-address {
+                        margin: 0px 0px 0px 17px;
+                    }
+                }
+            }
+            
+            .locations {
+                display: flex;
+                flex-direction: column;
+                align-items: stretch;
+                justify-content: stretch;
+                margin: 63px 0px 0px 0px;
+                
+                .addresses {
+                    flex: 1;
+                    display: flex;
+                    flex-direction: row;
+                    
+                    
+                    .address {
+                        flex: 1;
+                        display: flex;
+                        flex-direction: row;
+                        align-items: stretch;
+                        justify-content: flex-start;
+
+                        &:first-child {
+                            margin: 0px 30px 0px 0px;
+                        }
+
+                        .address-wrapper {
+                            flex: 1;
+                            display: flex;
+                            flex-direction: row;
+                            border-bottom: 1px solid #bbbbbb;
+
+                            svg {}
+                            .wrapper {
+                                display: flex;
+                                flex-direction: column;
+                                align-items: flex-start;
+                                justify-content: flex-start;
+                                color: #000000;
+                                margin: 0px 0px 0px 17px;
+
+                                .address-heading {
+                                    font-size: 24px;
+                                    line-height: 27px;
+                                    margin: 0px 0px 0px 6px;
+                                }
+                                .address-text {
+                                    font-size: 20px;
+                                    line-height: 27px;
+                                    min-height: 75px;
+                                    padding-bottom: 18px;
+                                }
+                            }
+                        }                        
+                    }
+                }
+                
+                .geolocations {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: stretch;
+                    justify-content: stretch;
+                    margin: 20px 0px 103px 0px;
+                    
+                    .address-geolocation {
+                        flex: 1;
+                        height: 356px;
+                        display: flex;
+                        flex-direction: row;
+                        align-items: stretch;
+                        justify-content: stretch;
+                        
+                        &:first-child {
+                            margin: 0px 30px 0px 0px;
+                        }
+                        
+                        .geolocation-map {
+                            flex: 1;
+                        }
+                    }
+                }
             }
         }
     }

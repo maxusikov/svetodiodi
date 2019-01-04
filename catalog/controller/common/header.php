@@ -106,7 +106,7 @@ class ControllerCommonHeader extends Controller {
                 $top_menu = [
                     'about_company' => [
                         'name' => $this->language->get('text_about_company'),
-                        'href' => $this->url->link('information/information', 'information_id=4')
+                        'href' => $this->url->link('information/about')
                     ],
                     'actions' => [
                         'name' => $this->language->get('text_actions'),

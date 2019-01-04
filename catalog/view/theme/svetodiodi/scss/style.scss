@@ -41,6 +41,7 @@ body {
         left: 0px;
         top: 180px;
         z-index: -1;
+        pointer-events: none;
     }
 }
 
@@ -118,6 +119,10 @@ body {
     .rightside {
         flex: 1;
     }
+}
+
+.greentext {
+    color: $primary-color;
 }
 
 .hexagon-1 {
@@ -794,6 +799,7 @@ footer {
         transform: scaleX(-1);
         z-index: 10;
         overflow: hidden;
+        pointer-events: none;
         
         img {
             margin-bottom: -100px;
@@ -1776,7 +1782,7 @@ footer {
     margin: 96px 0px 152px 0px;
 
     .greentext {
-        color: $primary-color;
+        
     }
 
     .heading-title-wrapper {
@@ -3310,6 +3316,617 @@ footer {
                         .geolocation-map {
                             flex: 1;
                         }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.information-about {
+    .container {
+        .container-row {
+            #content {
+                .html-module {
+                    margin: 0px 0px 0px 0px;
+                    
+                    .heading-title-wrapper {
+                        display: none;
+                    }
+                }
+                
+                .heading-wrapper {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    margin: 50px 0px 0px 0px;
+
+                    .heading-text {
+                        text-align: center;
+                        margin: 0px 0px 0px 0px;
+                        text-transform: uppercase;
+                    }
+
+                    .heading-bottom-line {
+                        border-bottom: 4px solid $primary-color;
+                        width: 167px;
+                        margin: 20px 0px 0px 0px;
+                    }
+                }
+                
+                .slogan {
+                    display: flex;
+                    flex-direction: 1;
+                    align-items: stretch;
+                    justify-content: stretch;
+                    border-top: 1px solid #d7d7d7;
+                    margin: 30px 0px 0px 0px;
+                        
+                    .left-side {
+                       width: 340px;
+                       margin: 32px 0px 50px 16px;
+                       
+                        .outer-border {
+                            display: flex;
+                            flex-direction: row;
+                            align-items: stretch;
+                            justify-content: stretch;
+                            border: 2px solid $primary-color;
+                            
+                            .inner-border {
+                                flex: 1;
+                                display: flex;
+                                flex-direction: column;
+                                align-items: center;
+                                justify-content: center;
+                                border: 2px solid $primary-color;
+                                margin: 7px 7px 7px 7px;
+                                
+                                .quotes {
+                                    margin: 22px 0px 0px 0px;
+                                }
+                                
+                                .heading {
+                                    text-align: center;
+                                    margin: 16px 0px 50px 0px;
+                                    text-transform: uppercase;
+                                }
+                            }
+                        }
+                    }
+                    .right-side {
+                        flex: 1;
+                        font-family: Calibri, sans-serif;
+                        color: #000000;
+                        font-size: 18px;
+                        margin: 48px 0px 0px 44px;
+                        
+                        .slogan-text {
+                            font-weight: 200;
+                            font-size: 18px;
+                            line-height: 24px;
+                        }
+                        
+                        .signification {
+                            font-weight: 400;
+                            font-style: italic;
+                            margin: 10px 0px 0px 0px;
+                        }
+                    }
+                }
+                
+                .our-mission {
+                    position: relative;
+                    min-height: 404px;
+                    overflow: hidden;
+                    font-family: Calibri, sans-serif;
+                    color: #ffffff;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    
+                    .background-overlay {
+                        position: absolute;
+                        transform: translate(-50%, -50%);
+                        top: 50%;
+                        left: 50%;
+                        min-width: 100%;
+                        min-height: 100%;
+                        z-index: -1;
+                        text-align: center;
+                        
+                        img {
+                            min-width: 100%;
+                            min-height: 100%;
+                        }
+                    }
+                    
+                    .mission-heading {
+                        font-size: 24px;
+                        line-height: 24px;
+                        font-weight: 600;
+                        color: #ffffff;
+                        text-align: center;
+                        margin: 0px 0px 0px 0px;
+                        padding: 0px 0px 16px 0px;
+                        border-bottom: 4px solid $primary-color;
+                        text-transform: uppercase;
+                    }
+                    
+                    .mission-subheading {
+                        font-size: 22px;
+                        font-weight: 600;
+                        color: #ffffff;
+                        text-align: center;
+                    }
+                    
+                    .mission-text {
+                        font-size: 20px;
+                        line-height: 24px;
+                        font-weight: 200;
+                        text-align: center;
+                        margin: 0px 0px 0px 0px;
+                    }
+                }
+                
+                .delivery {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    
+                    .heading-wrapper {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: center;
+                        margin: 50px 0px 0px 0px;
+                        
+                        .heading-text {
+                            text-align: center;
+                            margin: 0px 0px 0px 0px;
+                            text-transform: uppercase;
+                        }
+                        
+                        .heading-bottom-line {
+                            border-bottom: 4px solid $primary-color;
+                            width: 167px;
+                            margin: 20px 0px 0px 0px;
+                        }
+                    }
+                    
+                    .achievements {
+                        display: flex;
+                        flex-direction: row;
+                        align-items: stretch;
+                        justify-content: center;
+                        margin: 26px 0px 26px 0px;
+                        
+                        .achievement {
+                            display: flex;
+                            flex-direction: row;
+                            align-items: center;
+                            justify-content: center;
+                            
+                            svg {
+                                
+                            }
+                            
+                            .achievement-text {
+                                margin: 0px 0px 0px 26px;
+                                font-size: 20px;
+                                line-height: 24px;
+                                font-weight: 600;
+                                color: #000000;
+                            }
+                            
+                            &.deliveries {
+                                margin: 0px 0px 0px 0px;
+                            }
+
+                            &.customers {
+                                margin: 0px 0px 0px 63px;
+                            }
+                        }
+                    }
+                    
+                    .russia-map {
+                        margin: -100px 0px 0px 0px;
+                        z-index: -1;
+                    }
+                }
+                
+                .assortiment {
+                    .heading-wrapper {}
+                    .categories {
+                        display: flex;
+                        flex-direction: row;
+                        align-items: stretch;
+                        justify-content: center;
+                        margin: 66px 0px 66px 0px;
+                        
+                        .cat-list {
+                            display: flex;
+                            flex-direction: column;
+                            align-items: flex-start;
+                            justify-content: center;
+                            
+                            li {
+                                margin: 26px 0px 0px 0px;
+                                
+                                &:first-child {
+                                    margin: 0px 0px 0px 0px;
+                                }
+                                
+                                a {
+                                    font-size: 20px;
+                                    font-weight: 200;
+                                    color: #000000;
+                                    text-decoration: none;
+                                    display: flex;
+                                    flex-direction: row;
+                                    align-items: center;
+                                    justify-content: space-between;
+                                    
+                                    &:before {
+                                        content: "";
+                                        display: block;
+                                        width: 11px;
+                                        height: 11px;
+                                        background-color: $primary-color;
+                                        border-radius: 50%;
+                                        margin: 0px 24px 0px 0px;
+                                    }
+                                }
+                            }
+                            
+                            &.left-side {}
+                            &.right-side {
+                                margin: 0px 0px 0px 154px;
+                            }
+                        }
+                    }
+                }
+                
+                $benefits-hexagon-height: 184px;
+                $benefits-hexagon-height-numeric: 184;
+                $benefits-radial-hexagons-horizontal-margin: 57px;
+                $benefits-radial-hexagons-horizontal-margin-numeric: 57;
+                $benefits-radial-hexagons-vertical-margin: 221px;
+                $benefits-radial-hexagons-vertical-margin-numeric: 221;
+                
+                .collaboration-benefits {
+                    .bigger-white {
+                        text-transform: uppercase;
+                        color: #ffffff;
+                        font-weight: 600;
+                    }
+                    
+                    .bigger-black {
+                        text-transform: uppercase;
+                        color: #000000;
+                        font-weight: 600;
+                    }
+                    
+                    .heading-wrapper {
+                        
+                    }
+                    
+                    .benefits-wrapper {
+                        margin: 60px 0px 0px 0px;
+                        padding: 0px 0px 0px 0px;
+                        
+                        .benefits-inner-wrapper {
+                            position: relative;
+                            display: flex;
+                            flex-direction: column;
+                            align-items: stretch;
+                            justify-content: stretch;
+                            
+                            .hexagon-connectors {
+                                transform: translate(-50%, -50%);
+                                top: $benefits-hexagon-height + $benefits-radial-hexagons-horizontal-margin/2;
+                                left: 50%;
+                                position: absolute;
+                                display: flex;
+                                flex-direction: column;
+                                align-items: stretch;
+                                justify-content: stretch;
+                                z-index: -1;
+                                
+                                .connector {
+                                    width: 200px;
+                                    height: 200px;
+                                    
+                                    svg {
+                                        width: 100%;
+                                        height: 100%;
+                                        
+                                        line {
+                                            stroke: $primary-color!important;
+                                        }
+                                    }
+                                }
+                                
+                                .top-line {
+                                    display: flex;
+                                    flex-direction: row;
+                                    align-items: stretch;
+                                    justify-content: stretch;
+                                    
+                                    .top-left {
+                                        
+                                    }
+                                    
+                                    .top-right {
+                                        
+                                    }
+                                }
+                                .bottom-line {
+                                    display: flex;
+                                    flex-direction: row;
+                                    align-items: stretch;
+                                    justify-content: stretch;
+                                    
+                                    .bottom-left {
+                                        
+                                    }
+                                    
+                                    .bottom-right {
+                                        
+                                    }
+                                }
+                                .bottom-connector {
+                                    position: absolute;
+                                    height: 330px;
+                                    top: 50%;
+                                    left: 50%;
+                                }
+                            }
+                            
+                            .hexagon-big {
+                                position: relative;
+                                height: $benefits-hexagon-height;
+                                display: flex;
+                                flex-direction: row;
+                                align-items: center;
+                                justify-content: center;
+                                
+                                .background-layer {
+                                    
+                                    width: 100%;
+                                    z-index: -1;
+                                    margin: 0px 0px 0px 0px;
+                                    
+                                    &:before {
+                                        content: "";
+                                        position: absolute;
+                                        top: 0px;
+                                        bottom: 0px;
+                                        left: -$benefits-hexagon-height/4;
+                                        border-right: $benefits-hexagon-height/4 solid $primary-color;
+                                        border-top: $benefits-hexagon-height/2 solid transparent;
+                                        border-bottom: $benefits-hexagon-height/2 solid transparent;
+                                    }
+                                    &:after {
+                                        content: "";
+                                        position: absolute;
+                                        top: 0px;
+                                        bottom: 0px;
+                                        right: -$benefits-hexagon-height/4;
+                                        border-left: $benefits-hexagon-height/4 solid $primary-color;
+                                        border-top: $benefits-hexagon-height/2 solid transparent;
+                                        border-bottom: $benefits-hexagon-height/2 solid transparent;
+                                    }
+                                }
+                                
+                                .hexagon-content {
+                                    width: 100%;
+                                    height: 100%;
+                                    position: absolute;
+                                    transform: translate(-50%, -50%);
+                                    top: 50%;
+                                    left: 50%;
+                                    color: #ffffff;
+                                    font-family: Calibri, sans-serif;
+                                    flex: 1;
+                                    display: flex;
+                                    flex-direction: column;
+                                    align-items: flex-start;
+                                    justify-content: center;
+                                    
+                                    .hexagon-heading {
+                                        color: #ffffff;
+                                        font-size: 18px;
+                                        line-height: 18px;
+                                        font-weight: 600;
+                                        text-transform: uppercase;
+                                    }
+                                    
+                                    .hexagon-text {
+                                        font-size: 16px;
+                                        line-height: 16px;
+                                        font-weight: 400;
+                                        margin: 6px 0px 0px 0px;
+                                    }
+                                }
+                                
+                                .icon {
+                                    position: absolute;
+                                    transform: translateY(-50%);
+                                    top: 50%;
+                                }
+                            }
+                            
+                            .central-hexagon {
+                                transform: translate(-50%, -50%);
+                                top: $benefits-hexagon-height + $benefits-radial-hexagons-horizontal-margin/2;
+                                left: 50%;
+                                position: absolute;
+                                
+                                .background-layer {
+                                    width: $benefits-hexagon-height - $benefits-radial-hexagons-vertical-margin/3;
+                                    height: $benefits-hexagon-height;
+                                    background-color: #000000;
+                                    
+                                    &:before {
+                                        border-right-color: #000000;
+                                    }
+
+                                    &:after {
+                                        border-left-color: #000000;
+                                    }
+                                }
+                                
+                                img.logo-2 {
+                                    position: absolute;
+                                    width: 125%;
+                                    z-index: 1000;
+                                }
+                            }
+                            
+                            .radial-hexagon {
+                                flex: 1;
+                                
+                                .background-layer {
+                                    height: $benefits-hexagon-height;
+                                    background-color: $primary-color;
+                                }
+                                
+                                &.top-left {
+                                    .background-layer {
+                                        margin: 0px 0px 0px 0px;
+                                    }
+                                    .hexagon-content {
+                                        .hexagon-heading {
+                                            margin: 0px 120px 0px 16px;
+                                        }
+                                        .hexagon-text {
+                                            margin: 6px 60px 0px 16px;
+                                        }
+                                    }
+                                    .icon {
+                                        right: -24px;
+                                    }
+                                }
+                                &.top-right {
+                                    .background-layer {
+                                        margin: 0px 0px 0px 0px;
+                                    }
+                                    .hexagon-content {
+                                        .hexagon-heading {
+                                            margin: 0px 120px 0px 69px;
+                                        }
+                                        .hexagon-text {
+                                            margin: 6px 120px 0px 69px;
+                                        }
+                                    }
+                                    .icon {
+                                        left: -24px;
+                                    }
+                                }
+                                &.bottom-left {
+                                    .background-layer {
+                                        margin: 0px 0px 0px 0px;
+                                    }
+                                    .hexagon-content {
+                                        .hexagon-heading {
+                                            margin: 0px 120px 0px 25px;
+                                        }
+                                        .hexagon-text {
+                                            margin: 6px 120px 0px 25px;
+                                        }
+                                    }
+                                    .icon {
+                                        right: -24px;
+                                    }
+                                }
+                                &.bottom-right {
+                                    .background-layer {
+                                        margin: 0px 0px 0px 0px;
+                                    }
+                                    .hexagon-content {
+                                        .hexagon-heading {
+                                            margin: 0px 120px 0px 69px;
+                                        }
+                                        .hexagon-text {
+                                            margin: 6px 120px 0px 69px;
+                                        }
+                                    }
+                                    .icon {
+                                        left: -24px;
+                                    }
+                                }
+                            }
+                            
+                            .radial-hexagons-top-wrapper {
+                                display: flex;
+                                flex-direction: row;
+                                align-items: center;
+                                justify-content: space-between;
+                                margin: 0px 0px 0px 0px;
+                                
+                                .top-left {
+                                    
+                                }
+                                .top-right {
+                                    margin: 0px 0px 0px ($benefits-radial-hexagons-vertical-margin + $benefits-hexagon-height/2);
+                                }
+                            }
+                            
+                            .radial-hexagons-bottom-wrapper {
+                                margin: $benefits-radial-hexagons-horizontal-margin 0px 0px 0px;
+                                display: flex;
+                                flex-direction: row;
+                                align-items: center;
+                                justify-content: space-between;
+                                                               
+                                .bottom-left {
+                                    
+                                }
+                                
+                                .bottom-right {
+                                    margin: 0px 0px 0px ($benefits-radial-hexagons-vertical-margin + $benefits-hexagon-height/2);
+                                }
+                            }
+                            
+                            .bottom-hexagon {
+                                position: relative;
+                                height: $benefits-hexagon-height;
+                                width: 100%;
+                                max-width: 558px;
+                                margin: $benefits-radial-hexagons-horizontal-margin/2 auto 0px auto;
+
+                                .background-layer {
+                                    background-color: $primary-color;
+                                    height: $benefits-hexagon-height;
+                                }
+                                
+                                .hexagon-content {
+                                    .hexagon-heading {
+                                        margin: 6px 120px 0px 25px;
+                                    }
+                                    .hexagon-text {
+                                        margin: 6px 45px 0px 25px;
+                                    }
+                                }
+                                
+                                .icon {
+                                    right: -24px;
+                                }
+                            }
+                        }
+                    }
+                }
+                
+                .collaboration-process {
+                    .heading-wrapper {
+                        
+                    }
+                    .area-content {
+                        
                     }
                 }
             }

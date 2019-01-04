@@ -27,7 +27,8 @@ body {
     position: absolute;
     left: 0px;
     top: 180px;
-    z-index: -1; }
+    z-index: -1;
+    pointer-events: none; }
 
 #column-left {
   padding: 0px 0px 0px 0px;
@@ -88,6 +89,9 @@ body {
         border-bottom: 26px solid transparent; }
   .page-heading-wrapper .rightside {
     flex: 1; }
+
+.greentext {
+  color: #23a845; }
 
 .hexagon-1 {
   display: flex;
@@ -575,7 +579,8 @@ footer {
     bottom: 0px;
     transform: scaleX(-1);
     z-index: 10;
-    overflow: hidden; }
+    overflow: hidden;
+    pointer-events: none; }
     footer .right-uzor img {
       margin-bottom: -100px; }
   footer .container .container-row {
@@ -1164,8 +1169,6 @@ footer {
 .html-module {
   width: 100%;
   margin: 96px 0px 152px 0px; }
-  .html-module .greentext {
-    color: #23a845; }
   .html-module .heading-title-wrapper {
     display: flex;
     flex-direction: row;
@@ -2252,5 +2255,381 @@ footer {
           margin: 0px 30px 0px 0px; }
         .information-contact #content .content-wrapper .locations .geolocations .address-geolocation .geolocation-map {
           flex: 1; }
+
+.information-about .container .container-row #content .html-module {
+  margin: 0px 0px 0px 0px; }
+  .information-about .container .container-row #content .html-module .heading-title-wrapper {
+    display: none; }
+.information-about .container .container-row #content .heading-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 50px 0px 0px 0px; }
+  .information-about .container .container-row #content .heading-wrapper .heading-text {
+    text-align: center;
+    margin: 0px 0px 0px 0px;
+    text-transform: uppercase; }
+  .information-about .container .container-row #content .heading-wrapper .heading-bottom-line {
+    border-bottom: 4px solid #23a845;
+    width: 167px;
+    margin: 20px 0px 0px 0px; }
+.information-about .container .container-row #content .slogan {
+  display: flex;
+  flex-direction: 1;
+  align-items: stretch;
+  justify-content: stretch;
+  border-top: 1px solid #d7d7d7;
+  margin: 30px 0px 0px 0px; }
+  .information-about .container .container-row #content .slogan .left-side {
+    width: 340px;
+    margin: 32px 0px 50px 16px; }
+    .information-about .container .container-row #content .slogan .left-side .outer-border {
+      display: flex;
+      flex-direction: row;
+      align-items: stretch;
+      justify-content: stretch;
+      border: 2px solid #23a845; }
+      .information-about .container .container-row #content .slogan .left-side .outer-border .inner-border {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border: 2px solid #23a845;
+        margin: 7px 7px 7px 7px; }
+        .information-about .container .container-row #content .slogan .left-side .outer-border .inner-border .quotes {
+          margin: 22px 0px 0px 0px; }
+        .information-about .container .container-row #content .slogan .left-side .outer-border .inner-border .heading {
+          text-align: center;
+          margin: 16px 0px 50px 0px;
+          text-transform: uppercase; }
+  .information-about .container .container-row #content .slogan .right-side {
+    flex: 1;
+    font-family: Calibri, sans-serif;
+    color: #000000;
+    font-size: 18px;
+    margin: 48px 0px 0px 44px; }
+    .information-about .container .container-row #content .slogan .right-side .slogan-text {
+      font-weight: 200;
+      font-size: 18px;
+      line-height: 24px; }
+    .information-about .container .container-row #content .slogan .right-side .signification {
+      font-weight: 400;
+      font-style: italic;
+      margin: 10px 0px 0px 0px; }
+.information-about .container .container-row #content .our-mission {
+  position: relative;
+  min-height: 404px;
+  overflow: hidden;
+  font-family: Calibri, sans-serif;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; }
+  .information-about .container .container-row #content .our-mission .background-overlay {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
+    text-align: center; }
+    .information-about .container .container-row #content .our-mission .background-overlay img {
+      min-width: 100%;
+      min-height: 100%; }
+  .information-about .container .container-row #content .our-mission .mission-heading {
+    font-size: 24px;
+    line-height: 24px;
+    font-weight: 600;
+    color: #ffffff;
+    text-align: center;
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 16px 0px;
+    border-bottom: 4px solid #23a845;
+    text-transform: uppercase; }
+  .information-about .container .container-row #content .our-mission .mission-subheading {
+    font-size: 22px;
+    font-weight: 600;
+    color: #ffffff;
+    text-align: center; }
+  .information-about .container .container-row #content .our-mission .mission-text {
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: 200;
+    text-align: center;
+    margin: 0px 0px 0px 0px; }
+.information-about .container .container-row #content .delivery {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; }
+  .information-about .container .container-row #content .delivery .heading-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 50px 0px 0px 0px; }
+    .information-about .container .container-row #content .delivery .heading-wrapper .heading-text {
+      text-align: center;
+      margin: 0px 0px 0px 0px;
+      text-transform: uppercase; }
+    .information-about .container .container-row #content .delivery .heading-wrapper .heading-bottom-line {
+      border-bottom: 4px solid #23a845;
+      width: 167px;
+      margin: 20px 0px 0px 0px; }
+  .information-about .container .container-row #content .delivery .achievements {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: center;
+    margin: 26px 0px 26px 0px; }
+    .information-about .container .container-row #content .delivery .achievements .achievement {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center; }
+      .information-about .container .container-row #content .delivery .achievements .achievement .achievement-text {
+        margin: 0px 0px 0px 26px;
+        font-size: 20px;
+        line-height: 24px;
+        font-weight: 600;
+        color: #000000; }
+      .information-about .container .container-row #content .delivery .achievements .achievement.deliveries {
+        margin: 0px 0px 0px 0px; }
+      .information-about .container .container-row #content .delivery .achievements .achievement.customers {
+        margin: 0px 0px 0px 63px; }
+  .information-about .container .container-row #content .delivery .russia-map {
+    margin: -100px 0px 0px 0px;
+    z-index: -1; }
+.information-about .container .container-row #content .assortiment .categories {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: center;
+  margin: 66px 0px 66px 0px; }
+  .information-about .container .container-row #content .assortiment .categories .cat-list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center; }
+    .information-about .container .container-row #content .assortiment .categories .cat-list li {
+      margin: 26px 0px 0px 0px; }
+      .information-about .container .container-row #content .assortiment .categories .cat-list li:first-child {
+        margin: 0px 0px 0px 0px; }
+      .information-about .container .container-row #content .assortiment .categories .cat-list li a {
+        font-size: 20px;
+        font-weight: 200;
+        color: #000000;
+        text-decoration: none;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between; }
+        .information-about .container .container-row #content .assortiment .categories .cat-list li a:before {
+          content: "";
+          display: block;
+          width: 11px;
+          height: 11px;
+          background-color: #23a845;
+          border-radius: 50%;
+          margin: 0px 24px 0px 0px; }
+    .information-about .container .container-row #content .assortiment .categories .cat-list.right-side {
+      margin: 0px 0px 0px 154px; }
+.information-about .container .container-row #content .collaboration-benefits .bigger-white {
+  text-transform: uppercase;
+  color: #ffffff;
+  font-weight: 600; }
+.information-about .container .container-row #content .collaboration-benefits .bigger-black {
+  text-transform: uppercase;
+  color: #000000;
+  font-weight: 600; }
+.information-about .container .container-row #content .collaboration-benefits .benefits-wrapper {
+  margin: 60px 0px 0px 0px;
+  padding: 0px 0px 0px 0px; }
+  .information-about .container .container-row #content .collaboration-benefits .benefits-wrapper .benefits-inner-wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: stretch; }
+    .information-about .container .container-row #content .collaboration-benefits .benefits-wrapper .benefits-inner-wrapper .hexagon-connectors {
+      transform: translate(-50%, -50%);
+      top: 212.5px;
+      left: 50%;
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      justify-content: stretch;
+      z-index: -1; }
+      .information-about .container .container-row #content .collaboration-benefits .benefits-wrapper .benefits-inner-wrapper .hexagon-connectors .connector {
+        width: 200px;
+        height: 200px; }
+        .information-about .container .container-row #content .collaboration-benefits .benefits-wrapper .benefits-inner-wrapper .hexagon-connectors .connector svg {
+          width: 100%;
+          height: 100%; }
+          .information-about .container .container-row #content .collaboration-benefits .benefits-wrapper .benefits-inner-wrapper .hexagon-connectors .connector svg line {
+            stroke: #23a845 !important; }
+      .information-about .container .container-row #content .collaboration-benefits .benefits-wrapper .benefits-inner-wrapper .hexagon-connectors .top-line {
+        display: flex;
+        flex-direction: row;
+        align-items: stretch;
+        justify-content: stretch; }
+      .information-about .container .container-row #content .collaboration-benefits .benefits-wrapper .benefits-inner-wrapper .hexagon-connectors .bottom-line {
+        display: flex;
+        flex-direction: row;
+        align-items: stretch;
+        justify-content: stretch; }
+      .information-about .container .container-row #content .collaboration-benefits .benefits-wrapper .benefits-inner-wrapper .hexagon-connectors .bottom-connector {
+        position: absolute;
+        height: 330px;
+        top: 50%;
+        left: 50%; }
+    .information-about .container .container-row #content .collaboration-benefits .benefits-wrapper .benefits-inner-wrapper .hexagon-big {
+      position: relative;
+      height: 184px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center; }
+      .information-about .container .container-row #content .collaboration-benefits .benefits-wrapper .benefits-inner-wrapper .hexagon-big .background-layer {
+        width: 100%;
+        z-index: -1;
+        margin: 0px 0px 0px 0px; }
+        .information-about .container .container-row #content .collaboration-benefits .benefits-wrapper .benefits-inner-wrapper .hexagon-big .background-layer:before {
+          content: "";
+          position: absolute;
+          top: 0px;
+          bottom: 0px;
+          left: -46px;
+          border-right: 46px solid #23a845;
+          border-top: 92px solid transparent;
+          border-bottom: 92px solid transparent; }
+        .information-about .container .container-row #content .collaboration-benefits .benefits-wrapper .benefits-inner-wrapper .hexagon-big .background-layer:after {
+          content: "";
+          position: absolute;
+          top: 0px;
+          bottom: 0px;
+          right: -46px;
+          border-left: 46px solid #23a845;
+          border-top: 92px solid transparent;
+          border-bottom: 92px solid transparent; }
+      .information-about .container .container-row #content .collaboration-benefits .benefits-wrapper .benefits-inner-wrapper .hexagon-big .hexagon-content {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        transform: translate(-50%, -50%);
+        top: 50%;
+        left: 50%;
+        color: #ffffff;
+        font-family: Calibri, sans-serif;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center; }
+        .information-about .container .container-row #content .collaboration-benefits .benefits-wrapper .benefits-inner-wrapper .hexagon-big .hexagon-content .hexagon-heading {
+          color: #ffffff;
+          font-size: 18px;
+          line-height: 18px;
+          font-weight: 600;
+          text-transform: uppercase; }
+        .information-about .container .container-row #content .collaboration-benefits .benefits-wrapper .benefits-inner-wrapper .hexagon-big .hexagon-content .hexagon-text {
+          font-size: 16px;
+          line-height: 16px;
+          font-weight: 400;
+          margin: 6px 0px 0px 0px; }
+      .information-about .container .container-row #content .collaboration-benefits .benefits-wrapper .benefits-inner-wrapper .hexagon-big .icon {
+        position: absolute;
+        transform: translateY(-50%);
+        top: 50%; }
+    .information-about .container .container-row #content .collaboration-benefits .benefits-wrapper .benefits-inner-wrapper .central-hexagon {
+      transform: translate(-50%, -50%);
+      top: 212.5px;
+      left: 50%;
+      position: absolute; }
+      .information-about .container .container-row #content .collaboration-benefits .benefits-wrapper .benefits-inner-wrapper .central-hexagon .background-layer {
+        width: 110.3333333333px;
+        height: 184px;
+        background-color: #000000; }
+        .information-about .container .container-row #content .collaboration-benefits .benefits-wrapper .benefits-inner-wrapper .central-hexagon .background-layer:before {
+          border-right-color: #000000; }
+        .information-about .container .container-row #content .collaboration-benefits .benefits-wrapper .benefits-inner-wrapper .central-hexagon .background-layer:after {
+          border-left-color: #000000; }
+      .information-about .container .container-row #content .collaboration-benefits .benefits-wrapper .benefits-inner-wrapper .central-hexagon img.logo-2 {
+        position: absolute;
+        width: 125%;
+        z-index: 1000; }
+    .information-about .container .container-row #content .collaboration-benefits .benefits-wrapper .benefits-inner-wrapper .radial-hexagon {
+      flex: 1; }
+      .information-about .container .container-row #content .collaboration-benefits .benefits-wrapper .benefits-inner-wrapper .radial-hexagon .background-layer {
+        height: 184px;
+        background-color: #23a845; }
+      .information-about .container .container-row #content .collaboration-benefits .benefits-wrapper .benefits-inner-wrapper .radial-hexagon.top-left .background-layer {
+        margin: 0px 0px 0px 0px; }
+      .information-about .container .container-row #content .collaboration-benefits .benefits-wrapper .benefits-inner-wrapper .radial-hexagon.top-left .hexagon-content .hexagon-heading {
+        margin: 0px 120px 0px 16px; }
+      .information-about .container .container-row #content .collaboration-benefits .benefits-wrapper .benefits-inner-wrapper .radial-hexagon.top-left .hexagon-content .hexagon-text {
+        margin: 6px 60px 0px 16px; }
+      .information-about .container .container-row #content .collaboration-benefits .benefits-wrapper .benefits-inner-wrapper .radial-hexagon.top-left .icon {
+        right: -24px; }
+      .information-about .container .container-row #content .collaboration-benefits .benefits-wrapper .benefits-inner-wrapper .radial-hexagon.top-right .background-layer {
+        margin: 0px 0px 0px 0px; }
+      .information-about .container .container-row #content .collaboration-benefits .benefits-wrapper .benefits-inner-wrapper .radial-hexagon.top-right .hexagon-content .hexagon-heading {
+        margin: 0px 120px 0px 69px; }
+      .information-about .container .container-row #content .collaboration-benefits .benefits-wrapper .benefits-inner-wrapper .radial-hexagon.top-right .hexagon-content .hexagon-text {
+        margin: 6px 120px 0px 69px; }
+      .information-about .container .container-row #content .collaboration-benefits .benefits-wrapper .benefits-inner-wrapper .radial-hexagon.top-right .icon {
+        left: -24px; }
+      .information-about .container .container-row #content .collaboration-benefits .benefits-wrapper .benefits-inner-wrapper .radial-hexagon.bottom-left .background-layer {
+        margin: 0px 0px 0px 0px; }
+      .information-about .container .container-row #content .collaboration-benefits .benefits-wrapper .benefits-inner-wrapper .radial-hexagon.bottom-left .hexagon-content .hexagon-heading {
+        margin: 0px 120px 0px 25px; }
+      .information-about .container .container-row #content .collaboration-benefits .benefits-wrapper .benefits-inner-wrapper .radial-hexagon.bottom-left .hexagon-content .hexagon-text {
+        margin: 6px 120px 0px 25px; }
+      .information-about .container .container-row #content .collaboration-benefits .benefits-wrapper .benefits-inner-wrapper .radial-hexagon.bottom-left .icon {
+        right: -24px; }
+      .information-about .container .container-row #content .collaboration-benefits .benefits-wrapper .benefits-inner-wrapper .radial-hexagon.bottom-right .background-layer {
+        margin: 0px 0px 0px 0px; }
+      .information-about .container .container-row #content .collaboration-benefits .benefits-wrapper .benefits-inner-wrapper .radial-hexagon.bottom-right .hexagon-content .hexagon-heading {
+        margin: 0px 120px 0px 69px; }
+      .information-about .container .container-row #content .collaboration-benefits .benefits-wrapper .benefits-inner-wrapper .radial-hexagon.bottom-right .hexagon-content .hexagon-text {
+        margin: 6px 120px 0px 69px; }
+      .information-about .container .container-row #content .collaboration-benefits .benefits-wrapper .benefits-inner-wrapper .radial-hexagon.bottom-right .icon {
+        left: -24px; }
+    .information-about .container .container-row #content .collaboration-benefits .benefits-wrapper .benefits-inner-wrapper .radial-hexagons-top-wrapper {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      margin: 0px 0px 0px 0px; }
+      .information-about .container .container-row #content .collaboration-benefits .benefits-wrapper .benefits-inner-wrapper .radial-hexagons-top-wrapper .top-right {
+        margin: 0px 0px 0px 313px; }
+    .information-about .container .container-row #content .collaboration-benefits .benefits-wrapper .benefits-inner-wrapper .radial-hexagons-bottom-wrapper {
+      margin: 57px 0px 0px 0px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between; }
+      .information-about .container .container-row #content .collaboration-benefits .benefits-wrapper .benefits-inner-wrapper .radial-hexagons-bottom-wrapper .bottom-right {
+        margin: 0px 0px 0px 313px; }
+    .information-about .container .container-row #content .collaboration-benefits .benefits-wrapper .benefits-inner-wrapper .bottom-hexagon {
+      position: relative;
+      height: 184px;
+      width: 100%;
+      max-width: 558px;
+      margin: 28.5px auto 0px auto; }
+      .information-about .container .container-row #content .collaboration-benefits .benefits-wrapper .benefits-inner-wrapper .bottom-hexagon .background-layer {
+        background-color: #23a845;
+        height: 184px; }
+      .information-about .container .container-row #content .collaboration-benefits .benefits-wrapper .benefits-inner-wrapper .bottom-hexagon .hexagon-content .hexagon-heading {
+        margin: 6px 120px 0px 25px; }
+      .information-about .container .container-row #content .collaboration-benefits .benefits-wrapper .benefits-inner-wrapper .bottom-hexagon .hexagon-content .hexagon-text {
+        margin: 6px 45px 0px 25px; }
+      .information-about .container .container-row #content .collaboration-benefits .benefits-wrapper .benefits-inner-wrapper .bottom-hexagon .icon {
+        right: -24px; }
 
 /*# sourceMappingURL=style.css.map */

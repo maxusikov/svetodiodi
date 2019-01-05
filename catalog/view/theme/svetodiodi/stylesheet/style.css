@@ -2621,7 +2621,7 @@ footer {
       height: 184px;
       width: 100%;
       max-width: 558px;
-      margin: 28.5px auto 0px auto; }
+      margin: 28.5px auto 57px auto; }
       .information-about .container .container-row #content .collaboration-benefits .benefits-wrapper .benefits-inner-wrapper .bottom-hexagon .background-layer {
         background-color: #23a845;
         height: 184px; }
@@ -2631,5 +2631,62 @@ footer {
         margin: 6px 45px 0px 25px; }
       .information-about .container .container-row #content .collaboration-benefits .benefits-wrapper .benefits-inner-wrapper .bottom-hexagon .icon {
         right: -24px; }
+
+.collaboration-process {
+  height: 936px;
+  background-color: #23a845;
+  margin: 0px 0px 0px 0px;
+  width: 100vw;
+  display: none; }
+  .collaboration-process .container-row {
+    width: 1170px;
+    margin: 0px auto 0px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start; }
+    .collaboration-process .container-row .heading-wrapper {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center; }
+      .collaboration-process .container-row .heading-wrapper .heading-text {
+        color: #ffffff; }
+      .collaboration-process .container-row .heading-wrapper .heading-bottom-line {
+        display: none; }
+    .collaboration-process .container-row .content-area .line .column {
+      /* hexagon */
+      /* $hex-height: 87px; */
+      /* hexagon */ }
+      .collaboration-process .container-row .content-area .line .column .hexagon {
+        position: relative;
+        width: 70.6px;
+        height: 111px;
+        background-color: #ffffff;
+        margin: 86.60px 0;
+        border-top: solid 15px #000000;
+        border-bottom: solid 15px #000000; }
+      .collaboration-process .container-row .content-area .line .column .hexagon:before,
+      .collaboration-process .container-row .content-area .line .column .hexagon:after {
+        content: "";
+        position: absolute;
+        z-index: 1;
+        width: 77px;
+        height: 77px;
+        -webkit-transform: scaleX(0.5774) rotate(-135deg);
+        -ms-transform: scaleX(0.5774) rotate(-135deg);
+        transform: scaleX(0.5774) rotate(-135deg);
+        background-color: inherit;
+        left: 32px; }
+      .collaboration-process .container-row .content-area .line .column .hexagon:before {
+        left: -40px;
+        border-top: solid 15px #000000;
+        border-right: solid 15px #000000;
+        top: 13px; }
+      .collaboration-process .container-row .content-area .line .column .hexagon:after {
+        right: -129px;
+        border-bottom: solid 15px #000000;
+        border-left: solid 15px #000000;
+        top: 13px; }
 
 /*# sourceMappingURL=style.css.map */

@@ -233,17 +233,48 @@
             </div>
         </div>
         
-        <div class="collaboration-process">
-            <div class="heading-wrapper">
-                <h2 class="heading-text">Процесс сотрудничества</h2>
-                <span class="heading-bottom-line"></span>
-            </div>
-            
-        </div>
+        
         
     </div>
     <?php echo $column_right; ?>
   </div>
+</div>
+<div class="container collaboration-process">
+    <div class="container-row">
+        <div class="heading-wrapper">
+            <h2 class="heading-text">Процесс сотрудничества</h2>
+            <span class="heading-bottom-line"></span>
+        </div>
+        <div class="content-area">
+            <div class="line-1 line">
+                <div class="column-1 column">
+                    <div class="hexagon"></div>
+                </div>
+                <div class="column-2 column">
+                    <div class="hexagon"></div>
+                </div>
+                <div class="column-3 column">
+                    <div class="hexagon"></div>
+                </div>
+            </div>
+            <div class="line-2 line">
+                <div class="column-1 column">
+                    <div class="hexagon"></div>
+                </div>
+                <div class="column-2 column">
+                    <div class="hexagon"></div>
+                </div>
+                <div class="column-3 column">
+                    <div class="hexagon"></div>
+                </div>
+            </div>
+            <div class="line-3 line">
+                <div class="column-1 column">
+                    <div class="hexagon"></div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 <div id="content-bottom" class="container-row">
   <?php echo $content_bottom; ?>

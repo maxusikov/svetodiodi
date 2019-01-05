@@ -10,6 +10,7 @@
     font-weight: 800;
 }
 
+$body-width: 1170px;
 $primary-color: #23a845;
 $primary-text-color: #333334;
 
@@ -3897,7 +3898,7 @@ footer {
                                 height: $benefits-hexagon-height;
                                 width: 100%;
                                 max-width: 558px;
-                                margin: $benefits-radial-hexagons-horizontal-margin/2 auto 0px auto;
+                                margin: $benefits-radial-hexagons-horizontal-margin/2 auto $benefits-radial-hexagons-horizontal-margin auto;
 
                                 .background-layer {
                                     background-color: $primary-color;
@@ -3921,15 +3922,121 @@ footer {
                     }
                 }
                 
-                .collaboration-process {
-                    .heading-wrapper {
+                
+            }
+        }
+    }
+}
+
+.collaboration-process {
+    height: 936px;
+    background-color: $primary-color;
+    margin: 0px 0px 0px 0px;
+    width: 100vw;
+    display: none;
+    
+    .container-row {
+        width: $body-width;
+        margin: 0px auto 0px auto;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: flex-start;
+        
+        .heading-wrapper {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            
+            .heading-text {
+                color: #ffffff;
+            }
+            
+            .heading-bottom-line {
+                display: none;
+            }
+        }
+        
+        .content-area {
+            .line {
+                .column {
+                    &.column-1 {
                         
                     }
-                    .area-content {
+                    &.column-2 {
+                        
+                    }
+                    &.column-3 {
+                        
+                    }
+                    
+                    /* hexagon */
+                    /* $hex-height: 87px; */
+                    $hex-height: 100px;
+                    $hex-stroke-color: #000000;
+                    $hex-stroke-width: 15px;
+                    $hex-fill-color: #ffffff;
+                    
+                    .hexagon {
+                        position: relative;
+                        width: 0.706 * $hex-height;
+                        height: 1.11 * $hex-height;
+                        background-color: $hex-fill-color;
+                        margin: 86.60px 0;
+                        border-top: solid $hex-stroke-width $hex-stroke-color;
+                        border-bottom: solid $hex-stroke-width $hex-stroke-color;
+                    }
+
+                    .hexagon:before,
+                    .hexagon:after {
+                        content: "";
+                        position: absolute;
+                        z-index: 1;
+                        width: 0.77 * $hex-height;
+                        height: 0.77 * $hex-height;
+                        -webkit-transform: scaleX(0.5774) rotate(-135deg);
+                        -ms-transform: scaleX(0.5774) rotate(-135deg);
+                        transform: scaleX(0.5774) rotate(-135deg);
+                        background-color: inherit;
+                        left: 0.32 * $hex-height;
+                    }
+
+                    .hexagon:before {
+                        left: -0.4 * $hex-height;
+                        border-top: solid $hex-stroke-width $hex-stroke-color;
+                        border-right: solid $hex-stroke-width $hex-stroke-color;
+                        top: 0.13 * $hex-height;
+                    }
+
+                    .hexagon:after {
+                        right: -1.29 * $hex-height;
+                        border-bottom: solid $hex-stroke-width $hex-stroke-color;
+                        border-left: solid $hex-stroke-width $hex-stroke-color;
+                        top: 0.13 * $hex-height;
+                    }
+                      /* hexagon */
+                }
+                
+                &.line-1 {
+                    .column {
+                        
+                    }
+                }
+
+                &.line-2 {
+                    .column {
+                        
+                    }
+                }
+
+                &.line-3 {
+                    .column {
                         
                     }
                 }
             }
         }
     }
+    
 }

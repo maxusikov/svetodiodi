@@ -262,6 +262,10 @@ class ControllerCheckoutCart extends Controller {
 				}
 			}
 
+                        $data['send_order'] = $this->url->link('checkout/checkout/addOrder');
+                        $data['change_cart_product_quantity'] = $this->url->link('checkout/cart/changeCartProductQuantity');
+                        $data['remove_product_from_cart'] = $this->url->link('checkout/cart/removeProductFromCart');
+                        
 			$data['column_left'] = $this->load->controller('common/column_left');
 			$data['column_right'] = $this->load->controller('common/column_right');
 			$data['content_top'] = $this->load->controller('common/content_top');
@@ -508,4 +512,140 @@ class ControllerCheckoutCart extends Controller {
 		$this->response->addHeader('Content-Type: application/json');
 		$this->response->setOutput(json_encode($json));
 	}
+        
+        public function changeCartProductQuantity(){
+            $response_data = [
+                'status' => 'info',
+                'info'   => 'Request not processed'
+            ];
+            
+            if(!isset($this->request->post['indicator'])){
+                $response_data = [
+                    'status' => 'fail',
+                    'info'   => 'There are no indicator'
+                ];
+                
+                echo json_encode($response_data);
+                return;
+            }
+            
+            if(isset($this->request->post['product_id'])){                
+                if (isset($this->request->post['recurring_id'])) {
+                    $recurring_id = $this->request->post['recurring_id'];
+                } else {
+                    $recurring_id = 0;
+                }
+                
+                if (isset($this->request->post['options'])) {
+                    $options = $this->request->post['options'];
+                } else {
+                    $options = [];
+                }
+                
+                $product_id = $this->request->post['product_id'];
+                
+                $this->load->model('catalog/product');
+		$product_info = $this->model_catalog_product->getProduct($product_id);
+                
+                $cart_products = $this->cart->getProducts();
+                foreach($cart_products as $cart_product){
+                    if($cart_product['product_id'] == $product_id){
+                        $prod = $cart_product;
+                        break;
+                    }
+                }
+                
+                if($this->request->post['indicator'] == '+'){
+                    if (($prod['quantity'] + 1) > $product_info['quantity']) {
+                        $response_data = [
+                            'status' => 'fail',
+                            'info'   => 'There are no more on the stock'
+                        ];
+                    } else {
+                       $quantity = 1;
+                       $this->cart->add($this->request->post['product_id'], $quantity, $options, $recurring_id);
+                            
+                       $response_data = [
+                            'status' => 'success',
+                            'info'   => 'Product number increased successfully'
+                        ];
+                    }
+                } elseif($this->request->post['indicator'] == '-') {
+                    if (($prod['quantity'] - 1) < 1) {
+                        $response_data = [
+                            'status' => 'fail',
+                            'info'   => 'There are only 1 product item'
+                        ];
+                    } else {
+                       $quantity = -1;
+                       $this->cart->add($this->request->post['product_id'], $quantity, $options, $recurring_id);
+                       
+                       $response_data = [
+                            'status' => 'success',
+                            'info'   => 'Product number decreased successfully'
+                        ];
+                    }
+                }
+            } else {
+                $response_data = [
+                    'status' => 'fail',
+                    'info'   => 'Request not processed'
+                ];
+            }
+            
+            if($response_data['status'] == 'success'){
+                $prods = $this->cart->getProducts();
+                
+                foreach($prods as $prod){
+                    if($prod['product_id'] == $product_id){
+                        $quantity_changed_product = $prod;
+                        break;
+                    }
+                }
+                
+                $response_data['product_cart_info'] = [
+                    'cart_id' => $quantity_changed_product['cart_id'],
+                    'product_id' => $quantity_changed_product['product_id'],
+                    'quantity' => $quantity_changed_product['quantity'],
+                    'total' => $this->currency->format($quantity_changed_product['total'], $this->session->data['currency'])
+                ];
+                
+                $total = $this->cart->getTotal();
+                $response_data['cart'] = [
+                    'total' => $this->currency->format($total, $this->session->data['currency'])
+                ];
+            }
+            
+            $this->response->addHeader('Content-Type: application/json');
+            $this->response->setOutput(json_encode($response_data));
+        }
+        
+        public function removeProductFromCart(){
+            $response_data = [
+                'status' => 'info',
+                'info'   => 'Request not processed'
+            ];
+            
+            if(isset($this->request->post['cart_id'])){
+                $this->cart->remove($this->request->post['cart_id']);
+            
+                $response_data = [
+                    'status' => 'success',
+                    'info'   => 'Request processed successfully'
+                ];
+                
+                $total = $this->cart->getTotal();
+                $response_data['cart'] = [
+                    'total' => $this->currency->format($total, $this->session->data['currency'])
+                ];
+            } else {
+                $response_data = [
+                    'status' => 'fail',
+                    'info'   => 'Request not processed'
+                ];
+            }
+            
+            $this->response->addHeader('Content-Type: application/json');
+            $this->response->setOutput(json_encode($response_data));
+        }
 }

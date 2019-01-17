@@ -262,6 +262,42 @@ form {
   visibility: hidden;
   opacity: 0;
   transition: opacity 0.3s ease-out, visibility 0.01s 0.3s; }
+  .modal-dialog .form-wrapper {
+    border: 5px solid #23a845;
+    pointer-events: auto;
+    position: relative;
+    background-color: #ffffff;
+    width: 650px; }
+    .modal-dialog .form-wrapper .close-button {
+      position: absolute;
+      right: 19px;
+      top: 19px;
+      cursor: pointer; }
+      .modal-dialog .form-wrapper .close-button svg {
+        width: 20px;
+        height: 20px;
+        stroke: #191916; }
+    .modal-dialog .form-wrapper.success {
+      background-color: #6ef390; }
+      .modal-dialog .form-wrapper.success .close-button svg line {
+        stroke: #ffffff; }
+    .modal-dialog .form-wrapper.fail {
+      background-color: #ffc1e9; }
+      .modal-dialog .form-wrapper.fail .close-button svg line {
+        stroke: #ffffff; }
+    .modal-dialog .form-wrapper.info {
+      background-color: #e4e4e4; }
+      .modal-dialog .form-wrapper.info .close-button svg line {
+        stroke: #ffffff; }
+    .modal-dialog .form-wrapper form .error {
+      color: red;
+      font-style: italic;
+      margin: 21px 142px 21px 142px;
+      text-align: center; }
+  .modal-dialog.active {
+    visibility: visible;
+    opacity: 1;
+    transition: visibility 0.01s 0.3s,opacity 0.3s ease-out 0.3s; }
 
 #login-modal .form-wrapper {
   border: 5px solid #23a845;
@@ -312,64 +348,51 @@ form {
         text-decoration: underline; }
     #login-modal .form-wrapper form .submit {
       margin: 47px auto 156px auto; }
-#login-modal.active {
-  visibility: visible;
-  opacity: 1;
-  transition: visibility 0.01s 0.3s,opacity 0.3s ease-out 0.3s; }
 
-#order-modal .form-wrapper {
-  border: 5px solid #23a845;
-  pointer-events: auto;
-  position: relative;
-  background-color: #ffffff;
-  width: 650px; }
-  #order-modal .form-wrapper .close-button {
-    position: absolute;
-    right: 19px;
-    top: 19px;
-    cursor: pointer; }
-    #order-modal .form-wrapper .close-button svg {
-      width: 20px;
-      height: 20px;
-      stroke: #191916; }
-  #order-modal .form-wrapper form {
+#info-modal .form-wrapper h3.information-message {
+  text-align: center;
+  margin: 21px 142px 21px 142px; }
+#info-modal .form-wrapper.success h3.information-message {
+  color: #ffffff; }
+#info-modal .form-wrapper.fail h3.information-message {
+  color: #ffffff; }
+#info-modal .form-wrapper.info h3.information-message {
+  color: #ffffff; }
+
+#call-modal .form-wrapper form {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center; }
+  #call-modal .form-wrapper form h3.form-heading {
+    color: #000000;
+    font-size: 30px;
+    line-height: 30px;
+    margin: 95px 0px 56px 0px;
+    text-align: center; }
+  #call-modal .form-wrapper form .inputs-wrapper {
     display: flex;
     flex-direction: column;
     align-items: stretch;
-    justify-content: center; }
-    #order-modal .form-wrapper form h3.form-heading {
-      color: #000000;
-      font-size: 30px;
-      line-height: 30px;
-      margin: 95px 0px 56px 0px;
-      text-align: center; }
-    #order-modal .form-wrapper form .inputs-wrapper {
-      display: flex;
-      flex-direction: column;
-      align-items: stretch;
-      justify-content: center;
-      margin: 0px 0px 0px 0px; }
-      #order-modal .form-wrapper form .inputs-wrapper input {
-        margin: 21px 142px 0px 142px; }
-        #order-modal .form-wrapper form .inputs-wrapper input:first-child {
-          margin-top: 0px; }
-    #order-modal .form-wrapper form .need-registration-text {
-      display: block;
-      font-family: Calibri, sans-serif;
-      font-size: 18px;
-      font-weight: 200;
-      text-align: center;
-      margin: 16px 20px 0px 20px; }
-      #order-modal .form-wrapper form .need-registration-text .registration {
-        color: #23a845;
-        font-weight: 400;
-        text-decoration: underline; }
-    #order-modal .form-wrapper form .submit {
-      margin: 47px auto 156px auto; }
-#order-modal.active {
-  visibility: visible;
-  opacity: 1;
-  transition: visibility 0.01s 0.3s,opacity 0.3s ease-out 0.3s; }
+    justify-content: center;
+    margin: 0px 0px 0px 0px; }
+    #call-modal .form-wrapper form .inputs-wrapper input {
+      margin: 21px 142px 0px 142px; }
+      #call-modal .form-wrapper form .inputs-wrapper input:first-child {
+        margin-top: 0px; }
+  #call-modal .form-wrapper form .need-registration-text {
+    display: block;
+    font-family: Calibri, sans-serif;
+    font-size: 18px;
+    font-weight: 200;
+    text-align: center;
+    margin: 16px 20px 0px 20px; }
+    #call-modal .form-wrapper form .need-registration-text .registration {
+      color: #23a845;
+      font-weight: 400;
+      text-decoration: underline; }
+  #call-modal .form-wrapper form .submit {
+    margin: 47px auto 156px auto; }
 
 ul.breadcrumb {
   margin: 0px 0px 0px 0px;
@@ -394,19 +417,56 @@ ul.breadcrumb {
       margin: 0px 10px;
       color: #23a845; }
 
+.common-home header .container .left-side.logo {
+  height: 150px;
+  background-color: #128630;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  z-index: 100; }
+  .common-home header .container .left-side.logo img {
+    height: auto; }
+.common-home header .container .left-side .header-categories-menu {
+  display: none; }
+
 header {
   position: relative; }
   header .container {
     display: flex;
     flex-direction: row; }
-    header .container .left-side.logo {
-      height: 150px;
-      background-color: #128630;
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: center;
-      z-index: 100; }
+    header .container .left-side {
+      position: relative; }
+      header .container .left-side.logo {
+        height: 150px;
+        background-color: #128630;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        z-index: 100; }
+        header .container .left-side.logo img {
+          height: 55px;
+          margin: 0px 0px 45px 0px; }
+      header .container .left-side .header-categories-menu {
+        position: absolute;
+        top: 100%;
+        width: 100%; }
+        header .container .left-side .header-categories-menu .header-categories-menu-toggle {
+          color: #ffffff;
+          position: absolute;
+          bottom: 100%;
+          cursor: pointer;
+          width: 100%;
+          text-align: center;
+          font-size: 18px;
+          padding: 0px 0px 20px 0px; }
+        header .container .left-side .header-categories-menu .header-categories-menu-list {
+          visibility: hidden;
+          height: 0px; }
+        header .container .left-side .header-categories-menu:hover .header-categories-menu-list {
+          visibility: visible;
+          height: auto; }
     header .container .right-side {
       flex: 1;
       display: flex;
@@ -434,18 +494,27 @@ header {
             margin: 0px 30px 0px 30px; }
           header .container .right-side .inner-wrapper .market-info .phones {
             display: flex;
-            flex-direction: row;
-            align-items: center;
+            flex-direction: column;
+            align-items: flex-end;
             justify-content: center;
             font-size: 18px;
             margin: 0px 21px 0px 0px; }
-            header .container .right-side .inner-wrapper .market-info .phones .phone-icon {
-              margin: 0px 20px 0px 0px; }
-            header .container .right-side .inner-wrapper .market-info .phones .phone-number {
-              color: #333334; }
-            header .container .right-side .inner-wrapper .market-info .phones .phone-separator {
+            header .container .right-side .inner-wrapper .market-info .phones .phones-inner-wrapper {
+              display: flex;
+              flex-direction: row;
+              align-items: center;
+              justify-content: center; }
+              header .container .right-side .inner-wrapper .market-info .phones .phones-inner-wrapper .phone-icon {
+                margin: 0px 20px 0px 0px; }
+              header .container .right-side .inner-wrapper .market-info .phones .phones-inner-wrapper .phone-number {
+                color: #333334; }
+              header .container .right-side .inner-wrapper .market-info .phones .phones-inner-wrapper .phone-separator {
+                color: #23a845;
+                margin: 0px 8px 0px 8px; }
+            header .container .right-side .inner-wrapper .market-info .phones .request-call {
+              text-transform: uppercase;
               color: #23a845;
-              margin: 0px 8px 0px 8px; }
+              cursor: pointer; }
         header .container .right-side .inner-wrapper .user-area {
           display: flex;
           flex-direction: row;
@@ -1755,7 +1824,7 @@ footer {
               justify-content: center; }
 
 .cart-page #cart-form {
-  margin: 51px 0px 0px 0px; }
+  margin: 51px 0px 50px 0px; }
   .cart-page #cart-form form {
     display: flex;
     flex-direction: column;
@@ -1895,6 +1964,31 @@ footer {
                 justify-content: center; }
           .cart-page #cart-form form .cart-list .cart-list-item .cart-list-item-item.product-total {
             font-size: 20px; }
+          .cart-page #cart-form form .cart-list .cart-list-item .cart-list-item-item.remove-button a {
+            width: 28px;
+            height: 28px;
+            cursor: pointer;
+            background-color: rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            background-color: #ffffff;
+            border: 1px solid #a6a5a5;
+            transition: background-color 0.3s ease-out; }
+            .cart-page #cart-form form .cart-list .cart-list-item .cart-list-item-item.remove-button a svg {
+              width: 8px;
+              height: 8px; }
+              .cart-page #cart-form form .cart-list .cart-list-item .cart-list-item-item.remove-button a svg line {
+                stroke: #a6a5a5;
+                stroke-width: 6px;
+                transition: stroke 0.3s ease-out; }
+            .cart-page #cart-form form .cart-list .cart-list-item .cart-list-item-item.remove-button a:hover {
+              background-color: #23a845;
+              transition: background-color 0.3s ease-out; }
+              .cart-page #cart-form form .cart-list .cart-list-item .cart-list-item-item.remove-button a:hover svg line {
+                stroke: #ffffff;
+                transition: stroke 0.3s ease-out; }
     .cart-page #cart-form form .bottom-area {
       display: flex;
       flex-direction: row;

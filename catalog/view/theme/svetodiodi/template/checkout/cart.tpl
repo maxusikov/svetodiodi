@@ -39,7 +39,7 @@
     <?php } ?>
     <div id="content" class="<?php echo $class; ?>"><?php echo $content_top; ?>
       <div id="cart-form">
-          <form action="<?php echo $action; ?>" method="POST" enctype="multipart/form-data">
+          <form id="products-form" action="<?php echo $action; ?>" method="POST" enctype="multipart/form-data">
               <div class="cart-list-heading">
                 <span class="cart-heading-item product-image"><?php echo $column_image; ?></span>
                 <span class="cart-heading-item product-name"><?php echo $column_name; ?></span>
@@ -65,29 +65,37 @@
                             <div class="quantity">
                               <?php if ($product['available_quantity'] > 0) { ?>
                                 <div class="quantity-counter">
-                                  <a class="minus" onclick="javascript:changeOrderProductQuantity($(this).closest('.product-cart'), false);">-</a>
+                                  <a class="minus" onclick="javascript:changeOrderProductQuantity($(this).closest('.cart-list-item'), <?php echo $product['product_id']; ?>, false);">-</a>
                                   <span class="number"><?php echo $product['quantity']; ?></span>
-                                  <a class="plus" onclick="javascript:changeOrderProductQuantity($(this).closest('.product-cart'), true);">+</a>
+                                  <a class="plus" onclick="javascript:changeOrderProductQuantity($(this).closest('.cart-list-item'), <?php echo $product['product_id']; ?>, true);">+</a>
                                 </div>
                               <?php } ?>
                             </div>
-                            <input type="hidden" name="quantity" value="<?php echo $product['quantity']; ?>" />
-                            <input type="hidden" name="available_quantity" value="<?php echo $product['available_quantity']; ?>" />
-                            <input type="hidden" name="product_id" value="<?php echo $product['product_id']; ?>" />
+                            <input class="product-quantity" type="hidden" name="product[<?php echo $product['product_id']; ?>][quantity]" value="<?php echo $product['quantity']; ?>" />
+                            <input class="product-available-quantity" type="hidden" name="product[<?php echo $product['product_id']; ?>][available_quantity]" value="<?php echo $product['available_quantity']; ?>" />
+                            <input class="product-id" type="hidden" name="product[<?php echo $product['product_id']; ?>][product_id]" value="<?php echo $product['product_id']; ?>" />
                         </div>
                     </span>
                     <span class="cart-list-item-item product-total"><?php echo $product['total']; ?></span>
+                    <span class="cart-list-item-item remove-button">
+                        <a onclick="javascript:removeProductFromCart($(this).closest('.cart-list-item'), <?php echo $product['cart_id']; ?>);">
+                            <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <line x1="0" y1="0" x2="20" y2="20" stroke="#000000" />
+                                <line x1="0" y1="20" x2="20" y2="0" stroke="#000000" />
+                            </svg>
+                        </a>
+                    </span>
                 </div>
                 <?php } ?>
             </div>
             <div class="bottom-area">
                 <div class="area-wrapper">
-                    <div class="total">
+                    <div id="total" class="total">
                         <span class="total-text"><?php echo end($totals)['title']; ?>:</span>
                         <span class="total-value"><?php echo end($totals)['text']; ?></span>
                     </div>
                     <div class="order-button">
-                        <a class="button" onclick="javascript:toggleOrderModal();"><?php echo $text_order; ?></a>
+                        <a class="button" onclick="javascript:sendOrder();"><?php echo $text_order; ?></a>
                     </div>
                 </div>
             </div>
@@ -95,34 +103,90 @@
       </div>
       
       <?php echo $content_bottom; ?></div>
-    <?php echo $column_right; ?></div>
+      <?php echo $column_right; ?></div>
 </div>
 <?php echo $footer; ?>
 
 <script type="text/javascript">
-function changeOrderProductQuantity(product_container, increase = true) {
+function changeOrderProductQuantity(product_container, product_id, increase = true) {
     var product_data_container = $(product_container);
     var quantity_indicator = product_data_container.find('.quantity .number');
-    var quantity_storage = product_data_container.find('input[name=\"quantity\"]');
-    var quantity = parseInt(quantity_storage.val());
-    var available_quantity = parseInt(product_data_container.find('input[name=\"available_quantity\"]').val());
+    var product_total_value_container = product_data_container.find('.product-total');
+    var total_value_container = $('#total .total-value');
+    var ind;
     
-    if (increase) {
-        if (quantity < available_quantity) {
-            quantity++;
-            quantity_storage.val(quantity);
-            quantity_indicator.html(quantity);
-        } else {
-            return false;
-        }
+    if(increase){
+        ind = '+';
     } else {
-        if (quantity > 1) {
-            quantity--;
-            quantity_storage.val(quantity);
-            quantity_indicator.html(quantity);
-        } else {
-            return false;
-        }
+        ind = '-';
     }
+    
+    $.ajax({
+        url: '<?php echo $change_cart_product_quantity ?>',
+        method: 'POST',
+        data: {
+            product_id: product_id,
+            indicator: ind
+        },
+        success: function(response_data){
+            if(response_data.status == 'success'){
+                quantity_indicator.html(response_data.product_cart_info.quantity);
+                total_value_container.html(response_data.cart.total);
+                product_total_value_container.html(response_data.product_cart_info.total);
+            }
+        },
+        error: function(xhr){
+            console.log("Request error: ", xhr);
+        }
+    });
 }
+</script>
+
+<script type="text/javascript">
+    function removeProductFromCart(product_container, cart_id){
+        var prod_container = $(product_container);
+        var total_value_container = $('#total .total-value');
+        
+        $.ajax({
+            url: '<?php echo $remove_product_from_cart; ?>',
+            method: 'POST',
+            data: {
+                cart_id: cart_id
+            },
+            success: function(response_data){
+                if(response_data.status == 'success'){
+                    $(product_container).remove();
+                }
+                
+                console.log("SS: ", response_data);
+            },
+            error: function(xhr){
+                console.log("Err: ", xhr);
+            }
+        });
+    }
+</script>
+
+<script type="text/javascript">
+    function sendOrder(){
+        var cart_form = $('#cart-form');
+        var content_area = $('#content');
+    
+        $.ajax({
+            url: '<?php echo $send_order; ?>',
+            method: 'POST',
+            data: $('#products-form').serialize(),
+            success: function(response_data){
+                var response_data = JSON.parse(response_data);
+                if(response_data.status == 'success'){
+                    $(cart_form).remove();
+                    var order_sent_html = $('<h2>Ваш заказ отправлен на обработку. Наш менеджер свяжется с Вами в ближайшее время.</h2>');
+                    content_area.append(order_sent_html);
+                }
+            },
+            error: function(xhr){
+                console.log("Error data: ", xhr);
+            }
+        });
+    }
 </script>

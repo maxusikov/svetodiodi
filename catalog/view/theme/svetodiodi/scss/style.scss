@@ -14,6 +14,9 @@ $body-width: 1170px;
 $primary-color: #23a845;
 $primary-text-color: #333334;
 
+$fail-color: #ff769e;
+$info-color: #e4e4e4;
+
 * {
     margin: 0px 0px 0px 0px;
     padding: 0px 0px 0px 0px;
@@ -336,6 +339,78 @@ form {
     visibility: hidden;
     opacity: 0;
     transition: opacity 0.3s ease-out, visibility 0.01s 0.3s;
+    
+    .form-wrapper {
+        border: 5px solid $primary-color;
+        pointer-events: auto;
+        position: relative;
+        background-color: #ffffff;
+        width: 650px;
+        
+        .close-button {
+            position: absolute;
+            right: 19px;
+            top: 19px;
+            cursor: pointer;
+            
+            svg {
+                width: 20px;
+                height: 20px;
+                stroke: #191916;
+            }
+        }
+        
+        &.success {
+            background-color: $primary-color + 75;
+            
+            .close-button {
+                svg {
+                    line {
+                        stroke: #ffffff;
+                    }
+                }
+            }
+        }
+
+        &.fail {
+            background-color: $fail-color + 75;
+            
+            .close-button {
+                svg {
+                    line {
+                        stroke: #ffffff;
+                    }
+                }
+            }
+        }
+
+        &.info {
+            background-color: $info-color;
+            
+            .close-button {
+                svg {
+                    line {
+                        stroke: #ffffff;
+                    }
+                }
+            }
+        }
+        
+        form {
+            .error {
+                color: red;
+                font-style: italic;
+                margin: 21px 142px 21px 142px;
+                text-align: center;
+            }
+        }
+    }
+        
+    &.active {
+        visibility: visible;
+        opacity: 1;
+        transition: visibility 0.01s 0.3s,opacity 0.3s ease-out 0.3s;
+    }
 }
 
 #login-modal {
@@ -409,35 +484,37 @@ form {
             }
         }
     }
-    
-    &.active {
-        visibility: visible;
-        opacity: 1;
-        transition: visibility 0.01s 0.3s,opacity 0.3s ease-out 0.3s;
+}
+
+#info-modal {
+    .form-wrapper {
+        h3.information-message {
+            text-align: center;
+            margin: 21px 142px 21px 142px;
+        }
+        
+        &.success {
+            h3.information-message {
+                color: #ffffff;
+            }
+        }
+
+        &.fail {
+            h3.information-message {
+                color: #ffffff;
+            }
+        }
+
+        &.info {
+            h3.information-message {
+                color: #ffffff;
+            }
+        }
     }
 }
 
-#order-modal {
+#call-modal {
     .form-wrapper {
-        border: 5px solid $primary-color;
-        pointer-events: auto;
-        position: relative;
-        background-color: #ffffff;
-        width: 650px;
-        
-        .close-button {
-            position: absolute;
-            right: 19px;
-            top: 19px;
-            cursor: pointer;
-            
-            svg {
-                width: 20px;
-                height: 20px;
-                stroke: #191916;
-            }
-        }
-        
         form {
             display: flex;
             flex-direction: column;
@@ -487,12 +564,6 @@ form {
             }
         }
     }
-    
-    &.active {
-        visibility: visible;
-        opacity: 1;
-        transition: visibility 0.01s 0.3s,opacity 0.3s ease-out 0.3s;
-    }
 }
 
 // Breadcrumbs
@@ -530,6 +601,32 @@ ul.breadcrumb {
     }
 }
 
+.common-home {
+    header {
+        .container {
+            .left-side {
+                &.logo {
+                    height: 150px;
+                    background-color: #128630;
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: center;
+                    z-index: 100;
+                    
+                    img {
+                        height: auto;
+                    }
+                }
+                
+                .header-categories-menu {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
 // Page components
 header {
     position: relative;
@@ -539,6 +636,8 @@ header {
         flex-direction: row;
         
         .left-side {
+            position: relative;
+            
             &.logo {
                 height: 150px;
                 background-color: #128630;
@@ -547,6 +646,40 @@ header {
                 align-items: center;
                 justify-content: center;
                 z-index: 100;
+                
+                img {
+                    height: 55px;
+                    margin: 0px 0px 45px 0px;
+                }
+            }
+            
+            .header-categories-menu {
+                position: absolute;
+                top: 100%;
+                width: 100%;
+                
+                .header-categories-menu-toggle {
+                    color: #ffffff;
+                    position: absolute;
+                    bottom: 100%;
+                    cursor: pointer;
+                    width: 100%;
+                    text-align: center;
+                    font-size: 18px;
+                    padding: 0px 0px 20px 0px;
+                }
+                
+                .header-categories-menu-list {
+                    visibility: hidden;
+                    height: 0px;
+                }
+                
+                &:hover {
+                    .header-categories-menu-list {
+                        visibility: visible;
+                        height: auto;
+                    }
+                }
             }
         }
         
@@ -582,28 +715,41 @@ header {
 
                     .phones {
                         display: flex;
-                        flex-direction: row;
-                        align-items: center;
+                        flex-direction: column;
+                        align-items: flex-end;
                         justify-content: center;
                         font-size: 18px;
                         margin: 0px 21px 0px 0px;
                         
-                        .phone-icon {
-                            margin: 0px 20px 0px 0px;
-                            
-                            img {
-                                
+                        .phones-inner-wrapper {
+                            display: flex;
+                            flex-direction: row;
+                            align-items: center;
+                            justify-content: center;
+                            .phone-icon {
+                                margin: 0px 20px 0px 0px;
+
+                                img {
+
+                                }
+                            }
+
+                            .phone-number {
+                                color: $primary-text-color;
+                            }
+
+                            .phone-separator {
+                                color: $primary-color;
+                                margin: 0px 8px 0px 8px;
                             }
                         }
                         
-                        .phone-number {
-                            color: $primary-text-color;
+                        .request-call {
+                            text-transform: uppercase;
+                            color: $primary-color;
+                            cursor: pointer;
                         }
                         
-                        .phone-separator {
-                            color: $primary-color;
-                            margin: 0px 8px 0px 8px;
-                        }
                     }
                 }
                 
@@ -2597,7 +2743,7 @@ footer {
 
 .cart-page {
     #cart-form {
-        margin: 51px 0px 0px 0px;
+        margin: 51px 0px 50px 0px;
         
         form {
             display: flex;
@@ -2778,6 +2924,45 @@ footer {
                         }
                         &.product-total {
                             font-size: 20px;
+                        }
+                        
+                        &.remove-button {
+                            a {
+                                width: 28px;
+                                height: 28px;
+                                cursor: pointer;
+                                background-color: rgba(0, 0, 0, 0.1);
+                                display: flex;
+                                flex-direction: row;
+                                align-items: center;
+                                justify-content: center;
+                                background-color: #ffffff;
+                                border: 1px solid #a6a5a5;
+                                transition: background-color 0.3s ease-out;
+                                
+                                svg {
+                                    width: 8px;
+                                    height: 8px;
+                                    
+                                    line {
+                                        stroke: #a6a5a5;
+                                        stroke-width: 6px;
+                                        transition: stroke 0.3s ease-out;
+                                    }
+                                }
+                                
+                                &:hover {
+                                    background-color: $primary-color;
+                                    transition: background-color 0.3s ease-out;
+                                    
+                                    svg {
+                                        line {
+                                            stroke: #ffffff;
+                                            transition: stroke 0.3s ease-out;
+                                        }
+                                    }
+                                }
+                            }
                         }
                     }
                     

@@ -271,6 +271,14 @@ class ControllerCommonColumnLeft extends Controller {
 					'children' => array()		
 				);	
 			}
+                        
+                        if ($this->user->hasPermission('access', 'sale/call_request')) {
+				$sale[] = array(
+					'name'	   => $this->language->get('text_call_request'),
+					'href'     => $this->url->link('sale/call_request', 'token=' . $this->session->data['token'], true),
+					'children' => array()		
+				);	
+			}
 			
 			if ($this->user->hasPermission('access', 'sale/recurring')) {	
 				$sale[] = array(

@@ -202,11 +202,11 @@ class ControllerSaleOrder extends Controller {
 			'start'                => ($page - 1) * $this->config->get('config_limit_admin'),
 			'limit'                => $this->config->get('config_limit_admin')
 		);
-
+                
 		$order_total = $this->model_sale_order->getTotalOrders($filter_data);
 
 		$results = $this->model_sale_order->getOrders($filter_data);
-
+                
 		foreach ($results as $result) {
 			$data['orders'][] = array(
 				'order_id'      => $result['order_id'],

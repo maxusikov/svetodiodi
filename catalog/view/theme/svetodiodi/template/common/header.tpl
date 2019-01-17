@@ -49,6 +49,39 @@
 </head>
 <body class="<?php echo $class; ?>">
 <div id="modal-overlay" onclick="javascript:removeModal();"></div>
+<div id="info-modal" class="modal-dialog">
+    <div class="form-wrapper">
+        <span class="close-button" onclick="javascript:toggleInfoModal(false);">
+            <svg width="30" height="30">
+                <line x1="0" y1="0" x2="20" y2="20" stroke="#000000" stroke-width="2" />
+                <line x1="0" y1="20" x2="20" y2="0" stroke="#000000" stroke-width="2" />
+            </svg>
+        </span>
+        <h3 class="information-message"></h3>
+    </div>
+</div>
+<script type="text/javascript">
+    function toggleInfoModal(turnOn = true, message = '', modal_type = 'info'){
+        var modal_container = $('#info-modal');
+        var form_wrapper = modal_container.find('.form-wrapper');
+        var info_message_container = modal_container.find('.information-message');
+        
+        form_wrapper.addClass(modal_type);
+        info_message_container.html(message);
+        
+        if (turnOn) {
+            $('#modal-overlay').addClass('active');
+            $('#info-modal').addClass('active');
+            $(window).on('mousewheel', function(){
+                return false;
+            });
+        } else {
+            $('#modal-overlay').removeClass('active');
+            $('#info-modal').removeClass('active');
+            $(window).off('mousewheel');
+        }
+    }
+</script>
 <div id="login-modal" class="modal-dialog">
     <div class="form-wrapper">
         <span class="close-button" onclick="javascript:toggleLoginModal(false);">
@@ -68,23 +101,54 @@
         </form>
     </div>
 </div>
-<div id="order-modal" class="modal-dialog">
+<div id="call-modal" class="modal-dialog">
     <div class="form-wrapper">
-        <span class="close-button" onclick="javascript:toggleOrderModal(false);">
+        <span class="close-button" onclick="javascript:toggleCallModal(false);">
             <svg width="30" height="30">
                 <line x1="0" y1="0" x2="20" y2="20" stroke="#000000" stroke-width="2" />
                 <line x1="0" y1="20" x2="20" y2="0" stroke="#000000" stroke-width="2" />
             </svg>
         </span>
-        <form action="<?php echo $send_order; ?>" method="POST" enctype="multipart/form-data">
+        <form id="send-call-request-form" action="" method="POST" enctype="multipart/form-data">
             <h3 class="form-heading"><?php echo $text_make_order; ?></h3>
+            <span class="error"></span>
             <div class="inputs-wrapper">
                 <input type="text" name="name" class="name" value="" placeholder="<?php echo $entry_name; ?>" />
-                <input type="email" name="password" class="email" value="" placeholder="<?php echo $entry_email; ?>" />
+                <input type="email" name="email" class="email" value="" placeholder="<?php echo $entry_email; ?>" />
                 <input type="tel" name="telephone" class="telephone" value="" placeholder="<?php echo $entry_telephone; ?>" />
             </div>
-            <a class="submit button" onclick="javascript:$(this).closest('form').submit();"><?php echo $text_send; ?></a>
+            <a class="submit button" onclick="javascript:sendCallRequest();"><?php echo $text_send; ?></a>
         </form>
+        <script type="text/javascript">
+            function sendCallRequest(){
+                $.ajax({
+                    url: '<?php echo $send_call_request; ?>',
+                    method: 'POST',
+                    enctype: 'multipart/form-data',
+                    data: $('#send-call-request-form').serialize(),
+                    success: function(response_data){
+                        var response_data = JSON.parse(response_data);
+                        var error_container = $('#send-call-request-form .error');
+                        
+                        if(response_data.error){
+                            error_container.html(response_data.error);
+                            error_container.addClass('active');
+                        } else {
+                            if (error_container.hasClass('active')){
+                                error_container.removeClass('active');
+                                error_container.html('');
+                            }
+                            
+                            toggleCallModal(false);
+                            toggleInfoModal(true, response_data.info, response_data.status);
+                        }
+                    },
+                    error: function(xhr){
+                        console.log("Error: ", xhr);
+                    }
+                });
+            }
+        </script>
     </div>
 </div>
 <header>
@@ -99,12 +163,17 @@
             <?php } else { ?>
                 <h1><a href="<?php echo $home; ?>"><?php echo $name; ?></a></h1>
             <?php } ?>
+            <div class="header-categories-menu">
+                <span class="header-categories-menu-toggle"><?php echo $text_categories; ?></span>
+                <div class="header-categories-menu-list"><?php echo $header_categories_menu; ?></div>
+            </div>
         </div>
         <div class="right-side">
             <div class="inner-wrapper">
                 <div class="market-info">
                     <p class="short-market-description">Федеральный поставщик<br /> светодиодного оборудования</p>
                     <div class="phones">
+                      <div class="phones-inner-wrapper">
                         <span class="phone-icon">
                             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="27" height="24" viewBox="0 0 27 24">
                               <image class="telephone" width="27" height="24" xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAABsAAAAYCAMAAAA8nnbJAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAA7VBMVEUAAAAjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEVwxobz+vV7y49yx4eBzZW95cf////X7933/PhtxYTf8uTh8+WEz5eL0Z0kqEaw4L0mqUex4L3w+fN8y5Cw4LyGz5lxx4eCzpXe8uP4/PkAAACirhxwAAAAM3RSTlMAae/u3t2EEOr5I5GqKvv+OLnEUFIH2tkFeGwY8w6ghjf2HcWiHveID+tu21MBOiusJPqA43/iAAAAAWJLR0QAiAUdSAAAAAlwSFlzAAALEgAACxIB0t1+/AAAAQFJREFUKM9t0mtbAUEUB/DjshFlQ0SE2iIJMS7rINfS9ft/nebWOjOcV//Z3/PszJw5ALJCjLFwRFTUcZwTIBWLM1qnCWJJZtbZns5TlrkXgaWZXZl/yrLDulSUy8vVYDgidlWQVpSLsT9BiteCSmWZp+hPhsTiN9wqKs8Q/TndsQpQc1V8RVwYp7m9A0/HJSKuDKzAvU7rjY0ePNR13L5JnL/vdG9qAA1GccGvstO/BHhsGsivMhOLcklc8CnYYfsh8PNL5KLsS6EV4Pr753c6FqmVUw19PtLrrH6HtndA6eD9Oq5Fqe7+4V8sS5J56fUNasbooFX55EXlDIa5hdTHP14fX4e+o2ldAAAAAElFTkSuQmCC"/>
@@ -113,6 +182,10 @@
                         <a class="phone-number phone-number-1"><?php echo $telephone_1; ?></a>
                         <span class="phone-separator">/</span>
                         <a class="phone-number phone-number-2"><?php echo $telephone_2; ?></a>
+                      </div>
+                      <?php if(!$logged){ ?>
+                      <a class="request-call" onclick="javascript:toggleCallModal();">Заказать звонок</a>
+                      <?php } ?>
                     </div>
                 </div>
                 <div class="user-area">
@@ -137,9 +210,6 @@
                     </div>
                     <?php } else { ?>
                     <div class="personal-cabinet">
-                        <!--a class="cabinet-link" href="<?php echo $login; ?>">
-                            <img src="catalog/view/theme/svetodiodi/image/theme_images/personal_cabinet_inactive.png" />
-                        </a-->
                         <a class="cabinet-link" onclick="javascript:toggleLoginModal();">
                             <img src="catalog/view/theme/svetodiodi/image/theme_images/personal_cabinet_inactive.png" />
                         </a>
@@ -156,7 +226,7 @@
                 <ul>
                 <?php foreach($top_menu as $menu_item) { ?>    
                     <li>
-                        <a href="<?php echo $menu_item['href']; ?>" title="<?php echo $menu_item['name']; ?>"><?php echo $menu_item['name']; ?></a>
+                        <a href="<?php echo $menu_item['href']; ?>"><?php echo $menu_item['name']; ?></a>
                     </li>
                 <?php } ?>
                 </ul>
@@ -182,16 +252,16 @@
     }
 </script>
 <script type="text/javascript">
-    function toggleOrderModal(turnOn = true) {
+    function toggleCallModal(turnOn = true) {
         if (turnOn) {
             $('#modal-overlay').addClass('active');
-            $('#order-modal').addClass('active');
+            $('#call-modal').addClass('active');
             $(window).on('mousewheel', function(){
                 return false;
             });
         } else {
             $('#modal-overlay').removeClass('active');
-            $('#order-modal').removeClass('active');
+            $('#call-modal').removeClass('active');
             $(window).off('mousewheel');
         }
     }

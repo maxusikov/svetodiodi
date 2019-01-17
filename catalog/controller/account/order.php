@@ -486,5 +486,5 @@ class ControllerAccountOrder extends Controller {
 		}
 
 		$this->response->redirect($this->url->link('account/order/info', 'order_id=' . $order_id));
-	}
+	}        
 }

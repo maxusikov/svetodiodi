@@ -103,3 +103,5 @@ $_['text_complete_status']                  = 'Выполненных заказ
 $_['text_processing_status']                = 'Заказов в обработке';
 $_['text_other_status']          	        = 'Другие статусы';
 $_['text_octeam_toolset']              		= 'OC Team';
+
+$_['text_call_request'] = 'Запросы на связь менеджера';

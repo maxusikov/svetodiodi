@@ -458,10 +458,8 @@ class ControllerAccountRegister extends Controller {
 		if ($this->config->get('config_account_id')) {
 			$this->load->model('catalog/information');
 
-			$information_info = $this->model_catalog_information->getInformation($this->config->get('config_account_id'));
-
-			if ($information_info && !isset($this->request->post['agree'])) {
-				$this->error['warning'] = sprintf($this->language->get('error_agree'), $information_info['title']);
+                        if (!isset($this->request->post['agree'])) {
+				$this->error['error_agree'] = sprintf($this->language->get('error_agree'), $information_info['title']);
 			}
 		}
 

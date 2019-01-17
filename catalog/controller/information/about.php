@@ -34,4 +34,24 @@ class ControllerInformationAbout extends Controller {
                 
 		$this->response->setOutput($this->load->view('information/about', $data));
 	}
+        
+        public function validate(){
+            if (isset($this->request->post['name'])) {
+                if (utf8_strlen($this->request->post['name']) < 2 || utf8_strlen($this->request->post['name']) < 64) {
+                    $this->error['name'] = $this->language->get('error_name');
+                }
+            }
+            
+            if (isset($this->request->post['email'])) {
+                if (utf8_strlen($this->request->post['email']) < 2 || utf8_strlen($this->request->post['email']) < 96) {
+                    $this->error['email'] = $this->language->get('error_email');
+                }
+            }
+            
+            if (isset($this->request->post['phone'])) {
+                if (utf8_strlen($this->request->post['phone']) > 20) {
+                    $this->error['phone'] = $this->language->get('error_phone');
+                }
+            }
+        }
 }

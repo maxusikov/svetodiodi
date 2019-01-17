@@ -168,4 +168,22 @@ class ModelAccountOrder extends Model {
 
 		return $query->row['total'];
 	}
+        
+        // Call Request //
+        public function addCallRequest($call_request_data){
+            $sql  = "INSERT INTO `" . DB_PREFIX . "customer_call_request` (customer_name, customer_email, customer_telephone, date_added, date_modified) ";
+            $sql .= " VALUES('" . (string)$call_request_data['customer_name'] 
+                 . "', '" . (string)$call_request_data['customer_email'] 
+                 .  "', '" . (string)$call_request_data['customer_telephone'] 
+                 . "', NOW(), " 
+                 . "NOW())";
+            
+            if($this->db->query($sql)) {
+                $result = $this->db->getLastId();
+            } else {
+                return false;
+            }
+            
+            return $result;
+        }
 }

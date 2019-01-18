@@ -152,8 +152,8 @@
     </div>
 </div>
 <header>
-    <div class="container">
-        <div class="logo left-side col-md-3">
+    <div class="container outer-container">
+        <div class="logo left-side logo-width">
             <?php if ($logo) { ?>
                 <?php if ($home == $og_url) { ?>
                   <img src="<?php echo $logo; ?>" title="<?php echo $name; ?>" alt="<?php echo $name; ?>" class="img-responsive" />
@@ -222,6 +222,7 @@
     </div>
     <div id="top-menu" class="top-menu">
         <div class="container">
+            <div class="stub left-side"></div>
             <div class="menu-wrapper">
                 <ul>
                 <?php foreach($top_menu as $menu_item) { ?>    

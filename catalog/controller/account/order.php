@@ -37,17 +37,20 @@ class ControllerAccountOrder extends Controller {
 		$data['heading_title'] = $this->language->get('heading_title');
 
 		$data['text_empty'] = $this->language->get('text_empty');
-
+                $data['text_order_list_subheading'] = $this->language->get('text_order_list_subheading');
+                
 		$data['column_order_id'] = $this->language->get('column_order_id');
 		$data['column_customer'] = $this->language->get('column_customer');
 		$data['column_product'] = $this->language->get('column_product');
 		$data['column_total'] = $this->language->get('column_total');
 		$data['column_status'] = $this->language->get('column_status');
 		$data['column_date_added'] = $this->language->get('column_date_added');
+                $data['column_shipping'] = $this->language->get('column_shipping');
+                $data['column_is_payed'] = $this->language->get('column_is_payed');
 
 		$data['button_view'] = $this->language->get('button_view');
-    $data['button_ocstore_payeer_onpay'] = $this->language->get('button_ocstore_payeer_onpay');
-    $data['button_ocstore_yk_onpay'] = $this->language->get('button_ocstore_yk_onpay');
+                $data['button_ocstore_payeer_onpay'] = $this->language->get('button_ocstore_payeer_onpay');
+                $data['button_ocstore_yk_onpay'] = $this->language->get('button_ocstore_yk_onpay');
 		$data['button_continue'] = $this->language->get('button_continue');
 
 		if (isset($this->request->get['page'])) {
@@ -76,6 +79,8 @@ class ControllerAccountOrder extends Controller {
 				'order_id'   => $result['order_id'],
 				'name'       => $result['firstname'] . ' ' . $result['lastname'],
 				'status'     => $result['status'],
+                                'order_shipping' => 'Ожидает отправки',
+                                'order_is_payed' => 'Оплачено',
 				'date_added' => date($this->language->get('date_format_short'), strtotime($result['date_added'])),
 				'products'   => ($product_total + $voucher_total),
 				'total'      => $this->currency->format($result['total'], $result['currency_code'], $result['currency_value']),

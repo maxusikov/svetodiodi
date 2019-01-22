@@ -98,6 +98,7 @@ class ControllerCommonHeader extends Controller {
                 $data['my_orders'] = $this->url->link('account/order', true);
                 $data['personal_data'] = $this->url->link('account/personal', true);
                 $data['send_call_request'] = $this->url->link('account/call_request/sendCallRequest');
+                $data['account'] = $this->url->link('account/account', true);
                 
                 $data['entry_name'] = $this->language->get('entry_name');
                 $data['entry_email'] = $this->language->get('entry_email');
@@ -134,7 +135,7 @@ class ControllerCommonHeader extends Controller {
 		$data['search'] = $this->load->controller('common/search');
 		$data['cart'] = $this->load->controller('common/cart');
 
-                $data['text_categories'] = "Категории";
+                $data['text_categories'] = "Каталог";
                 $data['header_categories_menu'] = $this->load->controller('extension/module/category');
                 
                 $data['cart_products_count'] = count($this->load->controller('common/cart/getCartField', 'products'));

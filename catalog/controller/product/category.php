@@ -399,44 +399,55 @@ class ControllerProductCategory extends Controller {
                         $data['text_available'] = $this->language->get('text_available');
                         $data['text_not_available'] = $this->language->get('text_not_available');
                         
+                        $category_products = [];
+                        
+                        $category_products_query_result = $this->model_catalog_product->getProducts($filter_data);
+                            
+                        foreach ($category_products_query_result as $product) {
+                            $product_attributes = $this->model_catalog_product->getProductAttributes($product['product_id']);
+                            //$product_options = $this->model_catalog_product->getProductOptions($product['product_id']);
+
+                            $product_options = [
+                                [
+                                    'name' => 'Мощность',
+                                    'value' => '100 В'
+                                ],
+                                [
+                                    'name' => 'Выходное напряжение',
+                                    'value' => '12 В'
+                                ],
+                                [
+                                    'name' => 'Гарантия',
+                                    'value' => '2 года'
+                                ]
+                            ];
+
+                            $category_products[] = [
+                                'id'         => $product['product_id'],
+                                'name'       => $product['name'],
+                                'sku'        => $product['sku'],
+                                'price'      => $this->currency->format($product['price'], $this->session->data['currency']),
+                                'href'       => $this->url->link('product/product', 'path='. $this->request->get['path'] . '&product_id=' . $result['product_id'] . $url),
+                                'image'      => $this->model_tool_image->resize($product['image'], 500, 500),
+                                'available_quantity' => $product['quantity'],
+                                'attributes' => $product_attributes,
+                                'options'    => $product_options
+                            ];
+                        }
+                        
                         $data['category_products'] = [];
                         
                         if (!$data['category_categories']) {
-                            $category_products = $this->model_catalog_product->getProducts($filter_data);
-                            
-                            foreach ($category_products as $product) {
-                                $product_attributes = $this->model_catalog_product->getProductAttributes($product['product_id']);
-                                //$product_options = $this->model_catalog_product->getProductOptions($product['product_id']);
-                                
-                                $product_options = [
-                                    [
-                                        'name' => 'Мощность',
-                                        'value' => '100 В'
-                                    ],
-                                    [
-                                        'name' => 'Выходное напряжение',
-                                        'value' => '12 В'
-                                    ],
-                                    [
-                                        'name' => 'Гарантия',
-                                        'value' => '2 года'
-                                    ]
-                                ];
-                                
-                                $data['category_products'][] = [
-                                    'id'         => $product['product_id'],
-                                    'name'       => $product['name'],
-                                    'sku'        => $product['sku'],
-                                    'price'      => $this->currency->format($product['price'], $this->session->data['currency']),
-                                    'href'       => $this->url->link('product/product', 'path='. $this->request->get['path'] . '&product_id=' . $result['product_id'] . $url),
-                                    'image'      => $this->model_tool_image->resize($product['image'], 500, 500),
-                                    'available_quantity' => $product['quantity'],
-                                    'attributes' => $product_attributes,
-                                    'options'    => $product_options
-                                ];
-                            }
+                            $data['category_products'] = $category_products;
+                        } else {
                             
                         }
+                        
+                        ///// Filter data
+                        
+                        
+                        
+                        
                         
                         // ] Svetodiodi theme 
                         

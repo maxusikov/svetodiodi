@@ -7,13 +7,15 @@
   </ul>
 </div>
 <div class="page-heading-wrapper">
-    <div class="leftside"></div>
     <div class="container">
-        <div class="page-heading"><?php echo $heading_title; ?></div>
+        <div class="page-heading">
+            <?php echo $heading_title; ?>
+            <div class="leftside"></div>
+            <div class="rightside"></div>
+        </div>
     </div>
-    <div class="rightside"></div>
 </div>
-<div id="product-category" class="container">
+<div id="product-category" class="container content-container">
   <div class="container-row row"><?php echo $column_left; ?>
     <?php if ($column_left && $column_right) { ?>
     <?php $class = 'col-sm-6'; ?>
@@ -312,7 +314,7 @@ function changeOrderProductQuantity(product_container, increase = true) {
 			}
 
 			if (json['success']) {
-				$('.breadcrumb').after('<div class="alert alert-success">' + json['success'] + '<button type="button" class="close" data-dismiss="alert"><svg width="16" height="16"><line stroke="#ffffff" stroke-width="3" x1="0" y1="0" x2="16" y2="16"></line><line stroke="#ffffff" stroke-width="3" x1="0" y1="16" x2="16" y2="0"></line></svg></button></div>');
+				$('.breadcrumb').after('<div class="alert alert-success">' + json['success'] + '<button type="button" class="close" data-dismiss="alert"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="16" viewBox="0 0 16 16"><line stroke="#ffffff" stroke-width="3" x1="0" y1="0" x2="16" y2="16"></line><line stroke="#ffffff" stroke-width="3" x1="0" y1="16" x2="16" y2="0"></line></svg></button></div>');
 
 				$('#cart > button').html('<span id="cart-total"><i class="fa fa-shopping-cart"></i> ' + json['total'] + '</span>');
 

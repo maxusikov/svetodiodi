@@ -7,17 +7,19 @@
   </ul>
 </div>
 <div class="page-heading-wrapper">
-    <div class="leftside"></div>
     <div class="container">
-        <div class="page-heading"><?php echo $heading_title; ?></div>
+        <div class="page-heading">
+            <?php echo $heading_title; ?>
+            <div class="leftside"></div>
+            <div class="rightside"></div>
+        </div>
     </div>
-    <div class="rightside"></div>
 </div>
-<div class="container">
+<div class="container content-container">
   <?php if ($error_warning) { ?>
   <div class="alert alert-danger"><i class="fa fa-exclamation-circle"></i> <?php echo $error_warning; ?></div>
   <?php } ?>
-  <div class="row"><?php echo $column_left; ?>
+  <div class="content-row"><?php echo $column_left; ?>
     <?php if ($column_left && $column_right) { ?>
     <?php $class = 'col-sm-6'; ?>
     <?php } elseif ($column_left || $column_right) { ?>

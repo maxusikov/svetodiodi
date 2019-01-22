@@ -1,5 +1,5 @@
 <?php echo $header; ?>
-<div class="container">
+<div class="container content-container">
   <div class="container-row row"><?php echo $column_left; ?>
     <?php if ($column_left && $column_right) { ?>
     <?php $class = 'col-sm-6'; ?>

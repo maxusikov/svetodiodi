@@ -3,6 +3,7 @@
 $_['heading_title']      = 'Личный кабинет';
 
 // Text
+$_['text_home']          = 'Главная';
 $_['text_account']       = 'Личный кабинет';
 $_['text_my_account']    = 'Моя учетная запись';
 $_['text_my_orders']     = 'Мои заказы';
@@ -20,3 +21,4 @@ $_['text_transaction']   = 'История платежей';
 $_['text_newsletter']    = 'Редактировать подписку';
 $_['text_recurring']     = 'Регулярные платежи';
 $_['text_transactions']  = 'Переводы';
+$_['text_personal']      = 'Персональные данные';

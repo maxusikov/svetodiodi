@@ -6,14 +6,16 @@
     <?php } ?>
   </ul>
 </div>    
-  <div class="page-heading-wrapper">
-    <div class="leftside"></div>
-    <div class="container">
-        <div class="page-heading"><?php echo $heading_title; ?></div>
-    </div>
-    <div class="rightside"></div>
+<div class="page-heading-wrapper">
+  <div class="container">
+      <div class="page-heading">
+          <?php echo $heading_title; ?>
+          <div class="leftside"></div>
+          <div class="rightside"></div>
+      </div>
   </div>
-<div class="container cart-page">
+</div>
+<div class="container content-container cart-page">
   <?php if ($attention) { ?>
   <div class="alert alert-info"><i class="fa fa-info-circle"></i> <?php echo $attention; ?>
     <button type="button" class="close" data-dismiss="alert">&times;</button>

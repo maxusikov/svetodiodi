@@ -48,8 +48,10 @@ class ControllerAccountAccount extends Controller {
 		$data['text_transaction'] = $this->language->get('text_transaction');
 		$data['text_newsletter'] = $this->language->get('text_newsletter');
 		$data['text_recurring'] = $this->language->get('text_recurring');
-
+                $data['text_personal'] = $this->language->get('text_personal');
+                
 		$data['edit'] = $this->url->link('account/edit', '', true);
+                $data['personal'] = $this->url->link('account/personal', true);
 		$data['password'] = $this->url->link('account/password', '', true);
 		$data['address'] = $this->url->link('account/address', '', true);
 		

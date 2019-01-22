@@ -7,14 +7,16 @@
   </ul>
 </div>
 <div class="page-heading-wrapper">
-    <div class="leftside"></div>
     <div class="container">
-        <div class="page-heading"><?php echo $heading_title; ?></div>
+        <div class="page-heading">
+            <?php echo $heading_title; ?>
+            <div class="leftside"></div>
+            <div class="rightside"></div>
+        </div>
     </div>
-    <div class="rightside"></div>
 </div>
-<div class="container">
-  <div class="row"><?php echo $column_left; ?>
+<div class="container content-container">
+  <div class="content-row"><?php echo $column_left; ?>
     <?php if ($column_left && $column_right) { ?>
     <?php $class = 'col-sm-6'; ?>
     <?php } elseif ($column_left || $column_right) { ?>

@@ -52,7 +52,7 @@
 <div id="info-modal" class="modal-dialog">
     <div class="form-wrapper">
         <span class="close-button" onclick="javascript:toggleInfoModal(false);">
-            <svg width="30" height="30">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20" height="20" viewBox="0 0 20 20">
                 <line x1="0" y1="0" x2="20" y2="20" stroke="#000000" stroke-width="2" />
                 <line x1="0" y1="20" x2="20" y2="0" stroke="#000000" stroke-width="2" />
             </svg>
@@ -85,7 +85,7 @@
 <div id="login-modal" class="modal-dialog">
     <div class="form-wrapper">
         <span class="close-button" onclick="javascript:toggleLoginModal(false);">
-            <svg width="30" height="30">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20" height="20" viewBox="0 0 20 20">
                 <line x1="0" y1="0" x2="20" y2="20" stroke="#000000" stroke-width="2" />
                 <line x1="0" y1="20" x2="20" y2="0" stroke="#000000" stroke-width="2" />
             </svg>
@@ -104,7 +104,7 @@
 <div id="call-modal" class="modal-dialog">
     <div class="form-wrapper">
         <span class="close-button" onclick="javascript:toggleCallModal(false);">
-            <svg width="30" height="30">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20" height="20" viewBox="0 0 20 20">
                 <line x1="0" y1="0" x2="20" y2="20" stroke="#000000" stroke-width="2" />
                 <line x1="0" y1="20" x2="20" y2="0" stroke="#000000" stroke-width="2" />
             </svg>
@@ -197,7 +197,7 @@
                         </a>
                     </div>
                     <div class="personal-cabinet">
-                        <a class="cabinet-link" href="<?php echo $logout; ?>">
+                        <a class="cabinet-link" href="<?php echo $account; ?>">
                             <img src="catalog/view/theme/svetodiodi/image/theme_images/personal_cabinet_active.png" />
                         </a>
                         <div class="user-informations">
@@ -205,6 +205,8 @@
                                 <a href="<?php echo $my_orders; ?>" class="informations-item"><?php echo $text_my_orders; ?></a>
                                 <span class="informations-separator"></span>
                                 <a href="<?php echo $personal_data; ?>" class="informations-item"><?php echo $text_personal_data; ?></a>
+                                <span class="informations-separator"></span>
+                                <a href="<?php echo $logout; ?>" class="informations-item"><?php echo $text_logout; ?></a>
                             </div>
                         </div>
                     </div>
@@ -221,6 +223,13 @@
         </div>
     </div>
     <div id="top-menu" class="top-menu">
+        <div id="mobile-top-navbar-toggle" class="mobile-toggle" onclick="javascript:toggleMobileTopNavbar();">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20" height="20" viewBox="0 0 30 30">
+                <line x1="0" y1="3" x2="30" y2="3" stroke="#000000" stroke-width="5" />
+                <line x1="0" y1="15" x2="30" y2="15" stroke="#000000" stroke-width="5" />
+                <line x1="0" y1="27" x2="30" y2="27" stroke="#000000" stroke-width="5" />
+            </svg>
+        </div>
         <div class="container">
             <div class="stub left-side"></div>
             <div class="menu-wrapper">
@@ -230,6 +239,30 @@
                         <a href="<?php echo $menu_item['href']; ?>"><?php echo $menu_item['name']; ?></a>
                     </li>
                 <?php } ?>
+                  <?php if($logged){ ?>
+                    <li class="user-personal-area cart mobile-item">
+                      <span class="horizontal-gradient-line top-to-bottom"></span>
+                      <a class="cart-link" href="<?php echo $shopping_cart; ?>" title="<?php echo $text_shopping_cart; ?>">
+                        <img class="cart-icon" src="catalog/view/theme/svetodiodi/image/theme_images/cart.png" />
+                        <span class="cart-products-count"><?php echo $cart_products_count; ?></span>
+                        <span class="text-shopping-cart"><?php echo $text_shopping_cart; ?></span>
+                      </a>
+                      <a class="personal-cabinet-link" href="<?php echo $account; ?>">
+                        <img src="catalog/view/theme/svetodiodi/image/theme_images/personal_cabinet_active.png" />
+                        <span class="text-account"><?php echo $text_account; ?></span>
+                      </a>
+                      <a class="logout-link" href="<?php echo $logout; ?>"><?php echo $text_logout; ?></a>
+                      <span class="horizontal-gradient-line bottom-to-top"></span>
+                    </li>
+                  <?php } else { ?>
+                    <li class="user-personal-area login mobile-item">
+                      <span class="horizontal-gradient-line top-to-bottom"></span>
+                      <a class="cabinet-link" onclick="javascript:toggleLoginModal();">
+                        <img src="catalog/view/theme/svetodiodi/image/theme_images/personal_cabinet_inactive.png" />
+                      </a>
+                      <span class="horizontal-gradient-line bottom-to-top"></span>
+                    </li>
+                  <?php } ?>
                 </ul>
                 <div class="background-left"></div>
                 <div class="background-right"></div>
@@ -272,5 +305,17 @@
         $('#modal-overlay').removeClass('active');
         $('.modal-dialog').removeClass('active');
         $(window).off('mousewheel');
+    }
+</script>
+<script type="text/javascript">
+    function toggleMobileTopNavbar(){
+        var top_navbar = $('#top-menu');
+        var mobile_toggle_button = $('#mobile-top-navbar-toggle');
+        
+        if($(top_navbar).hasClass('active')){
+            top_navbar.removeClass('active');
+        } else {
+            top_navbar.addClass('active');
+        }
     }
 </script>

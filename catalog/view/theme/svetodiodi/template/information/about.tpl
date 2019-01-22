@@ -7,13 +7,15 @@
   </ul>
 </div>
 <div class="page-heading-wrapper">
-    <div class="leftside"></div>
     <div class="container">
-        <div class="page-heading"><?php echo $heading_title; ?></div>
+        <div class="page-heading">
+            <?php echo $heading_title; ?>
+            <div class="leftside"></div>
+            <div class="rightside"></div>
+        </div>
     </div>
-    <div class="rightside"></div>
 </div>
-<div class="container">
+<div class="container content-container">
   <div class="container-row row"><?php echo $column_left; ?>
     <?php if ($column_left && $column_right) { ?>
     <?php $class = 'col-sm-6'; ?>
@@ -123,30 +125,30 @@
                     <div class="hexagon-connectors">
                         <div class="top-line">
                             <div class="top-left connector">
-                                <svg width="200" height="200">
+                                <svg  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 200 200" width="200" height="200">
                                     <line x1="0" y1="90" x2="200" y2="190" style="stroke:green;stroke-width:3"></line>
                                 </svg>
                             </div>
                             <div class="top-right connector">
-                                <svg width="200" height="200">
+                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 200 200" width="200" height="200">
                                     <line x1="0" y1="190" x2="200" y2="90" style="stroke:green;stroke-width:3" />
                                 </svg>
                             </div>
                         </div>
                         <div class="bottom-line">
                             <div class="bottom-left connector">
-                                <svg width="200" height="200">
+                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 200 200" width="200" height="200">
                                     <line x1="0" y1="110" x2="200" y2="10" style="stroke:green;stroke-width:3" />
                                 </svg>
                             </div>
                             <div class="bottom-right connector">
-                                <svg width="200" height="200">
+                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 200 200" width="200" height="200">
                                     <line x1="0" y1="10" x2="200" y2="110" style="stroke:green;stroke-width:3" />
                                 </svg>
                             </div>
                         </div>
                         <div class="bottom-connector connector">
-                            <svg width="0" height="400">
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 200 400" width="200" height="400">
                                 <line x1="0" y1="0" x2="0" y2="400" style="stroke:green;stroke-width:6" />
                             </svg>
                         </div>

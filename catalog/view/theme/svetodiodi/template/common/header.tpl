@@ -243,12 +243,16 @@
                     <li class="user-personal-area cart mobile-item">
                       <span class="horizontal-gradient-line top-to-bottom"></span>
                       <a class="cart-link" href="<?php echo $shopping_cart; ?>" title="<?php echo $text_shopping_cart; ?>">
-                        <img class="cart-icon" src="catalog/view/theme/svetodiodi/image/theme_images/cart.png" />
+                        <span class="img-wrapper">
+                          <img class="cart-icon" src="catalog/view/theme/svetodiodi/image/theme_images/cart.png" />
+                        </span>
                         <span class="cart-products-count"><?php echo $cart_products_count; ?></span>
                         <span class="text-shopping-cart"><?php echo $text_shopping_cart; ?></span>
                       </a>
                       <a class="personal-cabinet-link" href="<?php echo $account; ?>">
-                        <img src="catalog/view/theme/svetodiodi/image/theme_images/personal_cabinet_active.png" />
+                        <span class="img-wrapper">
+                          <img src="catalog/view/theme/svetodiodi/image/theme_images/personal_cabinet_active.png" />
+                        </span>
                         <span class="text-account"><?php echo $text_account; ?></span>
                       </a>
                       <a class="logout-link" href="<?php echo $logout; ?>"><?php echo $text_logout; ?></a>

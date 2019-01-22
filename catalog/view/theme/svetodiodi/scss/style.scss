@@ -4832,8 +4832,13 @@ footer {
 
 
 @media only screen and (max-width: 400px) {
+    .button {
+        font-size: 4.41vw;
+        height: 10.4127vw;
+    }
+    
     .carousel-slideshow {
-        
+        margin: 0px 0px 0px 0px;
     }
     
     #modal-overlay {
@@ -4841,6 +4846,7 @@ footer {
     }
     
     header {
+        z-index: 1000;
         .container {
             &.outer-container {
                 height: auto;
@@ -4856,7 +4862,52 @@ footer {
                     height: auto;
                     
                     img {
-                        margin: 10vw 10vw 10vw 10vw;
+                        width: auto !important;
+                        height: auto !important;
+                        margin: 10vw 10vw 15vw 10vw !important;
+                    }
+                    
+                    .header-categories-menu {
+                        .header-categories-menu-toggle {
+                            margin: 0px 0px 3% 0px;
+                            font-size: 6.41vw;
+                            line-height: 6.41vw;
+                        }
+                        
+                        &:hover {
+                            .header-categories-menu-toggle {
+                                
+                            }
+                        }
+                        
+                        .header-categories-menu-list {
+                            .categories-module {
+                                ul {
+                                    li {
+                                        height: 10.968vw;
+                                        
+                                        a {
+                                            color: #333334;
+                                            font-size: 5.269841vw;
+                                            line-height: 5.269841vw;
+                                            height: 10.968vw;
+                                            flex: 1;
+                                            display: flex;
+                                            flex-direction: row;
+                                            align-items: center;
+                                        }
+                                        
+                                        .toggle-slider {
+                                            display: none;
+                                        }
+                                        
+                                        &.separator {
+                                            height: 1px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
                     }
                 }
             }
@@ -5018,15 +5069,32 @@ footer {
                                 transition: top 0.3s ease-out, opacity 0.3s ease-out;
                                 
                                 a {
-                                    &.cart-link {
+                                    display: flex;
+                                    flex-direction: row;
+                                    align-items: center;
+                                    justify-content: center;
+                                    color: $primary-text-color;
+                                    margin: 0px 70px 0px 70px;
+                                    font-size: 20px;
+                                    
+                                    .img-wrapper {
+                                        width: 50px;
                                         
+                                        img {
+                                            
+                                        }
+                                    }
+                                    
+                                    &.cart-link {
+                                        .cart-products-count {
+                                            display: none;
+                                        }
                                     }
                                     &.personal-cabinet-link {
                                         
                                     }
                                     &.logout-link {
-                                        color: $primary-text-color;
-                                        font-size: 20px;
+                                        
                                     }
                                 }
                             }
@@ -5078,6 +5146,233 @@ footer {
                                     opacity: 1;
                                     transition: top 0.3s 0.2s ease-out, opacity 0.3s 0.2s ease-out;
                                 }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    .breadcrumb {
+        display: none;
+    }
+        
+    .page-heading-wrapper {
+        height: 12.127vw;
+        
+        .container {
+            .page-heading {
+                min-width: 60.634921vw;
+                font-size: 6.641vw;
+                line-height: 6.641vw;
+                
+                &:after {
+                    right: -3.031746vw;
+                    border-left: 3.031746vw solid #23a845;
+                    border-top: 6.063492vw solid transparent;
+                    border-bottom: 6.063492vw solid transparent;
+                }
+            }
+        }
+    }
+    
+    /* Pricelist */
+    .information-pricelist {
+        > .content-container {
+            .container-row {
+                #content {
+                    .content-container {
+                        align-items: stretch;
+                        
+                        .form-info {
+                            font-size: 4.41vw;
+                            line-height: 4.41vw;
+                        }
+                        
+                        form {
+                            .inputs-wrapper {
+                                width: 100%;
+                                
+                                input {
+                                    font-size: 5.41vw;
+                                    line-height: 10.41vw;
+                                }
+                            }
+                        }
+                        
+                        .download-link {
+                            svg {
+                                width: 6.875vw;
+                                height: 7.222222vw;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    /* Terms */
+    .terms-heading {
+        font-size: 3.563vw;
+    }
+    
+    .terms-text {
+        font-size: 3.41vw;
+        line-height: 5.41vw;
+    }
+    
+    /* Information action */
+    .information-action {
+        .content-container {
+            .container-row {
+                #content {
+                    .action-container {
+                        flex-direction: column;
+                        height: auto;
+                        
+                        .action-big-image {
+                            width: 100%;
+                        }
+                        .action-content-container {
+                            padding: 10px 0px 10px 0px;
+                            
+                            .action-heading {
+                                font-size: 3.875vw;
+                                line-height: 4.641vw;
+                            }
+                            
+                            .action-text {
+                                font-size: 3.563vw;
+                                line-height: 3.875vw;
+                                text-align: center;
+                                margin: 10px 20px 10px 20px;
+                            }
+                            
+                            .action-date {
+                                font-size: 4.41vw;
+                                line-height: 4.875vw;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    /* Account-account */
+    .account-account {
+        .content-container {
+            .container-row {
+                #content {
+                    .items-list-wrapper {
+                        flex-direction: column;
+                        align-items: stretch;
+                        
+                        a {
+                            margin: 15px 0px 0px 0px;
+                            
+                            &:first-child {
+                                margin: 0px 0px 0px 0px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    /* Account-logout */
+    .account-logout {
+        .content-container {
+            .container-row {
+                #content {
+                    .message-area {
+                        font-size: 4.5vw;
+                        line-height: 4.5vw;
+                        margin: 4.875vw 0px 4.875vw 0px;
+                        
+                        p {
+                            margin: 0px 0px 0px 0px;
+                            padding: 0px 0px 0px 0px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    /* Information-contact */
+    .information-contact {
+        #content {
+            .content-wrapper {
+                svg {
+                    width: 5.11vw;
+                    height: 4.875vw;
+                }
+                
+                .contacts {
+                    flex-direction: column;
+                    
+                    .telephones {
+                        margin: 0px 0px 0px 0px;
+                        
+                        .telephone {
+                            font-size: 4.875vw;
+                            line-height: 4.875vw;
+                        }
+                    }
+                    
+                    .email {
+                        margin: 15px 0px 0px 0px;
+                        
+                        .email-address {
+                            font-size: 4.875vw;
+                            line-height: 4.875vw;
+                        }
+                    }
+                }
+                
+                .locations {
+                    .addresses {
+                        flex-direction: column;
+                        margin: 0px 0px 0px 0px;
+                        
+                        .address {
+                            .address-wrapper {
+                                .wrapper {
+                                    .address-heading {
+                                        font-size: 4.875vw;
+                                        line-height: 4.11vw;
+                                    }
+                                    
+                                    .address-text {
+                                        font-size: 2.563vw;
+                                        line-height: 4.11vw;
+                                        margin: 10px 0px 0px 0px;
+                                    }
+                                }
+                            }
+                            
+                            &.stock-address {
+                                margin: 15px 0px 0px 0px;
+                            }
+                        }
+                    }
+                    
+                    .geolocations {
+                        flex-direction: column;
+                        
+                        .address-geolocation {
+                            height: 55.253968vw;
+                            
+                            &:first-child {
+                                margin: 0px 0px 15px 0px;
+                            }
+                            
+                            .geolocation-map {
+                                
                             }
                         }
                     }
@@ -5153,9 +5448,12 @@ footer {
                 .left-side {
                     &.logo {
                         img {
-                            width: auto;
-                            margin: 10vw 10vw 10vw 10vw;
+                            
                         }
+                    }
+                    
+                    .header-categories-menu {
+                        display: block;
                     }
                 }
             }
@@ -5283,6 +5581,16 @@ footer {
         }
     }
     
+    .information-information-9 {
+        .page-heading-wrapper {
+            .contaner {
+                .page-heading {
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+    
     .html-module {
         .heading-title-wrapper {
             height: 12.127vw;
@@ -5309,6 +5617,8 @@ footer {
             }
             
             ul.about-us-list {
+                margin: 0px 0px 0px 5px;
+                
                 li {
                     font-size: 3.41vw;
                     line-height: 4.875vw;

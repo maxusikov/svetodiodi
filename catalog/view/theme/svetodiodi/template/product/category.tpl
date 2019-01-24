@@ -15,7 +15,7 @@
         </div>
     </div>
 </div>
-<div id="product-category" class="container content-container">
+<div id="product-category" class="container content-container product-category">
   <div class="container-row row"><?php echo $column_left; ?>
     <?php if ($column_left && $column_right) { ?>
     <?php $class = 'col-sm-6'; ?>
@@ -25,6 +25,8 @@
     <?php $class = 'col-sm-12'; ?>
     <?php } ?>
     <div id="content" class="<?php echo $class; ?>"><?php echo $content_top; ?>
+       
+      <?php if($categories || $products){ ?>
       <div id="filter" class="filter">
         <div class="filter-list">
           <div class="filter-item dropdown-list">
@@ -122,7 +124,8 @@
           </div>
         </div>
       </div>
-
+      <?php } ?>
+        
       <?php if ($category_categories) { ?>
       <div class="category-list">
         <?php foreach (array_chunk($category_categories, 3) as $categories_row) { ?>
@@ -203,9 +206,9 @@
       <?php } ?>
       
       <?php if (!$categories && !$products) { ?>
-      <p><?php echo $text_empty; ?></p>
+      <p class="text-empty"><?php echo $text_empty; ?></p>
       <div class="buttons">
-        <div class="pull-right"><a href="<?php echo $continue; ?>" class="btn btn-primary"><?php echo $button_continue; ?></a></div>
+          <a href="<?php echo $continue; ?>" class="button"><?php echo $button_continue; ?></a>
       </div>
       <?php } ?>
       <?php echo $content_bottom; ?></div>

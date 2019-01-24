@@ -1072,7 +1072,8 @@ footer {
           opacity: 1;
           transition: opacity 0.3s ease-out, right 0.3s ease-out, left 0.3s ease-out; }
       .component-category .category-row .category-item.category-id-62 .category-image {
-        width: 31.746032vw; }
+        width: 20.634921vw;
+        top: 46%; }
       .component-category .category-row .category-item.category-id-62 .dark-overlay img {
         left: 63.492063vw; }
       .component-category .category-row .category-item.category-id-62 .secondary-name {
@@ -1284,7 +1285,7 @@ footer {
         .component-category .category-row .category-item.category-id-66:hover .secondary-name span {
           margin-right: 3.650793vw; }
       .component-category .category-row .category-item.category-id-64 .category-image {
-        width: 44.047619vw; }
+        width: 26.190476vw; }
       .component-category .category-row .category-item.category-id-64 .dark-overlay img {
         right: 63.492063vw;
         transform: scaleX(-1); }
@@ -3091,9 +3092,21 @@ footer {
     width: 1170px;
     margin: 0px auto 0px auto; } }
 @media only screen and (max-width: 400px) {
+  .buttons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end; }
+
   .button {
     font-size: 4.41vw;
     height: 10.4127vw; }
+
+  form input {
+    font-size: 4.41vw; }
+  form textarea {
+    font-size: 4.41vw;
+    line-height: 4.41vw; }
 
   .carousel-slideshow {
     margin: 0px 0px 0px 0px; }
@@ -3259,7 +3272,13 @@ footer {
                   margin: 0px 70px 0px 70px;
                   font-size: 20px; }
                   header #top-menu .container .menu-wrapper ul li.user-personal-area a .img-wrapper {
-                    width: 50px; }
+                    width: 50px;
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: center; }
+                    header #top-menu .container .menu-wrapper ul li.user-personal-area a .img-wrapper svg {
+                      margin: 0px 0px 0px 0px; }
                   header #top-menu .container .menu-wrapper ul li.user-personal-area a.cart-link .cart-products-count {
                     display: none; }
               header #top-menu .container .menu-wrapper ul li .horizontal-gradient-line {
@@ -3303,6 +3322,79 @@ footer {
         border-left: 3.031746vw solid #23a845;
         border-top: 6.063492vw solid transparent;
         border-bottom: 6.063492vw solid transparent; }
+
+  /* About company */
+  .information-about .content-container .container-row #content .slogan {
+    flex-direction: column; }
+    .information-about .content-container .container-row #content .slogan .left-side {
+      width: auto;
+      margin: 2.539683vw 1.269841vw 3.968vw 1.269841vw; }
+      .information-about .content-container .container-row #content .slogan .left-side .outer-border .inner-border .quotes {
+        margin: 5.937vw 0px 1.937vw 0px; }
+        .information-about .content-container .container-row #content .slogan .left-side .outer-border .inner-border .quotes svg {
+          width: 19.936507vw;
+          height: 10.875vw; }
+      .information-about .content-container .container-row #content .slogan .left-side .outer-border .inner-border .heading {
+        font-size: 7.11vw;
+        margin: 1.269841vw 0px 5.968vw 0px; }
+    .information-about .content-container .container-row #content .slogan .right-side {
+      margin: 0px 1.269841vw 0px 1.269841vw; }
+      .information-about .content-container .container-row #content .slogan .right-side .slogan-text {
+        font-size: 4.41vw;
+        line-height: 4.875vw;
+        text-align: justify; }
+      .information-about .content-container .container-row #content .slogan .right-side .signification {
+        margin: 1.793651vw 0px 3.793651vw 0px;
+        font-size: 3.5vw;
+        line-height: 3.5vw;
+        text-align: right; }
+  .information-about .content-container .container-row #content .our-mission {
+    min-height: 90.063492vw; }
+    .information-about .content-container .container-row #content .our-mission .mission-heading {
+      font-size: 8.875vw;
+      line-height: 8.875vw;
+      border-width: 1.31746vw; }
+    .information-about .content-container .container-row #content .our-mission .mission-subheading {
+      font-size: 3.937vw; }
+    .information-about .content-container .container-row #content .our-mission .mission-text {
+      font-size: 3.563vw;
+      line-height: 3.875vw;
+      margin: 0px 5vw 0px 5vw; }
+  .information-about .content-container .container-row #content .delivery .heading-wrapper .heading-text {
+    font-size: 6.11vw; }
+  .information-about .content-container .container-row #content .delivery .heading-wrapper .heading-bottom-line {
+    border-bottom: 1.31746vw solid #23a845;
+    width: 52.253968vw;
+    margin: 2.563vw 0px 0px 0px; }
+  .information-about .content-container .container-row #content .delivery .achievements .achievement .achievement-text {
+    font-size: 3.563vw;
+    line-height: 3.875vw; }
+  .information-about .content-container .container-row #content .delivery .achievements .achievement.deliveries svg {
+    width: 15.761905vw;
+    height: 15.4127vw; }
+  .information-about .content-container .container-row #content .delivery .achievements .achievement.customers svg {
+    width: 15.761905vw;
+    height: 15.4127vw; }
+  .information-about .content-container .container-row #content .assortiment .heading-wrapper .heading-text {
+    font-size: 5.11vw; }
+  .information-about .content-container .container-row #content .assortiment .heading-wrapper .heading-bottom-line {
+    border-bottom: 1.31746vw solid #23a845;
+    width: 52.253968vw;
+    margin: 2.563vw 0px 0px 0px; }
+  .information-about .content-container .container-row #content .assortiment .categories .cat-list {
+    justify-content: flex-start; }
+    .information-about .content-container .container-row #content .assortiment .categories .cat-list li a {
+      font-size: 3.563vw;
+      line-height: 4.563vw; }
+      .information-about .content-container .container-row #content .assortiment .categories .cat-list li a:before {
+        min-width: 2.87301vw;
+        height: 2.87301vw; }
+  .information-about .content-container .container-row #content .collaboration-benefits .heading-wrapper .heading-text {
+    font-size: 5.11vw; }
+  .information-about .content-container .container-row #content .collaboration-benefits .heading-wrapper .heading-bottom-line {
+    border-bottom: 1.31746vw solid #23a845;
+    width: 52.253968vw;
+    margin: 2.563vw 0px 0px 0px; }
 
   /* Pricelist */
   .information-pricelist > .content-container .container-row #content .content-container {
@@ -3356,6 +3448,18 @@ footer {
       .account-account .content-container .container-row #content .items-list-wrapper a:first-child {
         margin: 0px 0px 0px 0px; }
 
+  /* Account personal */
+  .account-personal .container .container-row #content .form-wrapper form .input-wrapper {
+    flex-direction: column; }
+    .account-personal .container .container-row #content .form-wrapper form .input-wrapper .input-column-wrapper {
+      margin: 40px 0px 0px 0px; }
+      .account-personal .container .container-row #content .form-wrapper form .input-wrapper .input-column-wrapper .input-column-heading {
+        font-size: 4.875vw; }
+      .account-personal .container .container-row #content .form-wrapper form .input-wrapper .input-column-wrapper .form-input-unit label {
+        font-size: 3.563vw; }
+      .account-personal .container .container-row #content .form-wrapper form .input-wrapper .input-column-wrapper .form-input-unit textarea {
+        height: 15.428571vw; }
+
   /* Account-logout */
   .account-logout .content-container .container-row #content .message-area {
     font-size: 4.5vw;
@@ -3364,6 +3468,24 @@ footer {
     .account-logout .content-container .container-row #content .message-area p {
       margin: 0px 0px 0px 0px;
       padding: 0px 0px 0px 0px; }
+
+  /* Account register */
+  .account-register .content-container .content-row #content form {
+    align-items: stretch; }
+    .account-register .content-container .content-row #content form .inputs-wrapper {
+      flex-direction: column;
+      align-items: stretch; }
+      .account-register .content-container .content-row #content form .inputs-wrapper .inputs-column {
+        align-items: stretch; }
+        .account-register .content-container .content-row #content form .inputs-wrapper .inputs-column:first-child {
+          margin: 0px 0px 1.849vw 0px; }
+        .account-register .content-container .content-row #content form .inputs-wrapper .inputs-column input {
+          font-size: 4.41vw;
+          width: auto; }
+  .account-register .content-container .content-row #content .our-manager-call-you {
+    font-size: 3vw;
+    line-height: 3vw;
+    text-align: center; }
 
   /* Information-contact */
   .information-contact #content .content-wrapper svg {
@@ -3496,6 +3618,116 @@ footer {
 
   .information-information-9 .page-heading-wrapper .contaner .page-heading {
     font-size: 20px; }
+
+  #product-category .container-row #content .category-list .category-row {
+    flex-direction: column; }
+    #product-category .container-row #content .category-list .category-row .category-item {
+      margin: 20px 0px 0px 0px; }
+      #product-category .container-row #content .category-list .category-row .category-item:last-child {
+        margin: 20px 0px 20px 0px; }
+      #product-category .container-row #content .category-list .category-row .category-item > a .category-name {
+        font-size: 6.41vw; }
+  #product-category .container-row #content .product-list .product-row {
+    flex-direction: column;
+    align-items: stretch; }
+    #product-category .container-row #content .product-list .product-row .product-item {
+      margin: 20px 0px 0px 0px; }
+      #product-category .container-row #content .product-list .product-row .product-item .product-info .product-image {
+        width: 35vw; }
+        #product-category .container-row #content .product-list .product-row .product-item .product-info .product-image img {
+          width: 100%; }
+      #product-category .container-row #content .product-list .product-row .product-item .product-info .rightside .product-name {
+        font-size: 4.41vw; }
+      #product-category .container-row #content .product-list .product-row .product-item .product-info .rightside .product-data {
+        margin: 20px 0px 0px 0px; }
+        #product-category .container-row #content .product-list .product-row .product-item .product-info .rightside .product-data .product-data-item {
+          line-height: 3.269841vw; }
+          #product-category .container-row #content .product-list .product-row .product-item .product-info .rightside .product-data .product-data-item .item-name {
+            font-size: 3.269841vw; }
+          #product-category .container-row #content .product-list .product-row .product-item .product-info .rightside .product-data .product-data-item .item-gap {
+            font-size: 3.269841vw; }
+          #product-category .container-row #content .product-list .product-row .product-item .product-info .rightside .product-data .product-data-item .item-value {
+            font-size: 3.269841vw; }
+      #product-category .container-row #content .product-list .product-row .product-item .product-cart .price {
+        font-size: 8.1695vw; }
+      #product-category .container-row #content .product-list .product-row .product-item .product-cart .quantity .availability {
+        font-size: 3vw;
+        margin: 0px 0px 5px 0px; }
+      #product-category .container-row #content .product-list .product-row .product-item .product-cart .quantity .quantity-counter {
+        min-width: 22.015873vw;
+        height: 6.222222vw; }
+        #product-category .container-row #content .product-list .product-row .product-item .product-cart .quantity .quantity-counter .minus, #product-category .container-row #content .product-list .product-row .product-item .product-cart .quantity .quantity-counter .plus {
+          font-size: 4.41vw;
+          width: 6.222222vw; }
+        #product-category .container-row #content .product-list .product-row .product-item .product-cart .quantity .quantity-counter .number {
+          font-size: 3.41vw; }
+      #product-category .container-row #content .product-list .product-row .product-item .product-cart .add-to-cart {
+        height: 8.4127vw; }
+  #product-category .container-row .text-empty {
+    font-size: 4.41vw;
+    line-height: 4.41vw;
+    margin: 20px 0px 20px 0px; }
+
+  #filter .filter-list {
+    flex-direction: column; }
+    #filter .filter-list .filter-item {
+      flex-direction: row;
+      justify-content: space-between;
+      margin: 10px 0px 0px 0px; }
+      #filter .filter-list .filter-item:first-child {
+        margin: 0px 0px 0px 0px; }
+      #filter .filter-list .filter-item .filter-item-heading {
+        font-size: 4.41vw;
+        line-height: 4.41vw; }
+      #filter .filter-list .filter-item .filter-item-body {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start; }
+      #filter .filter-list .filter-item.dropdown-list .filter-item-body ul.filter-select-list {
+        width: auto;
+        max-width: 50vw; }
+        #filter .filter-list .filter-item.dropdown-list .filter-item-body ul.filter-select-list li a {
+          width: auto;
+          height: auto;
+          font-size: 4.269841vw;
+          line-height: 4.269841vw;
+          padding: 0px 3.11vw 0px 3.11vw;
+          white-space: nowrap; }
+      #filter .filter-list .filter-item.dropdown-list .filter-item-body .dropdown-arrow {
+        width: 2.190476vw;
+        height: 2.190476vw; }
+        #filter .filter-list .filter-item.dropdown-list .filter-item-body .dropdown-arrow .arrow-figure {
+          width: 1.6349vw;
+          height: 1.6349vw; }
+      #filter .filter-list .filter-item.checkbox .filter-item-body ul.filter-checkbox-list li.checkbox-item a .item-label {
+        font-size: 3.269841vw;
+        line-height: 3.269841vw; }
+      #filter .filter-list .filter-item.checkbox .filter-item-body ul.filter-checkbox-list li.checkbox-item a .checkbox-mark {
+        width: 1.555556vw;
+        height: 1.555556vw; }
+
+  #login-modal.modal-dialog, #info-modal.modal-dialog, #call-modal.modal-dialog {
+    margin: 0px 0px 0px 0px; }
+    #login-modal.modal-dialog .form-wrapper, #info-modal.modal-dialog .form-wrapper, #call-modal.modal-dialog .form-wrapper {
+      width: 100vw;
+      border-left: none;
+      border-right: none; }
+      #login-modal.modal-dialog .form-wrapper .close-button, #info-modal.modal-dialog .form-wrapper .close-button, #call-modal.modal-dialog .form-wrapper .close-button {
+        right: 3.5079vw;
+        top: 3.5079vw; }
+        #login-modal.modal-dialog .form-wrapper .close-button svg, #info-modal.modal-dialog .form-wrapper .close-button svg, #call-modal.modal-dialog .form-wrapper .close-button svg {
+          width: 5.563vw;
+          height: 5.563vw; }
+      #login-modal.modal-dialog .form-wrapper form .form-heading, #info-modal.modal-dialog .form-wrapper form .form-heading, #call-modal.modal-dialog .form-wrapper form .form-heading {
+        font-size: 5.641vw;
+        line-height: 5.641vw; }
+      #login-modal.modal-dialog .form-wrapper form .inputs-wrapper input, #info-modal.modal-dialog .form-wrapper form .inputs-wrapper input, #call-modal.modal-dialog .form-wrapper form .inputs-wrapper input {
+        font-size: 4.41vw;
+        line-height: 4.41vw; }
+      #login-modal.modal-dialog .form-wrapper form .need-registration-text, #info-modal.modal-dialog .form-wrapper form .need-registration-text, #call-modal.modal-dialog .form-wrapper form .need-registration-text {
+        font-size: 4.41vw;
+        line-height: 4.41vw; }
 
   .html-module .heading-title-wrapper {
     height: 12.127vw; }

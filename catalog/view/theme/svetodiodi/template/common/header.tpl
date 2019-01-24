@@ -192,13 +192,17 @@
                     <?php if ($logged) { ?>
                     <div class="cart">
                         <a class="cart-link" href="<?php echo $shopping_cart; ?>" title="<?php echo $text_shopping_cart; ?>">
-                            <img class="cart-icon" src="catalog/view/theme/svetodiodi/image/theme_images/cart.png" />
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="27" height="27" viewBox="0 0 27 27">
+                                <image id="shopping-cart_2_" data-name="shopping-cart (2)" width="27" height="27" xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAABsAAAAbCAMAAAC6CgRnAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAA/FBMVEUjqEX///8jqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUAAACJGs49AAAAUnRSTlMAALotwNGyUE8aDOzifxL0WozLARn6PZmwJPwnqJQv8RW1eQLfCWPz4N4pD+lKcsKcu4AobzFYYhcuaUMR2e8wa5/2MpvNG01UiNR8+aAmx91FJFI+vAAAAAFiS0dEU3pnHQYAAAAJcEhZcwAACxIAAAsSAdLdfvwAAAAHdElNRQfjARgMLxtlqp2pAAAA8UlEQVQoz33S6VbCMBAF4ER2WcSCCqgsSiiLCiiborIIIgoC8/4PYxI7jW2D90/PnK9nek9SAjwHRIWqEGHg05vfHwAIhrwJR/ibh1HQJibWxP+xxJHWkvL7xzoyUtLSJxo7pb/Fz7yUoZZlc27KnaORC7ddUtvyLioUlZGS066osmvDQWX2xyoAZhVTK9WpssYNwK33HmTuAJpkj7UA2vfOPKB1vOcSQmPt/UZS3bDr2tO2sV5/oLo8Pg1Vl+cXgNcR2pivnNgm/4qgZWwqpje0mZjmlr3LLgu0DzEtcecnH8yi3eWrsFoztO8NbHf8+QMV3m3RFQD7FAAAAABJRU5ErkJggg=="/>
+                            </svg>
                             <span class="cart-products-count"><?php echo $cart_products_count; ?></span>
                         </a>
                     </div>
                     <div class="personal-cabinet">
                         <a class="cabinet-link" href="<?php echo $account; ?>">
-                            <img src="catalog/view/theme/svetodiodi/image/theme_images/personal_cabinet_active.png" />
+                          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="36" height="36" viewBox="0 0 36 36">
+                            <image id="user_1" data-name="user" width="36" height="36" xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAMAAADW3miqAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAABy1BMVEUjqEX///8jqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUAAACup22YAAAAl3RSTlMAAAQkSllgVD8XD2W29PzgnUQCkPu0cDoVBSBJiNTcAwFo8Ox6FDGo/swwDa+UMsv47xg8KgyNhOQsjspjbn4t6bcHdAndiqTxHFcI46s3oEDWqWr5ERP9XK5Qm9BdzVMGYXxLG6a74Xachpre7RYvQzN75dsSgmx9jM/uNPqR0mu9CsDqH4e6xoM4VSGs8qP2gBBY4rw+G12xyAAAAAFiS0dEmHbRBj4AAAAJcEhZcwAACxIAAAsSAdLdfvwAAAAHdElNRQfjARgMLjDQDVWoAAACIElEQVQ4y4XUCVfTQBAA4EmAlJamlbZASgv0oEAKaUFFwYIXCEUr4oEoioIXeKCixQs8wRNE8Zq/a5LNbrK1D+e9vORNviS72Z0B4EKsqKySXNVuOyPo4RSeGq+MiD798O+qDZRD7qAcqqtvUADCjZFoEzZLLaUoFk8kW1OO17a1d6hpHnV2oebhhweZbHfciRS1J2Ld2t22Z28vuQzvw/026lT7+sm4DvjRGHpuwBwPDOJBimJdPcQcOow0jhw1M0PoslAcybeGj6EdI+STo/kxE7kTGkkcdxiUT5i53sJJEwWT1rw0J8Jx+mRGRx651ZrYKQ5NkGTg9Bkd1YRSOyHh7LlJAG8d7IjOT10AUa6n6CKHpukCq5egAhsso0xxyEuRloNKVCyU5gxepmgwCVUI/0EzCJKPon4eXaHIhXAVZy0U9nMoStFcN0xgI31VrdOMzlJ0rQAKXqco0Geb0A1WCDdvAcxH2V5csNFtu1oKdwDuNjE0fI+axfsMPcBqgIe4xNQMRY9YSgg+1ndprNjOMtMUsaWC5cQTYz9JHRmaeUrRM4aeJ5YNJKovRDI7aYWi/BxJwapviOzx9MtXxiny2vmfmiWDTRZzLVZJDeAbWHqLJaGzd2vr71lxfsCPWCaKn/LjjjL/jGVj5QvXMDbyZUx2s6T1jH0tJVsLIvzTxFa/fXeQ+e2UtXZ8p4MfP7Xsot4vfv3e/hNgCywIfwG1mCYytJH9rAAAAABJRU5ErkJggg=="/>
+                          </svg>
                         </a>
                         <div class="user-informations">
                             <div class="inner-wrapper">
@@ -213,7 +217,9 @@
                     <?php } else { ?>
                     <div class="personal-cabinet">
                         <a class="cabinet-link" onclick="javascript:toggleLoginModal();">
-                            <img src="catalog/view/theme/svetodiodi/image/theme_images/personal_cabinet_inactive.png" />
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="36" height="36" viewBox="0 0 36 36">
+                                <image id="user_1" data-name="" width="36" height="36" xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAMAAADW3miqAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAABy1BMVEVmZmf///9mZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmcAAAAftAaLAAAAl3RSTlMAAAQkSllgVD8XD2W29PzgnUQCkPu0cDoVBSBJiNTcAwFo8Ox6FDGo/swwDa+UMsv47xg8KgyNhOQsjspjbn4t6bcHdAndiqTxHFcI46s3oEDWqWr5ERP9XK5Qm9BdzVMGYXxLG6a74Xachpre7RYvQzN75dsSgmx9jM/uNPqR0mu9CsDqH4e6xoM4VSGs8qP2gBBY4rw+G12xyAAAAAFiS0dEmHbRBj4AAAAJcEhZcwAACxIAAAsSAdLdfvwAAAAHdElNRQfjARgMLhWbCYHvAAACIElEQVQ4y4XUCVfTQBAA4EmAlJamlbZASgv0oEAKaUFFwYIXCEUr4oEoioIXeKCixQs8wRNE8Zq/a5LNbrK1D+e9vORNviS72Z0B4EKsqKySXNVuOyPo4RSeGq+MiD798O+qDZRD7qAcqqtvUADCjZFoEzZLLaUoFk8kW1OO17a1d6hpHnV2oebhhweZbHfciRS1J2Ld2t22Z28vuQzvw/026lT7+sm4DvjRGHpuwBwPDOJBimJdPcQcOow0jhw1M0PoslAcybeGj6EdI+STo/kxE7kTGkkcdxiUT5i53sJJEwWT1rw0J8Jx+mRGRx651ZrYKQ5NkGTg9Bkd1YRSOyHh7LlJAG8d7IjOT10AUa6n6CKHpukCq5egAhsso0xxyEuRloNKVCyU5gxepmgwCVUI/0EzCJKPon4eXaHIhXAVZy0U9nMoStFcN0xgI31VrdOMzlJ0rQAKXqco0Geb0A1WCDdvAcxH2V5csNFtu1oKdwDuNjE0fI+axfsMPcBqgIe4xNQMRY9YSgg+1ndprNjOMtMUsaWC5cQTYz9JHRmaeUrRM4aeJ5YNJKovRDI7aYWi/BxJwapviOzx9MtXxiny2vmfmiWDTRZzLVZJDeAbWHqLJaGzd2vr71lxfsCPWCaKn/LjjjL/jGVj5QvXMDbyZUx2s6T1jH0tJVsLIvzTxFa/fXeQ+e2UtXZ8p4MfP7Xsot4vfv3e/hNgCywIfwG1mCYytJH9rAAAAABJRU5ErkJggg=="/>
+                            </svg>
                         </a>
                     </div>
                     <?php } ?>
@@ -239,34 +245,40 @@
                         <a href="<?php echo $menu_item['href']; ?>"><?php echo $menu_item['name']; ?></a>
                     </li>
                 <?php } ?>
-                  <?php if($logged){ ?>
+                <?php if($logged){ ?>
                     <li class="user-personal-area cart mobile-item">
                       <span class="horizontal-gradient-line top-to-bottom"></span>
                       <a class="cart-link" href="<?php echo $shopping_cart; ?>" title="<?php echo $text_shopping_cart; ?>">
                         <span class="img-wrapper">
-                          <img class="cart-icon" src="catalog/view/theme/svetodiodi/image/theme_images/cart.png" />
+                          <svg class="cart-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="27" height="27" viewBox="0 0 27 27">
+                            <image id="shopping-cart_2_" data-name="shopping-cart (2)" width="27" height="27" xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAABsAAAAbCAMAAAC6CgRnAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAA/FBMVEUjqEX///8jqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUAAACJGs49AAAAUnRSTlMAALotwNGyUE8aDOzifxL0WozLARn6PZmwJPwnqJQv8RW1eQLfCWPz4N4pD+lKcsKcu4AobzFYYhcuaUMR2e8wa5/2MpvNG01UiNR8+aAmx91FJFI+vAAAAAFiS0dEU3pnHQYAAAAJcEhZcwAACxIAAAsSAdLdfvwAAAAHdElNRQfjARgMLxtlqp2pAAAA8UlEQVQoz33S6VbCMBAF4ER2WcSCCqgsSiiLCiiborIIIgoC8/4PYxI7jW2D90/PnK9nek9SAjwHRIWqEGHg05vfHwAIhrwJR/ibh1HQJibWxP+xxJHWkvL7xzoyUtLSJxo7pb/Fz7yUoZZlc27KnaORC7ddUtvyLioUlZGS066osmvDQWX2xyoAZhVTK9WpssYNwK33HmTuAJpkj7UA2vfOPKB1vOcSQmPt/UZS3bDr2tO2sV5/oLo8Pg1Vl+cXgNcR2pivnNgm/4qgZWwqpje0mZjmlr3LLgu0DzEtcecnH8yi3eWrsFoztO8NbHf8+QMV3m3RFQD7FAAAAABJRU5ErkJggg=="/>
+                          </svg>
                         </span>
                         <span class="cart-products-count"><?php echo $cart_products_count; ?></span>
                         <span class="text-shopping-cart"><?php echo $text_shopping_cart; ?></span>
                       </a>
                       <a class="personal-cabinet-link" href="<?php echo $account; ?>">
                         <span class="img-wrapper">
-                          <img src="catalog/view/theme/svetodiodi/image/theme_images/personal_cabinet_active.png" />
+                          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="36" height="36" viewBox="0 0 36 36">
+                            <image id="user_1" data-name="user" width="36" height="36" xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAMAAADW3miqAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAABy1BMVEUjqEX///8jqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUjqEUAAACup22YAAAAl3RSTlMAAAQkSllgVD8XD2W29PzgnUQCkPu0cDoVBSBJiNTcAwFo8Ox6FDGo/swwDa+UMsv47xg8KgyNhOQsjspjbn4t6bcHdAndiqTxHFcI46s3oEDWqWr5ERP9XK5Qm9BdzVMGYXxLG6a74Xachpre7RYvQzN75dsSgmx9jM/uNPqR0mu9CsDqH4e6xoM4VSGs8qP2gBBY4rw+G12xyAAAAAFiS0dEmHbRBj4AAAAJcEhZcwAACxIAAAsSAdLdfvwAAAAHdElNRQfjARgMLjDQDVWoAAACIElEQVQ4y4XUCVfTQBAA4EmAlJamlbZASgv0oEAKaUFFwYIXCEUr4oEoioIXeKCixQs8wRNE8Zq/a5LNbrK1D+e9vORNviS72Z0B4EKsqKySXNVuOyPo4RSeGq+MiD798O+qDZRD7qAcqqtvUADCjZFoEzZLLaUoFk8kW1OO17a1d6hpHnV2oebhhweZbHfciRS1J2Ld2t22Z28vuQzvw/026lT7+sm4DvjRGHpuwBwPDOJBimJdPcQcOow0jhw1M0PoslAcybeGj6EdI+STo/kxE7kTGkkcdxiUT5i53sJJEwWT1rw0J8Jx+mRGRx651ZrYKQ5NkGTg9Bkd1YRSOyHh7LlJAG8d7IjOT10AUa6n6CKHpukCq5egAhsso0xxyEuRloNKVCyU5gxepmgwCVUI/0EzCJKPon4eXaHIhXAVZy0U9nMoStFcN0xgI31VrdOMzlJ0rQAKXqco0Geb0A1WCDdvAcxH2V5csNFtu1oKdwDuNjE0fI+axfsMPcBqgIe4xNQMRY9YSgg+1ndprNjOMtMUsaWC5cQTYz9JHRmaeUrRM4aeJ5YNJKovRDI7aYWi/BxJwapviOzx9MtXxiny2vmfmiWDTRZzLVZJDeAbWHqLJaGzd2vr71lxfsCPWCaKn/LjjjL/jGVj5QvXMDbyZUx2s6T1jH0tJVsLIvzTxFa/fXeQ+e2UtXZ8p4MfP7Xsot4vfv3e/hNgCywIfwG1mCYytJH9rAAAAABJRU5ErkJggg=="/>
+                          </svg>
                         </span>
                         <span class="text-account"><?php echo $text_account; ?></span>
                       </a>
                       <a class="logout-link" href="<?php echo $logout; ?>"><?php echo $text_logout; ?></a>
                       <span class="horizontal-gradient-line bottom-to-top"></span>
                     </li>
-                  <?php } else { ?>
+                <?php } else { ?>
                     <li class="user-personal-area login mobile-item">
                       <span class="horizontal-gradient-line top-to-bottom"></span>
                       <a class="cabinet-link" onclick="javascript:toggleLoginModal();">
-                        <img src="catalog/view/theme/svetodiodi/image/theme_images/personal_cabinet_inactive.png" />
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="36" height="36" viewBox="0 0 36 36">
+                            <image id="user_1" data-name="" width="36" height="36" xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAMAAADW3miqAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAABy1BMVEVmZmf///9mZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmdmZmcAAAAftAaLAAAAl3RSTlMAAAQkSllgVD8XD2W29PzgnUQCkPu0cDoVBSBJiNTcAwFo8Ox6FDGo/swwDa+UMsv47xg8KgyNhOQsjspjbn4t6bcHdAndiqTxHFcI46s3oEDWqWr5ERP9XK5Qm9BdzVMGYXxLG6a74Xachpre7RYvQzN75dsSgmx9jM/uNPqR0mu9CsDqH4e6xoM4VSGs8qP2gBBY4rw+G12xyAAAAAFiS0dEmHbRBj4AAAAJcEhZcwAACxIAAAsSAdLdfvwAAAAHdElNRQfjARgMLhWbCYHvAAACIElEQVQ4y4XUCVfTQBAA4EmAlJamlbZASgv0oEAKaUFFwYIXCEUr4oEoioIXeKCixQs8wRNE8Zq/a5LNbrK1D+e9vORNviS72Z0B4EKsqKySXNVuOyPo4RSeGq+MiD798O+qDZRD7qAcqqtvUADCjZFoEzZLLaUoFk8kW1OO17a1d6hpHnV2oebhhweZbHfciRS1J2Ld2t22Z28vuQzvw/026lT7+sm4DvjRGHpuwBwPDOJBimJdPcQcOow0jhw1M0PoslAcybeGj6EdI+STo/kxE7kTGkkcdxiUT5i53sJJEwWT1rw0J8Jx+mRGRx651ZrYKQ5NkGTg9Bkd1YRSOyHh7LlJAG8d7IjOT10AUa6n6CKHpukCq5egAhsso0xxyEuRloNKVCyU5gxepmgwCVUI/0EzCJKPon4eXaHIhXAVZy0U9nMoStFcN0xgI31VrdOMzlJ0rQAKXqco0Geb0A1WCDdvAcxH2V5csNFtu1oKdwDuNjE0fI+axfsMPcBqgIe4xNQMRY9YSgg+1ndprNjOMtMUsaWC5cQTYz9JHRmaeUrRM4aeJ5YNJKovRDI7aYWi/BxJwapviOzx9MtXxiny2vmfmiWDTRZzLVZJDeAbWHqLJaGzd2vr71lxfsCPWCaKn/LjjjL/jGVj5QvXMDbyZUx2s6T1jH0tJVsLIvzTxFa/fXeQ+e2UtXZ8p4MfP7Xsot4vfv3e/hNgCywIfwG1mCYytJH9rAAAAABJRU5ErkJggg=="/>
+                        </svg>
                       </a>
                       <span class="horizontal-gradient-line bottom-to-top"></span>
                     </li>
-                  <?php } ?>
+                <?php } ?>
                 </ul>
                 <div class="background-left"></div>
                 <div class="background-right"></div>

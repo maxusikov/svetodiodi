@@ -1708,7 +1708,8 @@ footer {
             
             &.category-id-62 {
                 .category-image {
-                    width: $base--400px;
+                    width: $base--260px;
+                    top: 46%;
                 }
                 
                 .dark-overlay {
@@ -2105,7 +2106,7 @@ footer {
             }
             &.category-id-64 {
                 .category-image {
-                    width: $base--555px;
+                    width: $base--330px;
                 }
                 
                 .dark-overlay {
@@ -4832,9 +4833,26 @@ footer {
 
 
 @media only screen and (max-width: 400px) {
+    .buttons {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-end;
+    }
+    
     .button {
         font-size: 4.41vw;
         height: 10.4127vw;
+    }
+    
+    form {
+        input {
+            font-size: 4.41vw;
+        }
+        textarea {
+            font-size: 4.41vw;
+            line-height: 4.41vw;
+        }
     }
     
     .carousel-slideshow {
@@ -5079,9 +5097,13 @@ footer {
                                     
                                     .img-wrapper {
                                         width: 50px;
+                                        display: flex;
+                                        flex-direction: row;
+                                        align-items: center;
+                                        justify-content: center;
                                         
-                                        img {
-                                            
+                                        svg {
+                                            margin: 0px 0px 0px 0px;
                                         }
                                     }
                                     
@@ -5172,6 +5194,180 @@ footer {
                     border-left: 3.031746vw solid #23a845;
                     border-top: 6.063492vw solid transparent;
                     border-bottom: 6.063492vw solid transparent;
+                }
+            }
+        }
+    }
+    
+    /* About company */
+    .information-about {
+        .content-container {
+            .container-row {
+                #content {
+                    .slogan {
+                        flex-direction: column;
+                        
+                        .left-side {
+                            width: auto;
+                            margin: 2.539683vw 1.269841vw 3.968vw 1.269841vw;
+                            
+                            .outer-border {
+                                .inner-border {
+                                    .quotes {
+                                        margin: 5.937vw 0px 1.937vw 0px;
+                                        
+                                        svg {
+                                            width: 19.936507vw;
+                                            height: 10.875vw;
+                                        }
+                                    }
+                                    
+                                    .heading {
+                                        font-size: 7.11vw;
+                                        margin: 1.269841vw 0px 5.968vw 0px;
+                                    }
+                                }
+                            }
+                        }
+                        
+                        .right-side {
+                            margin: 0px 1.269841vw 0px 1.269841vw;
+                            
+                            .slogan-text {
+                                font-size: 4.41vw;
+                                line-height: 4.875vw;
+                                text-align: justify;
+                            }
+                            
+                            .signification {
+                                margin: 1.793651vw 0px 3.793651vw 0px;
+                                font-size: 3.5vw;
+                                line-height: 3.5vw;
+                                text-align: right;
+                            }
+                        }
+                    }
+                    
+                    .our-mission {
+                        min-height: 90.063492vw;
+                        
+                        .background-overlay {
+                            img {}
+                        }
+                        
+                        .mission-heading {
+                            font-size: 8.875vw;
+                            line-height: 8.875vw;
+                            border-width: 1.31746vw;
+                        }
+                        
+                        .mission-subheading {
+                            font-size: 3.937vw;
+                        }
+                        
+                        .mission-text {
+                            font-size: 3.563vw;
+                            line-height: 3.875vw;
+                            margin: 0px 5vw 0px 5vw;
+                        }
+                    }
+                    
+                    .delivery {
+                        .heading-wrapper {
+                            .heading-text {
+                                font-size: 6.11vw;
+                            }
+                            
+                            .heading-bottom-line {
+                                border-bottom: 1.31746vw solid #23a845;
+                                width: 52.253968vw;
+                                margin: 2.563vw 0px 0px 0px;
+                            }
+                        }
+                        
+                        .achievements {
+                            .achievement {
+                                svg {
+                                    
+                                }
+                                
+                                .achievement-text {
+                                    font-size: 3.563vw;
+                                    line-height: 3.875vw;
+                                }
+                                
+                                &.deliveries {
+                                    svg {
+                                        width: 15.761905vw;
+                                        height: 15.4127vw;
+                                    }
+                                }
+                                
+                                &.customers {
+                                    svg {
+                                        width: 15.761905vw;
+                                        height: 15.4127vw;
+                                    }
+                                }
+                            }
+                        }
+                        
+                        .russia-map {
+                            img {}
+                        }
+                    }
+                    
+                    .assortiment {
+                        .heading-wrapper {
+                            .heading-text {
+                                font-size: 5.11vw;
+                            }
+                            
+                            .heading-bottom-line {
+                                border-bottom: 1.31746vw solid #23a845;
+                                width: 52.253968vw;
+                                margin: 2.563vw 0px 0px 0px;
+                            }
+                        }
+                        
+                        .categories {
+                            .cat-list {
+                                justify-content: flex-start;
+                                
+                                li {
+                                    a {
+                                        font-size: 3.563vw;
+                                        line-height: 4.563vw;
+                                        
+                                        &:before {
+                                            min-width: 2.87301vw;
+                                            height: 2.87301vw;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    
+                    .collaboration-benefits {
+                        .heading-wrapper {
+                            .heading-text {
+                                font-size: 5.11vw;
+                            }
+                            
+                            .heading-bottom-line {
+                                border-bottom: 1.31746vw solid #23a845;
+                                width: 52.253968vw;
+                                margin: 2.563vw 0px 0px 0px;
+                            }
+                        }
+                        
+                        .benefits-wrapper {
+                            .benefits-inner-wrapper {
+                                
+                            }
+                        }
+                    }
                 }
             }
         }
@@ -5283,6 +5479,41 @@ footer {
         }
     }
     
+    /* Account personal */
+    .account-personal {
+        .container {
+            .container-row {
+                #content {
+                    .form-wrapper {
+                        form {
+                            .input-wrapper {
+                                flex-direction: column;
+                                
+                                .input-column-wrapper {
+                                    margin: 40px 0px 0px 0px;
+                                    
+                                    .input-column-heading {
+                                        font-size: 4.875vw;
+                                    }
+                                    
+                                    .form-input-unit {
+                                        label {
+                                            font-size: 3.563vw;
+                                        }
+                                        
+                                        textarea {
+                                            height: 15.428571vw;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
     /* Account-logout */
     .account-logout {
         .content-container {
@@ -5297,6 +5528,43 @@ footer {
                             margin: 0px 0px 0px 0px;
                             padding: 0px 0px 0px 0px;
                         }
+                    }
+                }
+            }
+        }
+    }
+    
+    /* Account register */
+    .account-register {
+        .content-container {
+            .content-row {
+                #content {
+                    form {
+                        align-items: stretch;
+                        
+                        .inputs-wrapper {
+                            flex-direction: column;
+                            align-items: stretch;
+                            
+                            .inputs-column {
+                                align-items: stretch;
+                                
+                                &:first-child {
+                                    margin: 0px 0px 1.849vw 0px;
+                                }
+                                
+                                input {
+                                    font-size: 4.41vw;
+                                    width: auto;
+                                }
+                            }
+                        }
+                    }
+                    
+                    .our-manager-call-you {
+                        font-size: 3vw;
+                        line-height: 3vw;
+                        text-align: center;
                     }
                 }
             }
@@ -5586,6 +5854,239 @@ footer {
             .contaner {
                 .page-heading {
                     font-size: 20px;
+                }
+            }
+        }
+    }
+    
+    #product-category {
+        .container-row {
+            #content {
+                .category-list {
+                    .category-row {
+                        flex-direction: column;
+                        
+                        .category-item {
+                            margin: 20px 0px 0px 0px;
+                            
+                            &:last-child {
+                                margin: 20px 0px 20px 0px;
+                            }
+                            
+                            > a {
+                                .category-name {
+                                    font-size: 6.41vw;
+                                }
+                            }
+                        }
+                    }
+                }
+                
+                .product-list {
+                    .product-row {
+                        flex-direction: column;
+                        align-items: stretch;
+                        
+                        .product-item {
+                            margin: 20px 0px 0px 0px;
+                            
+                            &:last-child {
+                                
+                            }
+                            
+                            .product-info {
+                                .product-image {
+                                    width: 35vw;
+                                    
+                                    img {
+                                        width: 100%;
+                                    }
+                                }
+                                
+                                .rightside {
+                                    .product-name {
+                                        font-size: 4.41vw;
+                                    }
+                                    
+                                    .product-data {
+                                        margin: 20px 0px 0px 0px;
+                                        
+                                        .product-data-item {
+                                            line-height: 3.269841vw;
+                                            
+                                            .item-name {
+                                                font-size: 3.269841vw;
+                                            }
+                                            
+                                            .item-gap {
+                                                font-size: 3.269841vw;
+                                            }
+                                            
+                                            .item-value {
+                                                font-size: 3.269841vw;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            
+                            .product-cart {
+                                .price {
+                                    font-size: 8.1695vw;
+                                }
+                                
+                                .quantity {
+                                    .availability {
+                                        font-size: 3vw;
+                                        margin: 0px 0px 5px 0px;
+                                    }
+                                    
+                                    .quantity-counter{
+                                        min-width: 22.015873vw;
+                                        height: 6.222222vw;
+
+                                        .minus, .plus {
+                                            font-size: 4.41vw;
+                                            width: 6.222222vw;
+                                        }
+
+                                        .number {
+                                            font-size: 3.41vw;
+                                        }
+                                    }
+                                }
+                                
+                                .add-to-cart {
+                                    height: 8.4127vw;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            
+            .text-empty {
+                font-size: 4.41vw;
+                line-height: 4.41vw;
+                margin: 20px 0px 20px 0px;
+            }
+        }
+    }
+    
+    #filter {
+        .filter-list {
+            flex-direction: column;
+            
+            .filter-item {
+                flex-direction: row;
+                justify-content: space-between;
+                margin: 10px 0px 0px 0px;
+                
+                &:first-child {
+                    margin: 0px 0px 0px 0px;
+                }
+                
+                .filter-item-heading {
+                    font-size: 4.41vw;
+                    line-height: 4.41vw;
+                }
+                
+                .filter-item-body {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: flex-start;
+                }
+                
+                &.dropdown-list {
+                    .filter-item-body {
+                        ul.filter-select-list {
+                            width: auto;
+                            max-width: 50vw;
+                            
+                            li {
+                                a {
+                                    width: auto;
+                                    height: auto;
+                                    font-size: 4.269841vw;
+                                    line-height: 4.269841vw;
+                                    padding: 0px 3.11vw 0px 3.11vw;
+                                    white-space: nowrap;
+                                }
+                            }
+                        }
+                        
+                        .dropdown-arrow {
+                            width: 2.190476vw;
+                            height: 2.190476vw;
+                            
+                            .arrow-figure {
+                                width: 1.6349vw;
+                                height: 1.6349vw;
+                            }
+                        }
+                    }
+                }
+                
+                &.checkbox {
+                    .filter-item-body {
+                        ul.filter-checkbox-list {
+                            li.checkbox-item {
+                                a {
+                                    .item-label {
+                                        font-size: 3.269841vw;
+                                        line-height: 3.269841vw;
+                                    }
+
+                                    .checkbox-mark {
+                                        width: 1.555556vw;
+                                        height: 1.555556vw;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    #login-modal, #info-modal, #call-modal {
+        &.modal-dialog {
+            margin: 0px 0px 0px 0px;
+            
+            .form-wrapper {
+                width: 100vw;
+                border-left: none;
+                border-right: none;
+
+                .close-button {
+                    right: 3.5079vw;
+                    top: 3.5079vw;
+                    
+                    svg {
+                        width: 5.563vw;
+                        height: 5.563vw;
+                    }
+                }
+
+                form {
+                    .form-heading {
+                        font-size: 5.641vw;
+                        line-height: 5.641vw;
+                    }
+
+                    .inputs-wrapper {
+                        input {
+                            font-size: 4.41vw;
+                            line-height: 4.41vw;
+                        }
+                    }
+                    
+                    .need-registration-text {
+                        font-size: 4.41vw;
+                        line-height: 4.41vw;
+                    }
                 }
             }
         }

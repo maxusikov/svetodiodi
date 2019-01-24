@@ -102,7 +102,7 @@ class ControllerCommonFooter extends Controller {
                     ],
                     'price_list' => [
                         'name' => $this->language->get('text_price_list'),
-                        'href' => $this->url->link('information/information', 'information_id=6')
+                        'href' => $this->url->link('information/pricelist')
                     ],
                     'contacts' => [
                         'name' => $this->language->get('text_contacts'),
